@@ -14,8 +14,9 @@ public class ConnectFourBoard {
         this.height = height;
     }
     
-    public void printDimensions() {
-        System.out.println("The board is " + this.width + " wide ");
-        System.out.println("by " + this.height + "high.\n");
+    @Override
+    public String toString() {
+        return "The board is " + this.width + " wide " +
+                "by " + this.height + " high.\n";
     }
 }

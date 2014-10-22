@@ -7,12 +7,14 @@ package ConnectFour;
  */
 public class ConnectFour {
     
-    public void main(String args[]) {
+    public static void main(String args[]) {
         
-        System.out.println("Testing\n");
+        System.out.println("Begin test\n");
         
         ConnectFourBoard board = new ConnectFourBoard(4,5);
-        board.printDimensions();
+        System.out.println(board);
+        
+        System.out.println("End test");
     }
     
 }
