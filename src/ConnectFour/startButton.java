@@ -1,4 +1,3 @@
-
 package ConnectFour;
 
 import java.awt.event.ActionEvent;
@@ -9,19 +8,20 @@ import javax.swing.JButton;
  *
  * @author Beaker
  */
-public class dropButton extends JButton implements ActionListener{
-    int col;
-    ConnectFourBoard CFB;
-    
-    public dropButton(ConnectFourBoard CFB, int col){
-        this.col = col;
-        this.CFB = CFB;
-        this.setText(col+"");
+public class startButton extends JButton implements ActionListener{
+    private boolean start = false;
+            
+    public startButton(){
         this.addActionListener(this);
+        this.setText("Start!");
     }
     
     @Override
     public void actionPerformed(ActionEvent e){
-        
+        this.start = true;
+    }
+    
+    public boolean ready(){
+        return this.start;
     }
 }

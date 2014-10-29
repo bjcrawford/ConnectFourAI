@@ -22,8 +22,10 @@ public class ConnectFour {
     private static void createAndShowGUI() {
         JFrame gui = new JFrame("Connect Four AI");
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gui.add(new welcomePanel());
+        welcomePanel WP = new welcomePanel();
+        gui.add(WP);
         gui.pack();
         gui.setVisible(true);
+        
     }
 }
