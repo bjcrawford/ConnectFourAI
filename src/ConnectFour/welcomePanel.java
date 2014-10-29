@@ -40,25 +40,36 @@ public class welcomePanel extends JPanel {
         int boardWidth = bgWidth - (2 * borderWidth);
         int boardHeight = bgHeight - (2 * borderWidth);
         
+        
+        System.out.println("bgWidth: " + bgWidth + "\n");
+        System.out.println("bgHieght: " + bgHeight + "\n");
+        System.out.println("borderWidth: " + borderWidth + "\n");
+        System.out.println("boardWidth: " + boardWidth + "\n");
+        System.out.println("boardHeight: " + boardHeight + "\n");
+        
         g.setColor(Color.GRAY);
-        g.fillRect(x, y, boardWidth, boardHeight);
+        g.fillRect(x, y, bgWidth, bgHeight);
         g.setColor(Color.BLACK);
-        g.drawRect(x, y, boardWidth, boardHeight);
+        g.drawRect(x, y, bgWidth, bgHeight);
         g.setColor(Color.YELLOW);
-        g.fillRect(2 * borderWidth,
-                   2 * borderWidth,
+        g.fillRect(x + borderWidth,
+                   y + borderWidth,
                    boardWidth, 
                    boardHeight);
         
-        int rowSep = (boardWidth - 2 * borderWidth)/rows;
-        int colSep = (boardWidth - 2 * borderWidth)/cols;
+        int rowSep = (boardWidth - borderWidth)/rows;
+        int colSep = (boardWidth - borderWidth)/cols;
+        
+        System.out.println("rowSep: " + rowSep + "\n");
+        System.out.println("colSep: " + colSep + "\n");
         
         g.setColor(Color.GRAY);
-        for(int i = 2 * borderWidth; i < (200); i = i + rowSep)
+        for(int i = y + 2 * borderWidth; i < (y + boardHeight); i = i + rowSep)
         {
             
-            for(int j = 2 * borderWidth; j < (200); j = j + colSep)
+            for(int j = x + 2 * borderWidth; j < (x + boardHeight); j = j + colSep)
             {
+                System.out.println("i: " + i + "; j: " + j + "\n");
                 g.fillOval(j, i, rowSep - 10, colSep - 10);
             }
         }
