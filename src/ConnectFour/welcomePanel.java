@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 /**
@@ -18,10 +19,14 @@ import javax.swing.JPanel;
 public class welcomePanel extends JPanel {
     
     ConnectFourBoard myBoard;
+    public startButton start;
     
     public welcomePanel(ConnectFourBoard board) {
         this.myBoard = board;
         setBorder(BorderFactory.createLineBorder(Color.black));
+        
+         //this is just temporary. See main and you will know why I used this.
+        paintButton();
     }
     
     @Override
@@ -33,5 +38,10 @@ public class welcomePanel extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         myBoard.drawBoard(g, 20, 20);
+    }
+    
+    public void paintButton(){
+        this.start = new startButton();
+        add(start);
     }
 }
