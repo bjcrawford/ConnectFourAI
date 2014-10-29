@@ -1,6 +1,9 @@
 
 package ConnectFour;
 
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
 /**
  * This class is the main logic loop for the Connect Four game.
  * 
@@ -9,12 +12,18 @@ public class ConnectFour {
     
     public static void main(String args[]) {
         
-        System.out.println("Begin test\n");
-        
-        ConnectFourBoard board = new ConnectFourBoard(4,5);
-        System.out.println(board);
-        
-        System.out.println("End test");
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                createAndShowGUI();
+            }
+        });
     }
     
+    private static void createAndShowGUI() {
+        JFrame gui = new JFrame("Connect Four AI");
+        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        gui.add(new welcomePanel());
+        gui.pack();
+        gui.setVisible(true);
+    }
 }
