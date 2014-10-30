@@ -121,7 +121,6 @@ public class ConnectFourBoard {
                     else
                         pieceColor--;
                     
-                    
                     break;
                 }
             }
