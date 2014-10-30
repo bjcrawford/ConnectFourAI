@@ -48,6 +48,37 @@ public class ConnectFourBoard {
     }
     
     /**
+     * Returns the height of the board
+     * 
+     * @return The height of the board
+     */
+    public int getHeight() {
+        return height;
+    }
+    
+    /**
+     * Returns the width of the board
+     * 
+     * @return The width of the board
+     */
+    public int getWidth() {
+        return width;
+    }
+    
+    /**
+     * Returns a copy of the two-dimensional array representation of the board.
+     * 
+     * @return A copy of the board
+     */
+    public int[][] getBoard() {
+        int copy[][] = new int[height][width];
+        for(int i = 0; i < height; i++)
+            for(int j = 0; j < width; j++)
+                copy[i][j] = board[i][j];
+        return copy;
+    }
+    
+    /**
      * Resets the board to an empty state
      */
     public void resetBoard() {
@@ -246,20 +277,9 @@ public class ConnectFourBoard {
     }
     
     /**
-     * Returns a copy of the two-dimensional array representation of the board.
-     * 
-     * @return A copy of the board
-     */
-    public int[][] getBoard() {
-        int copy[][] = new int[height][width];
-        for(int i = 0; i < height; i++)
-            for(int j = 0; j < width; j++)
-                copy[i][j] = board[i][j];
-        return copy;
-    }
-    
-    /**
      * Returns a string representation of the board.
+     * 
+     * @return A string containing the board state
      */
     @Override
     public String toString() {
