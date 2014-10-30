@@ -16,12 +16,12 @@ import javax.swing.JPanel;
  *
  * @author bcrawford
  */
-public class welcomePanel extends JPanel {
+public class WelcomePanel extends JPanel {
     
     ConnectFourBoard myBoard;
-    public startButton start;
+    public StartButton start;
     
-    public welcomePanel(ConnectFourBoard board) {
+    public WelcomePanel(ConnectFourBoard board) {
         this.myBoard = board;
         setBorder(BorderFactory.createLineBorder(Color.black));
         
@@ -41,7 +41,7 @@ public class welcomePanel extends JPanel {
     }
     
     public void paintButton(){
-        this.start = new startButton();
+        this.start = new StartButton();
         add(start);
     }
 }

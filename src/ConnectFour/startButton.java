@@ -8,10 +8,10 @@ import javax.swing.JButton;
  *
  * @author Beaker
  */
-public class startButton extends JButton implements ActionListener{
+public class StartButton extends JButton implements ActionListener{
     private boolean start = false;
             
-    public startButton(){
+    public StartButton(){
         this.addActionListener(this);
         this.setText("Start!");
     }
