@@ -24,10 +24,22 @@ import java.awt.Graphics;
 */
 public class ConnectFourBoard {
     
-    private final int height;
+    /** The height of the board */
+    private final int height;  
+    
+    /** The width of the board */
     private final int width;
+    
+    /** A two-dimensional array to hold the contents of the board */
     private final int board[][]; 
     
+    /**
+     * Creates a Connect Four board representation with a given
+     * width and height for the board.
+     * 
+     * @param height The height of the board
+     * @param width The width of the board
+     */
     public ConnectFourBoard(int height, int width) {
         
         this.height = height;
@@ -35,26 +47,52 @@ public class ConnectFourBoard {
         this.board = new int[height][width];
     }
     
+    /**
+     * Resets the board to an empty state
+     */
+    public void resetBoard() {
+        
+        for(int i = 0; i < height; i++)
+            for(int j = 0; j < width; j++)
+                board[i][j] = 0;
+    }
+    
     /* Not quite sure how we are going to handle drawing an inserted 
        piece. I don't know if we should redraw the entire board after 
        any move or simply draw only the newly inserted piece.
     */
+    
+    /**
+     * Inserts a game piece into the board.
+     * 
+     * @param pieceColor  color of the piece to be inserted (red:1, black:2)
+     * @param col The column to insert the piece into
+     * @return True if the insertion was successful, otherwise false
+     */
     public boolean insertPiece(int pieceColor, int col) {
         
         boolean result = false;
-        for(int row = height - 1; row >= 0; row--)
+        if( (pieceColor == 1 || pieceColor == 2) &&  col >= 0 && col < width)
         {
-            if(board[row][col] == 0)
+            for(int row = height - 1; row >= 0; row--)
             {
-                board[row][col] = pieceColor;
-                result = true;
-                break;
+                if(board[row][col] == 0)
+                {
+                    board[row][col] = pieceColor;
+                    result = true;
+                    break;
+                }
             }
         }
         
         return result;
     }
     
+    /**
+     * Checks the game board for a win.
+     * 
+     * @return 0 if no win, 1 if red win, 2 if black win
+     */
     public int checkWin() {
         
         int result = 0;
@@ -143,6 +181,14 @@ public class ConnectFourBoard {
         return result;
     }
     
+    /**
+     * Draws a visual representation of the board to the given graphics object.
+     * The board is drawn at a fixed size of 400 by 400 pixels.
+     * 
+     * @param g The graphics object to draw with
+     * @param x The x coordinate at which to draw the left edge of the board
+     * @param y The y coordinate at which to draw the top edge of the board
+     */
     public void drawBoard(Graphics g, int x, int y) {
         
         int bgHeight = 400;
@@ -199,6 +245,22 @@ public class ConnectFourBoard {
         }
     }
     
+    /**
+     * Returns a copy of the two-dimensional array representation of the board.
+     * 
+     * @return A copy of the board
+     */
+    public int[][] getBoard() {
+        int copy[][] = new int[height][width];
+        for(int i = 0; i < height; i++)
+            for(int j = 0; j < width; j++)
+                copy[i][j] = board[i][j];
+        return copy;
+    }
+    
+    /**
+     * Returns a string representation of the board.
+     */
     @Override
     public String toString() {
         String result = "";
