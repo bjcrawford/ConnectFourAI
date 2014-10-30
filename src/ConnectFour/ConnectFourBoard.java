@@ -33,6 +33,11 @@ public class ConnectFourBoard {
     /** A two-dimensional array to hold the contents of the board */
     private final int board[][]; 
     
+    /** this corresponds to who's turn it is. This variable is changed only in insertPiece(/1)
+     * Will only ever be 1 or 2 (red turn or black turn)
+     */
+    private int pieceColor = 1;
+    
     /**
      * Creates a Connect Four board representation with a given
      * width and height for the board.
@@ -96,11 +101,10 @@ public class ConnectFourBoard {
     /**
      * Inserts a game piece into the board.
      * 
-     * @param pieceColor  color of the piece to be inserted (red:1, black:2)
      * @param col The column to insert the piece into
      * @return True if the insertion was successful, otherwise false
      */
-    public boolean insertPiece(int pieceColor, int col) {
+    public boolean insertPiece(int col) {
         
         boolean result = false;
         if( (pieceColor == 1 || pieceColor == 2) &&  col >= 0 && col < width)
@@ -111,6 +115,12 @@ public class ConnectFourBoard {
                 {
                     board[row][col] = pieceColor;
                     result = true;
+                    
+                    if(pieceColor == 1)
+                        pieceColor++;
+                    else
+                        pieceColor--;
+                    
                     break;
                 }
             }

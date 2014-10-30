@@ -40,6 +40,19 @@ public class ConnectFour {
         
         System.out.println(myBoard);
         
+        myBoard.insertPiece(0);//red
+        myBoard.insertPiece(1);//black
+        myBoard.insertPiece(1);//red
+        myBoard.insertPiece(2);//black
+        myBoard.insertPiece(3);//red
+        myBoard.insertPiece(2);//black
+        myBoard.insertPiece(2);//red
+        myBoard.insertPiece(3);//black
+        myBoard.insertPiece(4);//red
+        myBoard.insertPiece(3);//black
+        myBoard.insertPiece(3);//red
+        
+        /* had to take this out right quick
         myBoard.insertPiece(2, 3);
         myBoard.insertPiece(2, 3);
         myBoard.insertPiece(2, 3);
@@ -51,6 +64,7 @@ public class ConnectFour {
         myBoard.insertPiece(1, 1);
         myBoard.insertPiece(1, 2);
         myBoard.insertPiece(1, 3);
+        */
         
         System.out.println(myBoard);
         

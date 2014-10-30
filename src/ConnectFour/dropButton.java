@@ -25,6 +25,6 @@ public class dropButton extends JButton implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e){
-        
+        CFB.insertPiece(col);
     }
 }
