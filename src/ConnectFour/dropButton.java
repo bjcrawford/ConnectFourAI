@@ -12,8 +12,10 @@ import javax.swing.JButton;
 public class dropButton extends JButton implements ActionListener{
     int col;
     ConnectFourBoard CFB;
+    String name;
     
-    public dropButton(ConnectFourBoard CFB, int col){
+    public dropButton(ConnectFourBoard CFB, int col, String name){
+        this.name = name;
         this.col = col;
         this.CFB = CFB;
         this.setText(col+"");

@@ -9,7 +9,6 @@ import javax.swing.JButton;
  * @author Beaker
  */
 public class startButton extends JButton implements ActionListener{
-    private boolean start = false;
             
     public startButton(){
         this.addActionListener(this);
@@ -18,10 +17,10 @@ public class startButton extends JButton implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e){
-        this.start = true;
+        ConnectFour.gui.remove(ConnectFour.WP);
+        ConnectFour.gui.add(ConnectFour.GPI);
+        ConnectFour.gui.pack();
+        ConnectFour.gui.setVisible(true);
     }
     
-    public boolean ready(){
-        return this.start;
-    }
 }

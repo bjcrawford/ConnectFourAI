@@ -1,6 +1,8 @@
 
 package ConnectFour;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
@@ -11,12 +13,16 @@ import javax.swing.SwingUtilities;
 public class ConnectFour {
     
     static ConnectFourBoard myBoard;
+    static welcomePanel WP;
+    static GamePlayUI GPI;
+    static JFrame gui;
     
     public static void main(String args[]) {
         
         myBoard = new ConnectFourBoard(8, 8);
         
         SwingUtilities.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 createAndShowGUI();
             }
@@ -26,12 +32,14 @@ public class ConnectFour {
     }
     
     private static void createAndShowGUI() {
-        JFrame gui = new JFrame("Connect Four AI");
+        gui = new JFrame("Connect Four AI");
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        welcomePanel WP = new welcomePanel(myBoard);
+        WP = new welcomePanel(myBoard);
+        GPI = new GamePlayUI(myBoard);
         gui.add(WP);
         gui.pack();
         gui.setVisible(true);
         
     }
+    
 }

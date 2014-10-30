@@ -19,14 +19,14 @@ import javax.swing.JPanel;
 public class welcomePanel extends JPanel {
     
     ConnectFourBoard myBoard;
-    public startButton start;
+    startButton start;
     
     public welcomePanel(ConnectFourBoard board) {
         this.myBoard = board;
+        this.start = new startButton();
         setBorder(BorderFactory.createLineBorder(Color.black));
+        add(start);
         
-         //this is just temporary. See main and you will know why I used this.
-        paintButton();
     }
     
     @Override
@@ -40,8 +40,4 @@ public class welcomePanel extends JPanel {
         myBoard.drawBoard(g, 20, 20);
     }
     
-    public void paintButton(){
-        this.start = new startButton();
-        add(start);
-    }
 }
