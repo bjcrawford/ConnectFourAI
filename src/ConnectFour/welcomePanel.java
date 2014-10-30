@@ -16,17 +16,18 @@ import javax.swing.JPanel;
  *
  * @author bcrawford
  */
-public class WelcomePanel extends JPanel {
+public class welcomePanel extends JPanel {
     
     ConnectFourBoard myBoard;
-    public StartButton start;
+    startButton start;
+
     
-    public WelcomePanel(ConnectFourBoard board) {
+    public welcomePanel(ConnectFourBoard board) {
         this.myBoard = board;
+        this.start = new startButton();
         setBorder(BorderFactory.createLineBorder(Color.black));
+        add(start);
         
-         //this is just temporary. See main and you will know why I used this.
-        paintButton();
     }
     
     @Override
@@ -41,7 +42,7 @@ public class WelcomePanel extends JPanel {
     }
     
     public void paintButton(){
-        this.start = new StartButton();
+        this.start = new startButton();
         add(start);
     }
 }

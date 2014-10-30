@@ -9,12 +9,15 @@ import javax.swing.JButton;
  *
  * @author Beaker
  */
-public class DropButton extends JButton implements ActionListener{
+public class dropButton extends JButton implements ActionListener{
     int col;
     ConnectFourBoard CFB;
+    String name;
     
-    public DropButton(ConnectFourBoard CFB, int col){
+    
+    public dropButton(ConnectFourBoard CFB, int col, String name){
         this.col = col;
+        this.name = name;
         this.CFB = CFB;
         this.setText(col+"");
         this.addActionListener(this);

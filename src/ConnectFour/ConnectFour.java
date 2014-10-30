@@ -1,6 +1,8 @@
 
 package ConnectFour;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
@@ -11,14 +13,15 @@ import javax.swing.SwingUtilities;
 public class ConnectFour {
     
     static ConnectFourBoard myBoard;
+    static welcomePanel WP;
+    static GamePlayUI GPI;
     static JFrame gui;
-    static WelcomePanel wp;
-    
+
     public static void main(String args[]) {
         
         myBoard = new ConnectFourBoard(8, 8);
         gui = new JFrame("Connect Four AI");
-        wp = new WelcomePanel(myBoard);
+        WP = new welcomePanel(myBoard);
         
         SwingUtilities.invokeLater(new Runnable() {
             @Override
@@ -60,11 +63,21 @@ public class ConnectFour {
             System.out.println("No winner\n");
     }
     
+    private static void createAndShowGUI() {
+        gui = new JFrame("Connect Four AI");
+        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        WP = new welcomePanel(myBoard);
+        GPI = new GamePlayUI(myBoard);
+        gui.add(WP);
+    }
+    
     private static void initGUI() {
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gui.add(wp);
+        gui.add(WP);
+        GPI = new GamePlayUI(myBoard);
         gui.pack();
         gui.setVisible(true);
         
     }
+    
 }
