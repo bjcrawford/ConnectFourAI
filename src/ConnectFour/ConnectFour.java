@@ -40,6 +40,7 @@ public class ConnectFour {
         
         System.out.println(myBoard);
         
+        /*
         myBoard.insertPiece(0);//red
         myBoard.insertPiece(1);//black
         myBoard.insertPiece(1);//red
@@ -52,21 +53,9 @@ public class ConnectFour {
         myBoard.insertPiece(3);//black
         myBoard.insertPiece(3);//red
         
-        /* had to take this out right quick
-        myBoard.insertPiece(2, 3);
-        myBoard.insertPiece(2, 3);
-        myBoard.insertPiece(2, 3);
-        myBoard.insertPiece(2, 2);
-        myBoard.insertPiece(2, 2);
-        myBoard.insertPiece(2, 1);
-        
-        myBoard.insertPiece(1, 0);
-        myBoard.insertPiece(1, 1);
-        myBoard.insertPiece(1, 2);
-        myBoard.insertPiece(1, 3);
-        */
         
         System.out.println(myBoard);
+        */
         
         int win = myBoard.checkWin();
         if(win == 1)
