@@ -14,9 +14,10 @@ public class dropButton extends JButton implements ActionListener{
     ConnectFourBoard CFB;
     String name;
     
+    
     public dropButton(ConnectFourBoard CFB, int col, String name){
-        this.name = name;
         this.col = col;
+        this.name = name;
         this.CFB = CFB;
         this.setText(col+"");
         this.addActionListener(this);

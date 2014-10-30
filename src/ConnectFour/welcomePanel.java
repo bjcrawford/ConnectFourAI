@@ -20,6 +20,7 @@ public class welcomePanel extends JPanel {
     
     ConnectFourBoard myBoard;
     startButton start;
+
     
     public welcomePanel(ConnectFourBoard board) {
         this.myBoard = board;
@@ -40,4 +41,8 @@ public class welcomePanel extends JPanel {
         myBoard.drawBoard(g, 20, 20);
     }
     
+    public void paintButton(){
+        this.start = new startButton();
+        add(start);
+    }
 }
