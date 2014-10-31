@@ -1,6 +1,9 @@
 
 package ConnectFour;
 
+import com.gaurav.tree.KAryTree;
+
+
 /**
  *
  * @author bcrawford
@@ -17,9 +20,19 @@ public class AgentType1Player {
     }
     
     public int getNextMove(int board[][]) {
-        int result = 0;
         
-        // Create tree to hold state space looking two moves ahead
+        int result = 0;
+        int cols = board[0].length;
+        
+        // Create tree to hold state space.
+        // int[][] should probably be replaced with
+        // a board state class that holds the array
+        // and other necessary info.
+        KAryTree<int[][]> stateSpace = new KAryTree<>(cols);
+        
+        // Create state space.
+            // stateSpace.add(root);
+            // stateSpace.add(parent, child);
         
         // Send to to method for evaluation
         
