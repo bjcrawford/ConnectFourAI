@@ -10,4 +10,5 @@ This is a final project for an introduction to artificial intelligence course ta
 - [Connect Four Wiki](http://en.wikipedia.org/wiki/Connect_Four)
 - [Connect Four AI: How it works](http://roadtolarissa.com/connect-4-ai-how-it-works/)
 - [Connect Four AI: Minimax](http://roadtolarissa.com/connect-4-ai-how-it-works/)
+- [jc-tree](https://code.google.com/p/jc-tree/)
 
