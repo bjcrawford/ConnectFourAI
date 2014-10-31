@@ -1,8 +1,6 @@
 
 package ConnectFour;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
@@ -16,6 +14,7 @@ public class ConnectFour {
     static welcomePanel WP;
     static GamePlayUI GPI;
     static JFrame gui;
+    static GameEndPanel GEP;
 
     public static void main(String args[]) {
         

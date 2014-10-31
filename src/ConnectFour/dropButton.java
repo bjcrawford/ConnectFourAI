@@ -29,12 +29,25 @@ public class dropButton extends JButton implements ActionListener {
         ConnectFour.GPI = new GamePlayUI(CFB);
         ConnectFour.gui.add(ConnectFour.GPI);
         ConnectFour.gui.pack();
-        if(CFB.checkWin() == 1)
+        if(CFB.checkWin() == 1){
+            ConnectFour.gui.remove(ConnectFour.GPI);
+            ConnectFour.GEP = new GameEndPanel(CFB, ConnectFour.GPI.bP, true);
+            ConnectFour.gui.add(ConnectFour.GEP);
+            ConnectFour.gui.pack();
+            ConnectFour.gui.setVisible(true);
             System.out.println("Red WINS");
-        else if(CFB.checkWin() == 2)
+        }
+        else if(CFB.checkWin() == 2){
+            ConnectFour.gui.remove(ConnectFour.GPI);
+            ConnectFour.GEP = new GameEndPanel(CFB, ConnectFour.GPI.bP, false);
+            ConnectFour.gui.add(ConnectFour.GEP);
+            ConnectFour.gui.pack();
+            ConnectFour.gui.setVisible(true);
             System.out.println("Black WINS");
-        else
+        }
+        else{
             System.out.println("No winner yet");
+        }
         System.out.println(CFB);
         ConnectFour.gui.setVisible(true);
     }
