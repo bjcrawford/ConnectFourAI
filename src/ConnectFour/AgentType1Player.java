@@ -47,7 +47,7 @@ public class AgentType1Player {
             if(CFBS[1].getWin())
                 CFBS[1].setScore(evaluateBoardState(CFBS[1].getBoard()));
             else if(CFBS[1].getFailedInsert())
-                CFBS[1].setScore(-100);
+                CFBS[1].setScore(-101);
             else
             {
                 for(int j = 0; j < cols; j++)
@@ -59,7 +59,7 @@ public class AgentType1Player {
                     if(CFBS[2].getWin())
                         CFBS[2].setScore(evaluateBoardState(CFBS[2].getBoard()));
                     else if(CFBS[2].getFailedInsert())
-                        CFBS[2].setScore(-100);
+                        CFBS[2].setScore(-101);
                     else
                     {
                         for(int k = 0; k < cols; k++)
@@ -71,7 +71,7 @@ public class AgentType1Player {
                             if(CFBS[3].getWin())
                                 CFBS[3].setScore(evaluateBoardState(CFBS[3].getBoard()));
                             else if(CFBS[3].getFailedInsert())
-                                CFBS[3].setScore(-100);
+                                CFBS[3].setScore(-101);
                             else
                             {
                                 for(int l = 0; l < cols; l++)
@@ -83,7 +83,7 @@ public class AgentType1Player {
                                     if(CFBS[4].getWin())
                                         CFBS[4].setScore(evaluateBoardState(CFBS[4].getBoard()));
                                     else if(CFBS[4].getFailedInsert())
-                                        CFBS[4].setScore(-100);
+                                        CFBS[4].setScore(-101);
                                     else
                                     {
                                         for(int m = 0; m < cols; m++)
