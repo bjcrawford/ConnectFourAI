@@ -184,6 +184,11 @@ public class AIType1Player {
             
         }
         
+        
+        // Need to have the move chosen from the list of
+        // considered moves be done at random. As it is
+        // right now, the AI favors the right side of the
+        // board. 
         System.out.println("\nConsidered Moves:");
         for(ConnectFourBoardState cfbs : list)
         {
