@@ -36,89 +36,106 @@ public class AgentType1Player {
         KAryTree<ConnectFourBoardState> stateSpace = new KAryTree<>(cols);
         
         // Create and insert the root (depth 0)
-        CFBS[0] = new ConnectFourBoardState(0, CFB.getBoard(), 0, "0", false);
+        CFBS[0] = new ConnectFourBoardState(CFB.getBoard(), 0, "0", false);
         stateSpace.add(CFBS[0]);
         for(int i = 0; i < cols; i++)
         {
             // Create and insert the i-th child of the root (depth 1)
             CFBS[1] = CFBS[0].createChildState(pc1, i);
-            stateSpace.add(CFBS[0], CFBS[1]);
             
-            if(CFBS[1].getWin())
-                CFBS[1].setScore(evaluateBoardState(CFBS[1].getBoard()));
-            else if(CFBS[1].getFailedInsert())
-                CFBS[1].setScore(-101);
-            else
+            if(CFBS[1].getFailedInsert());
+                //Do Nothing
+            else if(CFBS[1].getWin())
             {
+                CFBS[1].setScore(evaluateBoardState(CFBS[1].getBoard()));
+                stateSpace.add(CFBS[0], CFBS[1]);
+            }
+            else 
+            {
+                
+                stateSpace.add(CFBS[0], CFBS[1]);
                 for(int j = 0; j < cols; j++)
                 {
                     // Create and insert the j-th child of the i-th node (depth 2)
                     CFBS[2] = CFBS[1].createChildState(pc2, j);
-                    stateSpace.add(CFBS[1], CFBS[2]);
 
-                    if(CFBS[2].getWin())
+                    if(CFBS[2].getFailedInsert());
+                        //Do Nothing
+                    else if(CFBS[2].getWin())
+                    {
                         CFBS[2].setScore(evaluateBoardState(CFBS[2].getBoard()));
-                    else if(CFBS[2].getFailedInsert())
-                        CFBS[2].setScore(-101);
+                        stateSpace.add(CFBS[1], CFBS[2]);
+                    }
                     else
                     {
+                        stateSpace.add(CFBS[1], CFBS[2]);
                         for(int k = 0; k < cols; k++)
                         {
                             // Create and insert the k-th child of the j-th node (depth 3);
                             CFBS[3] = CFBS[2].createChildState(pc1, k);
-                            stateSpace.add(CFBS[2], CFBS[3]);
-
-                            if(CFBS[3].getWin())
+                            
+                            if(CFBS[3].getFailedInsert());
+                                //Do Nothing
+                            else if(CFBS[3].getWin())
+                            {
                                 CFBS[3].setScore(evaluateBoardState(CFBS[3].getBoard()));
-                            else if(CFBS[3].getFailedInsert())
-                                CFBS[3].setScore(-101);
+                                stateSpace.add(CFBS[2], CFBS[3]);
+                            }
                             else
                             {
+                                stateSpace.add(CFBS[2], CFBS[3]);
                                 for(int l = 0; l < cols; l++)
                                 {
                                     // Create and insert the l-th child of the k-th node (depth 4);
                                     CFBS[4] = CFBS[3].createChildState(pc2, l);
-                                    stateSpace.add(CFBS[3], CFBS[4]);
                                     
-                                    if(CFBS[4].getWin())
+                                    if(CFBS[4].getFailedInsert());
+                                        //Do Nothing
+                                    else if(CFBS[4].getWin())
+                                    {
                                         CFBS[4].setScore(evaluateBoardState(CFBS[4].getBoard()));
-                                    else if(CFBS[4].getFailedInsert())
-                                        CFBS[4].setScore(-101);
+                                        stateSpace.add(CFBS[3], CFBS[4]);
+                                    }
                                     else
                                     {
+                                        stateSpace.add(CFBS[3], CFBS[4]);
                                         for(int m = 0; m < cols; m++)
                                         {
                                             // Create and insert the m-th child of the l-th node (depth 5);
                                             CFBS[5] = CFBS[4].createChildState(pc1, m);
-                                            stateSpace.add(CFBS[4], CFBS[5]);
                                             
-                                            CFBS[5].setScore(evaluateBoardState(CFBS[5].getBoard()));
-                                            
-                                            if(m == 0)
+                                            if(CFBS[5].getFailedInsert());
+                                                //Do Nothing
+                                            else
+                                            {
+                                                CFBS[5].setScore(evaluateBoardState(CFBS[5].getBoard()));
+                                                stateSpace.add(CFBS[4], CFBS[5]);
+                                            }
+                                            if(!CFBS[4].getScoreEvaluated())
                                                 CFBS[4].setScore(CFBS[5].getScore());
                                             if(CFBS[5].getScore() > CFBS[4].getScore())
                                                 CFBS[4].setScore(CFBS[5].getScore());
                                         }
                                     }
-                                    if(l == 0)
+                                    if(!CFBS[3].getScoreEvaluated())
                                         CFBS[3].setScore(CFBS[4].getScore());
                                     if(CFBS[4].getScore() < CFBS[3].getScore())
                                         CFBS[3].setScore(CFBS[4].getScore());
                                 }
                             }
-                            if(k == 0)
+                            if(!CFBS[2].getScoreEvaluated())
                                 CFBS[2].setScore(CFBS[3].getScore());
                             if(CFBS[3].getScore() > CFBS[2].getScore())
                                 CFBS[2].setScore(CFBS[3].getScore());
                         }
                     }
-                    if(j == 0)
+                    if(!CFBS[1].getScoreEvaluated())
                         CFBS[1].setScore(CFBS[2].getScore());
                     if(CFBS[2].getScore() < CFBS[1].getScore())
                         CFBS[1].setScore(CFBS[2].getScore());
                 }
             }
-            if(i == 0)
+            if(!CFBS[0].getScoreEvaluated())
                 CFBS[0].setScore(CFBS[1].getScore());
             if(CFBS[1].getScore() > CFBS[0].getScore())
                 CFBS[0].setScore(CFBS[1].getScore());
