@@ -5,29 +5,27 @@
  */
 package ConnectFour;
 
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
 /**
  *
- * @author Beaker
+ * @author bcrawford
  */
-public class GameEndPanel extends JPanel {
+public class WelcomePanel extends JPanel {
+    
     ConnectFourBoard board;
+    StartButton start;
+
     
-    
-    public GameEndPanel(ConnectFourBoard board, boardPanel bP, boolean winner){
+    public WelcomePanel(ConnectFourBoard board) {
         this.board = board;
-        setLayout(new BorderLayout());
-        add(bP, BorderLayout.CENTER);
-        if(winner)
-            add(new JLabel(new ImageIcon("Red.png")), BorderLayout.NORTH);
-        else
-            add(new JLabel(new ImageIcon("Black.png")), BorderLayout.NORTH);
+        this.start = new StartButton();
+        setBorder(BorderFactory.createLineBorder(Color.black));
+        add(start);
         
     }
     
@@ -39,6 +37,11 @@ public class GameEndPanel extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        g.drawString("Welcome! Press start to play.", 300, 300);
     }
     
+    public void paintButton(){
+        this.start = new StartButton();
+        add(start);
+    }
 }

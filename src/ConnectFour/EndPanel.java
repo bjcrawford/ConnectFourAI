@@ -5,27 +5,29 @@
  */
 package ConnectFour;
 
-import java.awt.Color;
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
  *
- * @author bcrawford
+ * @author Beaker
  */
-public class welcomePanel extends JPanel {
+public class EndPanel extends JPanel {
+    ConnectFourBoard board;
     
-    ConnectFourBoard myBoard;
-    startButton start;
-
     
-    public welcomePanel(ConnectFourBoard board) {
-        this.myBoard = board;
-        this.start = new startButton();
-        setBorder(BorderFactory.createLineBorder(Color.black));
-        add(start);
+    public EndPanel(ConnectFourBoard board, BoardPanel bP, boolean winner){
+        this.board = board;
+        setLayout(new BorderLayout());
+        add(bP, BorderLayout.CENTER);
+        if(winner)
+            add(new JLabel(new ImageIcon("Red.png")), BorderLayout.NORTH);
+        else
+            add(new JLabel(new ImageIcon("Black.png")), BorderLayout.NORTH);
         
     }
     
@@ -37,11 +39,6 @@ public class welcomePanel extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        myBoard.drawBoard(g, 20, 20);
     }
     
-    public void paintButton(){
-        this.start = new startButton();
-        add(start);
-    }
 }

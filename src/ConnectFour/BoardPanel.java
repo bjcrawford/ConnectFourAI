@@ -13,21 +13,21 @@ import javax.swing.JPanel;
  *
  * @author Beaker
  */
-public class boardPanel extends JPanel{
+public class BoardPanel extends JPanel{
     ConnectFourBoard board;
     
-    public boardPanel(ConnectFourBoard board){
+    public BoardPanel(ConnectFourBoard board){
         this.board = board;
     }
     
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(400, 300);
+        return new Dimension(400, 400);
     }
     
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        board.drawBoard(g, 20, 20);
+        board.drawBoard(g, 200, 30);
     }
 }

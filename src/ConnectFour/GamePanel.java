@@ -10,18 +10,18 @@ import javax.swing.JPanel;
  *
  * @author Beaker
  */
-public class GamePlayUI extends JPanel{
+public class GamePanel extends JPanel{
     ConnectFourBoard board;
-    boardPanel bP;
+    BoardPanel bP;
     
-    public GamePlayUI(ConnectFourBoard board){
+    public GamePanel(ConnectFourBoard board){
         this.board = board;
         setLayout(new BorderLayout());
         JPanel buttons = new JPanel(new GridLayout(1, board.getWidth()));
         for(int i = 1; i < board.getWidth() + 1; i++){
-            buttons.add(new dropButton(board, i, "" + i));
+            buttons.add(new DropButton(board, i, "" + i));
         }
-        bP = new boardPanel(board);
+        bP = new BoardPanel(board);
         add(buttons, BorderLayout.NORTH);
         add(this.bP, BorderLayout.CENTER);
     }

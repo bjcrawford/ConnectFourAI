@@ -8,13 +8,13 @@ import javax.swing.JButton;
  *
  * @author Beaker
  */
-public class dropButton extends JButton implements ActionListener {
+public class DropButton extends JButton implements ActionListener {
 
     int col;
     ConnectFourBoard CFB;
     String name;
 
-    public dropButton(ConnectFourBoard CFB, int col, String name) {
+    public DropButton(ConnectFourBoard CFB, int col, String name) {
         this.col = col;
         this.name = name;
         this.CFB = CFB;
@@ -25,22 +25,22 @@ public class dropButton extends JButton implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         CFB.insertPiece(col - 1);
-        ConnectFour.gui.remove(ConnectFour.GPI);
-        ConnectFour.GPI = new GamePlayUI(CFB);
-        ConnectFour.gui.add(ConnectFour.GPI);
+        ConnectFour.gui.remove(ConnectFour.gp);
+        ConnectFour.gp = new GamePanel(CFB);
+        ConnectFour.gui.add(ConnectFour.gp);
         ConnectFour.gui.pack();
         if(CFB.checkWin() == 1){
-            ConnectFour.gui.remove(ConnectFour.GPI);
-            ConnectFour.GEP = new GameEndPanel(CFB, ConnectFour.GPI.bP, true);
-            ConnectFour.gui.add(ConnectFour.GEP);
+            ConnectFour.gui.remove(ConnectFour.gp);
+            ConnectFour.ep = new EndPanel(CFB, ConnectFour.gp.bP, true);
+            ConnectFour.gui.add(ConnectFour.ep);
             ConnectFour.gui.pack();
             ConnectFour.gui.setVisible(true);
             System.out.println("Red WINS");
         }
         else if(CFB.checkWin() == 2){
-            ConnectFour.gui.remove(ConnectFour.GPI);
-            ConnectFour.GEP = new GameEndPanel(CFB, ConnectFour.GPI.bP, false);
-            ConnectFour.gui.add(ConnectFour.GEP);
+            ConnectFour.gui.remove(ConnectFour.gp);
+            ConnectFour.ep = new EndPanel(CFB, ConnectFour.gp.bP, false);
+            ConnectFour.gui.add(ConnectFour.ep);
             ConnectFour.gui.pack();
             ConnectFour.gui.setVisible(true);
             System.out.println("Black WINS");
