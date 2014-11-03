@@ -17,10 +17,11 @@ public class ConnectFourBoardState {
     private boolean child;
     private int colInserted;
     private boolean failedInsert;
+    private boolean scoreEvaluated;
     
-    public ConnectFourBoardState(int score, int board[][], int depth, String path, boolean win) {
+    public ConnectFourBoardState(int board[][], int depth, String path, boolean win) {
         
-        this.score = score;
+        this.score = 0;
         this.height = board.length;
         this.width = board[0].length;
         this.board = board;
@@ -30,11 +31,12 @@ public class ConnectFourBoardState {
         this.child = false;
         this.colInserted = -1;
         this.failedInsert = false;
+        this.scoreEvaluated = false;
     }
     
     public ConnectFourBoardState(ConnectFourBoardState toCopy) {
         
-        this.score = toCopy.getScore();
+        this.score = 0;
         this.height = toCopy.getHeight();
         this.width = toCopy.getWidth();
         this.board = new int[height][width];
@@ -47,6 +49,7 @@ public class ConnectFourBoardState {
         this.child = false;
         this.colInserted = -1;
         this.failedInsert = false;
+        this.scoreEvaluated = false;
     }
     
     public ConnectFourBoardState createChildState(int pieceColor, int col) {
@@ -70,6 +73,7 @@ public class ConnectFourBoardState {
         child.child = true;
         child.colInserted = col;
         child.failedInsert = !inserted;
+        child.scoreEvaluated = false;
         
         return child;
     }
@@ -119,9 +123,14 @@ public class ConnectFourBoardState {
         return failedInsert;
     }
     
+    public boolean getScoreEvaluated() {
+        
+        return scoreEvaluated;
+    }
     public void setScore(int newScore) {
         
         this.score = newScore;
+        this.scoreEvaluated = true;
     }
     
     /**
