@@ -15,12 +15,12 @@ import java.util.ListIterator;
  * 
  * @author bcrawford
  */
-public class AgentType1Player {
+public class AIType1Player {
     
     int pieceColor;
     ConnectFourBoard CFB;
     
-    public AgentType1Player(int pieceColor, ConnectFourBoard CFB) {
+    public AIType1Player(int pieceColor, ConnectFourBoard CFB) {
         
         this.pieceColor = pieceColor;
         this.CFB = CFB;
@@ -32,8 +32,14 @@ public class AgentType1Player {
         int result = cols/2;
         int pc1 = pieceColor;
         int pc2 = ((pieceColor + 2) % 2) + 1;
-        ConnectFourBoardState CFBS[] = new ConnectFourBoardState[7];
+        ConnectFourBoardState CFBS[] = new ConnectFourBoardState[6];
         KAryTree<ConnectFourBoardState> stateSpace = new KAryTree<>(cols);
+        
+        // The generation of the state space can be done recursively. I 
+        // will make these changes soon.
+        // This will allow for the look ahead value (depth of the state
+        // space, currently 5) to be easily altered resulting in 
+        // different difficulty levels for this minimax AI.
         
         // Create and insert the root (depth 0)
         CFBS[0] = new ConnectFourBoardState(CFB.getBoard(), 0, "0", false);

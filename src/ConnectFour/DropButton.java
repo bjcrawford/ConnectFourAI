@@ -54,7 +54,7 @@ public class DropButton extends JButton implements ActionListener {
         
         int aiMove = 0;
         try {
-            aiMove = ConnectFour.at1.getNextMove();
+            aiMove = ConnectFour.ait1.getNextMove();
         }
         catch(NodeNotFoundException ex) {
             System.out.println("Crap, at1 failed");

@@ -8,13 +8,13 @@ import java.util.Scanner;
  *
  * @author bcrawford
  */
-public class AgentType1Tester {
+public class AITester {
     
     public static void main(String args[]) {
         int i = 1;
         Scanner input = new Scanner(System.in);
         ConnectFourBoard CFB = new ConnectFourBoard(8, 8);
-        AgentType1Player AT1 = new AgentType1Player(2, CFB);
+        AIType1Player AT1 = new AIType1Player(2, CFB);
         int win = CFB.checkWin();
         
         while(win == 0)
@@ -60,7 +60,7 @@ public class AgentType1Tester {
     
     public void test() {
         ConnectFourBoard CFB = new ConnectFourBoard(8, 8);
-        AgentType1Player AT1 = new AgentType1Player(1, CFB);
+        AIType1Player AT1 = new AIType1Player(1, CFB);
         
         CFB.insertPiece(0);
         CFB.insertPiece(0);
