@@ -15,12 +15,14 @@ public class ConnectFour {
     static WelcomePanel wp;
     static GamePanel gp;
     static EndPanel ep;
+    static AgentType1Player at1;
 
     public static void main(String args[]) {
         
         board = new ConnectFourBoard(8, 8);
         gui = new JFrame("Connect Four AI");
         wp = new WelcomePanel(board);
+        at1 = new AgentType1Player(2, board);
         
         SwingUtilities.invokeLater(new Runnable() {
             @Override
