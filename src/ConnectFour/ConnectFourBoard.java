@@ -159,9 +159,9 @@ public class ConnectFourBoard {
         }
         
         // Check verticals
-        for(int col = 0; col < height && result == 0; col++)
+        for(int row = 3; row < height && result == 0; row++)
         {
-            for(int row = 3; row < width && result == 0; row++)
+            for(int col = 0; col < width && result == 0; col++)
             {
                 // Red team win
                 if(board[row - 3][col] == 1 &&
@@ -179,9 +179,9 @@ public class ConnectFourBoard {
         }
         
         // Check positive slope diagonals
-        for(int col = 3; col < height && result == 0; col++)
+        for(int row = 3; row < height && result == 0; row++)
         {
-            for(int row = 3; row < width && result == 0; row++)
+            for(int col = 3; col < width && result == 0; col++)
             {
                 // Red team win
                 if(board[row]    [col - 3] == 1 &&
@@ -199,9 +199,9 @@ public class ConnectFourBoard {
         }
         
         // Check negative slope diagonals
-        for(int col = 3; col < height && result == 0; col++)
+        for(int row = 3; row < height && result == 0; row++)
         {
-            for(int row = 3; row < width && result == 0; row++)
+            for(int col = 3; col < width && result == 0; col++)
             {
                 // Red team win
                 if(board[row - 3][col - 3] == 1 &&

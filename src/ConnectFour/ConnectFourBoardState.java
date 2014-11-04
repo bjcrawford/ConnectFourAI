@@ -171,9 +171,9 @@ public class ConnectFourBoardState {
         }
         
         // Check verticals
-        for(int col = 0; col < board.length && result == 0; col++)
+        for(int row = 3; row < board.length && result == 0; row++)
         {
-            for(int row = 3; row < board[0].length && result == 0; row++)
+            for(int col = 0; col < board[0].length && result == 0; col++)
             {
                 // Red team win
                 if(board[row - 3][col] == 1 &&
@@ -191,9 +191,9 @@ public class ConnectFourBoardState {
         }
         
         // Check positive slope diagonals
-        for(int col = 3; col < board.length && result == 0; col++)
+        for(int row = 3; row < board.length && result == 0; row++)
         {
-            for(int row = 3; row < board[0].length && result == 0; row++)
+            for(int col = 3; col < board[0].length && result == 0; col++)
             {
                 // Red team win
                 if(board[row]    [col - 3] == 1 &&
@@ -211,9 +211,9 @@ public class ConnectFourBoardState {
         }
         
         // Check negative slope diagonals
-        for(int col = 3; col < board.length && result == 0; col++)
+        for(int row = 3; row < board.length && result == 0; row++)
         {
-            for(int row = 3; row < board[0].length && result == 0; row++)
+            for(int col = 3; col < board[0].length && result == 0; col++)
             {
                 // Red team win
                 if(board[row - 3][col - 3] == 1 &&
