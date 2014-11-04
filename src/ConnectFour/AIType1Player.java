@@ -55,12 +55,12 @@ public class AIType1Player {
         ConnectFourBoardState c = lotLI.next();
         int d = 1;
         
-        System.out.println("Possible Moves:");
+        System.out.println("Possible Moves:\n");
         while(lotLI.hasNext() && (c = lotLI.next()).getDepth() < 2)
         {
-            System.out.println("Score: " + c.getScore() + 
+            System.out.println("Col: " + c.getColInserted() + 
                                " Path: " + c.getPath() + 
-                               " Col: " + c.getColInserted());
+                               " Score: " + c.getScore());
             
             
             if(c.getScore() > highest)
@@ -76,21 +76,20 @@ public class AIType1Player {
             
         }
         
-        System.out.println("\nConsidered Moves:");
+        System.out.println("\nConsidered Moves:\n");
         for(ConnectFourBoardState cfbs : list)
         {
             //System.out.println(cfbs);
-            System.out.println("Score: " + cfbs.getScore() + 
+            System.out.println("Column: " + cfbs.getColInserted() + 
                                " Path: " + cfbs.getPath() + 
-                               " Col: " + cfbs.getColInserted());
+                               " Score: " + cfbs.getScore());
         }
         
         int numMoves = list.size();
-        System.out.println("" + numMoves + " considered moves");
         Random rand = new Random();
         int choice = rand.nextInt(numMoves);
         int col = list.get(choice).getColInserted();
-        System.out.println("Inserting into column " + col);
+        System.out.println("\nInserting into column " + col + "\n");
         result = list.get(choice).getColInserted();
         
         /*
