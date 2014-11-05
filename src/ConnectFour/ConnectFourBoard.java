@@ -238,10 +238,11 @@ public class ConnectFourBoard {
         int borderSize = 10;
         int boardHeight = bgHeight - (2 * borderSize);
         int boardWidth = bgWidth - (2 * borderSize);
-        int rowSep = (boardWidth - borderSize) / width;
-        int colSep = (boardWidth - borderSize) / height;
-        int pieceWidth = rowSep / 2;
-        int pieceHeight = colSep / 2;
+        int squareSize = boardWidth / ((width > height) ? width : height);
+        int rowSep = squareSize;
+        int colSep = squareSize;
+        int pieceWidth = (rowSep * 3) / 4;
+        int pieceHeight = (colSep * 3) / 4;
         int row = 0;
         int col = 0;
         
@@ -264,25 +265,30 @@ public class ConnectFourBoard {
         g.drawRect(x, y, bgWidth, bgHeight);
         
         // Draw board
-        g.setColor(Color.YELLOW);
-        g.fillRect(x + borderSize,
-                   y + borderSize,
-                   boardWidth, 
-                   boardHeight);
+//        g.setColor(Color.YELLOW);
+//        g.fillRect(x + borderSize,
+//                   y + borderSize,
+//                   boardWidth, 
+//                   boardHeight);
         
         
-        for(int i = y + (2 * borderSize); row < height; i += rowSep, row++)
+        for(int i = y + borderSize; row < height; i += rowSep, row++)
         {
             col = 0;
-            for(int j = x + (2 * borderSize); col < width; j += colSep, col++)
+            for(int j = x + borderSize; col < width; j += colSep, col++)
             {
+                g.setColor(Color.YELLOW);
+                g.fillRect(j, i, colSep, rowSep);
+                
                 if(board[row][col] == 0)
                     g.setColor(Color.GRAY);
                 else if(board[row][col] == 1)
                     g.setColor(Color.RED);
                 else
                     g.setColor(Color.BLACK);
-                g.fillOval(j, i, pieceWidth, pieceHeight);
+                int xOval = j + (colSep / 8);
+                int yOval = i + (rowSep / 8);
+                g.fillOval(xOval, yOval, pieceWidth, pieceHeight);
             }
         }
     }
