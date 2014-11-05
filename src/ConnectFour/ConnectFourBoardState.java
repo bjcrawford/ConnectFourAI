@@ -15,20 +15,22 @@ public class ConnectFourBoardState {
     private int depth;
     private String path;
     private boolean child;
+    private int pieceColor;
     private int colInserted;
     private boolean failedInsert;
     private boolean scoreEvaluated;
     
-    public ConnectFourBoardState(int board[][], int depth, String path, boolean win) {
+    public ConnectFourBoardState(int board[][], int pieceColor) {
         
         this.score = 0;
         this.height = board.length;
         this.width = board[0].length;
         this.board = board;
-        this.win = win;
-        this.depth = depth;
-        this.path = path;
+        this.win = false;
+        this.depth = 0;
+        this.path = "0";
         this.child = false;
+        this.pieceColor = pieceColor;
         this.colInserted = -1;
         this.failedInsert = false;
         this.scoreEvaluated = false;
@@ -52,16 +54,17 @@ public class ConnectFourBoardState {
         this.scoreEvaluated = false;
     }
     
-    public ConnectFourBoardState createChildState(int pieceColor, int col) {
+    public ConnectFourBoardState createChildState(int col) {
         
         ConnectFourBoardState child = new ConnectFourBoardState(this);
         child.score = 0;
+        int newPieceColor = ((this.getPieceColor() + 2) % 2) + 1;
         boolean inserted = false; 
         for(int row = child.getBoard().length - 1; row >= 0; row--)
         {
             if(child.getBoard()[row][col] == 0)
             {
-                child.getBoard()[row][col] = pieceColor;
+                child.getBoard()[row][col] = newPieceColor;
                 inserted = true;
                 break;
             }
@@ -111,6 +114,11 @@ public class ConnectFourBoardState {
     public String getPath() {
         
         return path;
+    }
+    
+    public int getPieceColor() {
+        
+        return pieceColor;
     }
     
     public int getColInserted() {
@@ -163,9 +171,9 @@ public class ConnectFourBoardState {
         }
         
         // Check verticals
-        for(int col = 0; col < board.length && result == 0; col++)
+        for(int row = 3; row < board.length && result == 0; row++)
         {
-            for(int row = 3; row < board[0].length && result == 0; row++)
+            for(int col = 0; col < board[0].length && result == 0; col++)
             {
                 // Red team win
                 if(board[row - 3][col] == 1 &&
@@ -183,9 +191,9 @@ public class ConnectFourBoardState {
         }
         
         // Check positive slope diagonals
-        for(int col = 3; col < board.length && result == 0; col++)
+        for(int row = 3; row < board.length && result == 0; row++)
         {
-            for(int row = 3; row < board[0].length && result == 0; row++)
+            for(int col = 3; col < board[0].length && result == 0; col++)
             {
                 // Red team win
                 if(board[row]    [col - 3] == 1 &&
@@ -203,9 +211,9 @@ public class ConnectFourBoardState {
         }
         
         // Check negative slope diagonals
-        for(int col = 3; col < board.length && result == 0; col++)
+        for(int row = 3; row < board.length && result == 0; row++)
         {
-            for(int row = 3; row < board[0].length && result == 0; row++)
+            for(int col = 3; col < board[0].length && result == 0; col++)
             {
                 // Red team win
                 if(board[row - 3][col - 3] == 1 &&

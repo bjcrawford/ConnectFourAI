@@ -6,6 +6,7 @@ import com.gaurav.tree.NodeNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Random;
 
 
 /**
@@ -19,6 +20,9 @@ public class AIType1Player {
     
     int pieceColor;
     ConnectFourBoard CFB;
+    ConnectFourBoardState CFBS[];
+    KAryTree<ConnectFourBoardState> stateSpace;
+    
     
     public AIType1Player(int pieceColor, ConnectFourBoard CFB) {
         
@@ -28,125 +32,19 @@ public class AIType1Player {
     
     public int getNextMove() throws NodeNotFoundException {
         
+        int result;
         int cols = CFB.getBoard().length;
-        int result = cols/2;
-        int pc1 = pieceColor;
-        int pc2 = ((pieceColor + 2) % 2) + 1;
-        ConnectFourBoardState CFBS[] = new ConnectFourBoardState[6];
-        KAryTree<ConnectFourBoardState> stateSpace = new KAryTree<>(cols);
+        int pc = ((pieceColor + 2) % 2) + 1; // Opponents piece color
+        CFBS = new ConnectFourBoardState[6];
+        stateSpace = new KAryTree<>(cols);
         
-        // The generation of the state space can be done recursively. I 
-        // will make these changes soon.
-        // This will allow for the look ahead value (depth of the state
-        // space, currently 5) to be easily altered resulting in 
-        // different difficulty levels for this minimax AI.
-        
-        // Create and insert the root (depth 0)
-        CFBS[0] = new ConnectFourBoardState(CFB.getBoard(), 0, "0", false);
+        // Create and insert the root
+        CFBS[0] = new ConnectFourBoardState(CFB.getBoard(), pc);
         stateSpace.add(CFBS[0]);
-        for(int i = 0; i < cols; i++)
-        {
-            // Create and insert the i-th child of the root (depth 1)
-            CFBS[1] = CFBS[0].createChildState(pc1, i);
-            
-            if(CFBS[1].getFailedInsert());
-                //Do Nothing
-            else if(CFBS[1].getWin())
-            {
-                CFBS[1].setScore(evaluateBoardState(CFBS[1].getBoard()));
-                stateSpace.add(CFBS[0], CFBS[1]);
-            }
-            else 
-            {
-                
-                stateSpace.add(CFBS[0], CFBS[1]);
-                for(int j = 0; j < cols; j++)
-                {
-                    // Create and insert the j-th child of the i-th node (depth 2)
-                    CFBS[2] = CFBS[1].createChildState(pc2, j);
-
-                    if(CFBS[2].getFailedInsert());
-                        //Do Nothing
-                    else if(CFBS[2].getWin())
-                    {
-                        CFBS[2].setScore(evaluateBoardState(CFBS[2].getBoard()));
-                        stateSpace.add(CFBS[1], CFBS[2]);
-                    }
-                    else
-                    {
-                        stateSpace.add(CFBS[1], CFBS[2]);
-                        for(int k = 0; k < cols; k++)
-                        {
-                            // Create and insert the k-th child of the j-th node (depth 3);
-                            CFBS[3] = CFBS[2].createChildState(pc1, k);
-                            
-                            if(CFBS[3].getFailedInsert());
-                                //Do Nothing
-                            else if(CFBS[3].getWin())
-                            {
-                                CFBS[3].setScore(evaluateBoardState(CFBS[3].getBoard()));
-                                stateSpace.add(CFBS[2], CFBS[3]);
-                            }
-                            else
-                            {
-                                stateSpace.add(CFBS[2], CFBS[3]);
-                                for(int l = 0; l < cols; l++)
-                                {
-                                    // Create and insert the l-th child of the k-th node (depth 4);
-                                    CFBS[4] = CFBS[3].createChildState(pc2, l);
-                                    
-                                    if(CFBS[4].getFailedInsert());
-                                        //Do Nothing
-                                    else if(CFBS[4].getWin())
-                                    {
-                                        CFBS[4].setScore(evaluateBoardState(CFBS[4].getBoard()));
-                                        stateSpace.add(CFBS[3], CFBS[4]);
-                                    }
-                                    else
-                                    {
-                                        stateSpace.add(CFBS[3], CFBS[4]);
-                                        for(int m = 0; m < cols; m++)
-                                        {
-                                            // Create and insert the m-th child of the l-th node (depth 5);
-                                            CFBS[5] = CFBS[4].createChildState(pc1, m);
-                                            
-                                            if(CFBS[5].getFailedInsert());
-                                                //Do Nothing
-                                            else
-                                            {
-                                                CFBS[5].setScore(evaluateBoardState(CFBS[5].getBoard()));
-                                                stateSpace.add(CFBS[4], CFBS[5]);
-                                            }
-                                            if(!CFBS[4].getScoreEvaluated())
-                                                CFBS[4].setScore(CFBS[5].getScore());
-                                            if(CFBS[5].getScore() > CFBS[4].getScore())
-                                                CFBS[4].setScore(CFBS[5].getScore());
-                                        }
-                                    }
-                                    if(!CFBS[3].getScoreEvaluated())
-                                        CFBS[3].setScore(CFBS[4].getScore());
-                                    if(CFBS[4].getScore() < CFBS[3].getScore())
-                                        CFBS[3].setScore(CFBS[4].getScore());
-                                }
-                            }
-                            if(!CFBS[2].getScoreEvaluated())
-                                CFBS[2].setScore(CFBS[3].getScore());
-                            if(CFBS[3].getScore() > CFBS[2].getScore())
-                                CFBS[2].setScore(CFBS[3].getScore());
-                        }
-                    }
-                    if(!CFBS[1].getScoreEvaluated())
-                        CFBS[1].setScore(CFBS[2].getScore());
-                    if(CFBS[2].getScore() < CFBS[1].getScore())
-                        CFBS[1].setScore(CFBS[2].getScore());
-                }
-            }
-            if(!CFBS[0].getScoreEvaluated())
-                CFBS[0].setScore(CFBS[1].getScore());
-            if(CFBS[1].getScore() > CFBS[0].getScore())
-                CFBS[0].setScore(CFBS[1].getScore());
-        }
         
+        // Build the state space with a depth of three
+        // starting from the first level (the root is zero level)
+        buildStateSpaceRecursive(cols, 3, 1);
         
         List<ConnectFourBoardState> lotL = stateSpace.levelOrderTraversal();
         ListIterator<ConnectFourBoardState> lotLI = lotL.listIterator();
@@ -157,18 +55,12 @@ public class AIType1Player {
         ConnectFourBoardState c = lotLI.next();
         int d = 1;
         
-        System.out.println("Possible Moves:");
+        System.out.println("Possible Moves:\n");
         while(lotLI.hasNext() && (c = lotLI.next()).getDepth() < 2)
         {
-            /*
-            if(d == c.getDepth())
-            {
-                System.out.println("\nDepth: " + d + "\n");
-                d++;
-            }*/
-            System.out.println("Score: " + c.getScore() + 
+            System.out.println("Col: " + c.getColInserted() + 
                                " Path: " + c.getPath() + 
-                               " Col: " + c.getColInserted());
+                               " Score: " + c.getScore());
             
             
             if(c.getScore() > highest)
@@ -184,22 +76,72 @@ public class AIType1Player {
             
         }
         
-        
-        // Need to have the move chosen from the list of
-        // considered moves be done at random. As it is
-        // right now, the AI favors the right side of the
-        // board. 
-        System.out.println("\nConsidered Moves:");
+        System.out.println("\nConsidered Moves:\n");
         for(ConnectFourBoardState cfbs : list)
         {
             //System.out.println(cfbs);
-            System.out.println("Score: " + cfbs.getScore() + 
+            System.out.println("Column: " + cfbs.getColInserted() + 
                                " Path: " + cfbs.getPath() + 
-                               " Col: " + cfbs.getColInserted());
-            result = cfbs.getColInserted();
+                               " Score: " + cfbs.getScore());
         }
         
+        int numMoves = list.size();
+        Random rand = new Random();
+        int choice = rand.nextInt(numMoves);
+        int col = list.get(choice).getColInserted();
+        System.out.println("\nInserting into column " + col + "\n");
+        result = list.get(choice).getColInserted();
+        
+        /*
+        lotLI = lotL.listIterator();
+        System.out.println("\nState Space:");
+        while(lotLI.hasNext() && (c = lotLI.next()).getDepth() < 3) {
+            System.out.println("Score: " + c.getScore() + 
+                               " Path: " + c.getPath() + 
+                               " Col: " + c.getColInserted());
+        }
+        */
+        
         return result;
+    }
+    
+    public void buildStateSpaceRecursive(int k, int maxDepth, int currentDepth) throws NodeNotFoundException {
+        
+        if(maxDepth >= 0)
+        {
+            for(int i = 0; i < k; i++)
+            {
+                // Create and insert i-th child of the parent node
+                CFBS[currentDepth] = CFBS[currentDepth - 1].createChildState(i);
+
+                // If the child did not result in a failed insert (i.e., insert
+                // into full column), add the child to the tree and create
+                // any children it may have
+                if(!CFBS[currentDepth].getFailedInsert());
+                {
+                    CFBS[currentDepth].setScore(evaluateBoardState(CFBS[currentDepth].getBoard()));
+                    stateSpace.add(CFBS[currentDepth - 1], CFBS[currentDepth]);
+                    buildStateSpaceRecursive(k, maxDepth - 1, currentDepth + 1);
+                }
+                
+                // If the parent has not had a score set, give it the child's score
+                if(!CFBS[currentDepth - 1].getScoreEvaluated())
+                    CFBS[currentDepth - 1].setScore(CFBS[currentDepth].getScore());
+                
+                // On even depths, give the parent the min score
+                // On odd depths, give the parent the max score
+                if(currentDepth % 2 == 0)
+                {
+                    if(CFBS[currentDepth].getScore() < CFBS[currentDepth - 1].getScore())
+                        CFBS[currentDepth - 1].setScore(CFBS[currentDepth].getScore());
+                }
+                else
+                {
+                    if(CFBS[currentDepth].getScore() > CFBS[currentDepth - 1].getScore())
+                        CFBS[currentDepth - 1].setScore(CFBS[currentDepth].getScore());
+                }
+            }
+        }
     }
     
     public int evaluateBoardState(int[][] board) {
