@@ -91,6 +91,7 @@ public class ConnectFourBoard {
         for(int i = 0; i < height; i++)
             for(int j = 0; j < width; j++)
                 board[i][j] = 0;
+        this.pieceColor = 1;
     }
     
     /* Not quite sure how we are going to handle drawing an inserted 

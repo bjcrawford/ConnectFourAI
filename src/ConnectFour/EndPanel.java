@@ -18,7 +18,7 @@ import javax.swing.JPanel;
  */
 public class EndPanel extends JPanel {
     ConnectFourBoard board;
-    
+    StartButton restart;
     
     public EndPanel(ConnectFourBoard board, BoardPanel bP, boolean winner){
         this.board = board;
@@ -28,7 +28,8 @@ public class EndPanel extends JPanel {
             add(new JLabel(new ImageIcon("Red.png")), BorderLayout.NORTH);
         else
             add(new JLabel(new ImageIcon("Black.png")), BorderLayout.NORTH);
-        
+        restart = new StartButton("Restart?");
+        add(restart, BorderLayout.SOUTH);
     }
     
     @Override

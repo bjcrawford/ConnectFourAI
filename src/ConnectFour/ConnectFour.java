@@ -10,6 +10,7 @@ import javax.swing.SwingUtilities;
  */
 public class ConnectFour {
     
+    static int restart = 0;
     static ConnectFourBoard board;
     static JFrame gui;
     static WelcomePanel wp;
