@@ -264,7 +264,6 @@ public class ConnectFourBoard {
         g.drawRect(x, y, bgWidth, bgHeight);
 
         // Draw board
-<<<<<<< HEAD
 //        g.setColor(Color.YELLOW);
 //        g.fillRect(x + borderSize,
 //                   y + borderSize,
@@ -279,33 +278,18 @@ public class ConnectFourBoard {
             {
                 g.setColor(Color.YELLOW);
                 g.fillRect(j, i, colSep, rowSep);
-                
-                if(board[row][col] == 0)
-=======
-        g.setColor(Color.YELLOW);
-        g.fillRect(x + borderSize,
-                y + borderSize,
-                boardWidth,
-                boardHeight);
 
-        for (int i = y + (2 * borderSize); row < height; i += rowSep, row++) {
-            col = 0;
-            for (int j = x + (2 * borderSize); col < width; j += colSep, col++) {
                 if (board[row][col] == 0) {
->>>>>>> 49efd4acf5a08633053dc269b91c323702451d4a
                     g.setColor(Color.GRAY);
                 } else if (board[row][col] == 1) {
                     g.setColor(Color.RED);
                 } else {
                     g.setColor(Color.BLACK);
-<<<<<<< HEAD
+                }
                 int xOval = j + (colSep / 8);
                 int yOval = i + (rowSep / 8);
                 g.fillOval(xOval, yOval, pieceWidth, pieceHeight);
-=======
-                }
-                g.fillOval(j, i, pieceWidth, pieceHeight);
->>>>>>> 49efd4acf5a08633053dc269b91c323702451d4a
+                
             }
         }
     }
