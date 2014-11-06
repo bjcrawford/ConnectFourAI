@@ -11,22 +11,27 @@ import java.util.Random;
 
 /**
  * This is the Minimax AI for our Connect Four implementation. This
- * AI is capable of looking 5 moves ahead. No other factors besides
+ * AI is capable of looking n moves ahead. No other factors besides
  * win or lose have been considered.
  * 
- * @author bcrawford
  */
 public class AIType1Player extends AbstractPlayer {
     
-    ConnectFourBoardState CFBS[];
-    KAryTree<ConnectFourBoardState> stateSpace;
+    private int lookAhead;
+    private ConnectFourBoardState CFBS[];
+    private KAryTree<ConnectFourBoardState> stateSpace;
     
-    
-    public AIType1Player(int pieceColor, ConnectFourBoard cfb) {
+    public AIType1Player(int pieceColor, int lookAhead, ConnectFourBoard cfb) {
         
         super(pieceColor, cfb);
+        this.lookAhead = lookAhead;
     }
     
+    /**
+     * Gets the AI's next move. 
+     * 
+     * @return The column the AI wishes to insert into
+     */
     @Override
     public int getNextMove() {
         
@@ -43,7 +48,7 @@ public class AIType1Player extends AbstractPlayer {
         // Build the state space with a depth of three
         // starting from the first level (the root is zero level)
         try {
-            buildStateSpaceRecursive(cols, 3, 1);
+            buildStateSpaceRecursive(cols, lookAhead - 1, 1);
         }
         catch(NodeNotFoundException e) {
             return -1;
@@ -107,7 +112,14 @@ public class AIType1Player extends AbstractPlayer {
         
         return result;
     }
-    
+    /**
+     * Builds the state space for the getNextMove() method. 
+     * 
+     * @param k The max number of children per node
+     * @param maxDepth The max depth to continue building past this call's level
+     * @param currentDepth The current depth within the tree
+     * @throws NodeNotFoundException 
+     */
     public void buildStateSpaceRecursive(int k, int maxDepth, int currentDepth) throws NodeNotFoundException {
         
         if(maxDepth >= 0)
@@ -148,6 +160,12 @@ public class AIType1Player extends AbstractPlayer {
         }
     }
     
+    /**
+     * Evaluates a connect four board state.
+     * 
+     * @param board The array representation of the board
+     * @return 0 for no win, 100 for player win, -100 for opponent win
+     */
     public int evaluateBoardState(int[][] board) {
         int result;
         int win = ConnectFourBoardState.checkWin(board);
