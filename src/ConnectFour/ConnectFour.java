@@ -16,7 +16,8 @@ public class ConnectFour {
     static WelcomePanel wp;
     static GamePanel gp;
     static EndPanel ep;
-    static AIType1Player ait1;
+    static AbstractPlayer player1;
+    static AbstractPlayer player2;
 
     public static void main(String args[]) {
         
@@ -42,7 +43,8 @@ public class ConnectFour {
         board = new ConnectFourBoard(8, 8);
         gp = new GamePanel(board);
         // end panel should be created here
-        ait1 = new AIType1Player(2, board);
+        player1 = new HumanPlayer(1, board);
+        player2 = new AIType1Player(2, board);
         
         // use invoke later to make call to init gamepanel
         

@@ -16,35 +16,38 @@ import java.util.Random;
  * 
  * @author bcrawford
  */
-public class AIType1Player {
+public class AIType1Player extends AbstractPlayer {
     
-    int pieceColor;
-    ConnectFourBoard CFB;
     ConnectFourBoardState CFBS[];
     KAryTree<ConnectFourBoardState> stateSpace;
     
     
-    public AIType1Player(int pieceColor, ConnectFourBoard CFB) {
+    public AIType1Player(int pieceColor, ConnectFourBoard cfb) {
         
-        this.pieceColor = pieceColor;
-        this.CFB = CFB;
+        super(pieceColor, cfb);
     }
     
-    public int getNextMove() throws NodeNotFoundException {
+    @Override
+    public int getNextMove() {
         
         int result;
-        int cols = CFB.getBoard().length;
+        int cols = cfb.getBoard().length;
         int pc = ((pieceColor + 2) % 2) + 1; // Opponents piece color
         CFBS = new ConnectFourBoardState[6];
         stateSpace = new KAryTree<>(cols);
         
         // Create and insert the root
-        CFBS[0] = new ConnectFourBoardState(CFB.getBoard(), pc);
+        CFBS[0] = new ConnectFourBoardState(cfb.getBoard(), pc);
         stateSpace.add(CFBS[0]);
         
         // Build the state space with a depth of three
         // starting from the first level (the root is zero level)
-        buildStateSpaceRecursive(cols, 3, 1);
+        try {
+            buildStateSpaceRecursive(cols, 3, 1);
+        }
+        catch(NodeNotFoundException e) {
+            return -1;
+        }
         
         List<ConnectFourBoardState> lotL = stateSpace.levelOrderTraversal();
         ListIterator<ConnectFourBoardState> lotLI = lotL.listIterator();

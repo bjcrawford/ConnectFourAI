@@ -5,9 +5,17 @@ package ConnectFour;
  *
  * @author bcrawford
  */
-public class HumanPlayer {
+public class HumanPlayer extends AbstractPlayer {
     
-    public int pieceColor;
-    public int minimaxScore;
+    public HumanPlayer(int pieceColor, ConnectFourBoard cfb) {
+        
+        super(pieceColor, cfb);
+    }
+    
+    @Override
+    public int getNextMove() {
+        
+        return 0;
+    }
     
 }

@@ -1,6 +1,5 @@
 package ConnectFour;
 
-import com.gaurav.tree.NodeNotFoundException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -52,13 +51,8 @@ public class DropButton extends JButton implements ActionListener {
         System.out.println(board);
         ConnectFour.gui.setVisible(true);
 
-        int aiMove = 0;
-        try {
-            aiMove = ConnectFour.ait1.getNextMove();
-        } catch (NodeNotFoundException ex) {
-            System.out.println("Crap, at1 failed");
-            System.exit(-1);
-        }
+        int aiMove = ConnectFour.player2.getNextMove();
+            
         board.insertPiece(2, aiMove);
         setEnabled(!board.isColFull(aiMove));
 

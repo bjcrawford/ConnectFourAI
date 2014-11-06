@@ -1,7 +1,6 @@
 
 package ConnectFour;
 
-import com.gaurav.tree.NodeNotFoundException;
 import java.util.Scanner;
 
 /**
@@ -35,13 +34,9 @@ public class AITester {
             else
             {
                 System.out.println("Black Turn\n");
-                try {
-                    col = AT1.getNextMove();
-                }
-                catch(NodeNotFoundException e)
-                {
-                    System.out.println("Oops");
-                }
+                
+                col = AT1.getNextMove();
+                
                 CFB.insertPiece(2, col);
                 System.out.println("\nBlack inserts in col " + col);
             }
@@ -79,12 +74,7 @@ public class AITester {
         System.out.println("Intial Board State\n");
         System.out.println(CFB);
         
-        try {
-            AT1.getNextMove();
-        }
-        catch(NodeNotFoundException e) {
-            System.out.println("Oops");
-        }
+        AT1.getNextMove();
     }
 
     
