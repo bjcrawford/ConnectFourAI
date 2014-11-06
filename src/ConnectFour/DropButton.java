@@ -25,6 +25,10 @@ public class DropButton extends JButton implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+        // We should create a thread here to make a call to 
+        // the connect four class where all of this code can
+        // be handled. 
 
         board.insertPiece(col - 1);
         setEnabled(!board.isColFull(col - 1));

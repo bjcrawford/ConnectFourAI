@@ -17,12 +17,10 @@ import javax.swing.JPanel;
  */
 public class WelcomePanel extends JPanel {
     
-    ConnectFourBoard board;
     StartButton start;
 
     
-    public WelcomePanel(ConnectFourBoard board) {
-        this.board = board;
+    public WelcomePanel() {
         this.start = new StartButton();
         setBorder(BorderFactory.createLineBorder(Color.black));
         add(start);

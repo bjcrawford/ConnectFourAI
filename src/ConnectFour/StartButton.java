@@ -35,7 +35,7 @@ public class StartButton extends JButton implements ActionListener {
         } else {
             ConnectFour.board.resetBoard();
             ConnectFour.gui.remove(ConnectFour.ep);
-            ConnectFour.wp = new WelcomePanel(ConnectFour.board);
+            ConnectFour.wp = new WelcomePanel();
             ConnectFour.gui.add(ConnectFour.wp);
             ConnectFour.gui.pack();
             ConnectFour.gui.setVisible(true);
