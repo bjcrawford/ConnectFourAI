@@ -11,7 +11,13 @@ import java.awt.Graphics;
  *
  * The visual representation will look as follows:
  *
- * 0 1 2 3 ... ___________ 0 | 0 0 0 0 1 | 0 0 2 0 2 | 0 0 1 0 3 | 1 1 2 0 ...|
+ *       0 1 2 3 ... 
+ *      ___________ 
+ *   0 | 0 0 0 0 
+ *   1 | 0 0 2 0 
+ *   2 | 0 0 1 0 
+ *   3 | 1 1 2 0 
+ *  ...|
  *
  * Empty slots: 0, Red pieces: 1, Black pieces: 2
  */
@@ -31,12 +37,6 @@ public class ConnectFourBoard {
      * A two-dimensional array to hold the contents of the board
      */
     private final int board[][];
-
-    /**
-     * this corresponds to who's turn it is. This variable is changed only in
-     * insertPiece(/1) Will only ever be 1 or 2 (red turn or black turn)
-     */
-    private int pieceColor = 1;
 
     /**
      * Creates a Connect Four board representation with a given width and height
@@ -84,6 +84,22 @@ public class ConnectFourBoard {
         }
         return copy;
     }
+    
+    /**
+     * Checks if a given column is full
+     * 
+     * @param col The column to be checked
+     * @return true if the colum is full, otherwise false
+     */
+    public boolean isColFull(int col) {
+        boolean ret = true;
+        for (int row = height - 1; row >= 0; row--) {
+            if (board[row][col] == 0) {
+                ret = false;
+            }
+        }
+        return ret;
+    }
 
     /**
      * Resets the board to an empty state
@@ -95,20 +111,16 @@ public class ConnectFourBoard {
                 board[i][j] = 0;
             }
         }
-        this.pieceColor = 1;
     }
 
-    /* Not quite sure how we are going to handle drawing an inserted 
-     piece. I don't know if we should redraw the entire board after 
-     any move or simply draw only the newly inserted piece.
-     */
     /**
      * Inserts a game piece into the board.
      *
+     * @param pieceColor The color of the piece to be inserted
      * @param col The column to insert the piece into
      * @return True if the insertion was successful, otherwise false
      */
-    public boolean insertPiece(int col) {
+    public boolean insertPiece(int pieceColor, int col) {
 
         boolean result = false;
         if ((pieceColor == 1 || pieceColor == 2) && col >= 0 && col < width) {
@@ -116,13 +128,6 @@ public class ConnectFourBoard {
                 if (board[row][col] == 0) {
                     board[row][col] = pieceColor;
                     result = true;
-
-                    if (pieceColor == 1) {
-                        pieceColor++;
-                    } else {
-                        pieceColor--;
-                    }
-
                     break;
                 }
             }
@@ -294,15 +299,6 @@ public class ConnectFourBoard {
         }
     }
 
-    public boolean isColFull(int col) {
-        boolean ret = true;
-        for (int row = height - 1; row >= 0; row--) {
-            if (board[row][col] == 0) {
-                ret = false;
-            }
-        }
-        return ret;
-    }
 
     /**
      * Returns a string representation of the board.
