@@ -30,7 +30,7 @@ public class AITester {
                     System.out.println("Please enter a col: ");
                     col = input.nextInt();
                 }
-                CFB.insertPiece(col);
+                CFB.insertPiece(1, col);
             }
             else
             {
@@ -42,7 +42,7 @@ public class AITester {
                 {
                     System.out.println("Oops");
                 }
-                CFB.insertPiece(col);
+                CFB.insertPiece(2, col);
                 System.out.println("\nBlack inserts in col " + col);
             }
             i++;
@@ -62,19 +62,19 @@ public class AITester {
         ConnectFourBoard CFB = new ConnectFourBoard(8, 8);
         AIType1Player AT1 = new AIType1Player(1, CFB);
         
-        CFB.insertPiece(0);
-        CFB.insertPiece(0);
-        CFB.insertPiece(2);
-        CFB.insertPiece(2);
-        CFB.insertPiece(2);
-        CFB.insertPiece(3);
-        CFB.insertPiece(6);
-        CFB.insertPiece(3);
-        CFB.insertPiece(3);
-        CFB.insertPiece(4);
-        CFB.insertPiece(3);
-        CFB.insertPiece(5);
-        CFB.insertPiece(7);
+        CFB.insertPiece(1, 0);
+        CFB.insertPiece(2, 0);
+        CFB.insertPiece(1, 2);
+        CFB.insertPiece(2, 2);
+        CFB.insertPiece(1, 2);
+        CFB.insertPiece(2, 3);
+        CFB.insertPiece(1, 6);
+        CFB.insertPiece(2, 3);
+        CFB.insertPiece(1, 3);
+        CFB.insertPiece(2, 4);
+        CFB.insertPiece(1, 3);
+        CFB.insertPiece(2, 5);
+        CFB.insertPiece(1, 7);
         
         System.out.println("Intial Board State\n");
         System.out.println(CFB);

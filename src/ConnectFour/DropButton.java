@@ -30,7 +30,7 @@ public class DropButton extends JButton implements ActionListener {
         // the connect four class where all of this code can
         // be handled. 
 
-        board.insertPiece(col - 1);
+        board.insertPiece(1, col - 1);
         setEnabled(!board.isColFull(col - 1));
 
         if (board.checkWin() == 1) {
@@ -59,7 +59,7 @@ public class DropButton extends JButton implements ActionListener {
             System.out.println("Crap, at1 failed");
             System.exit(-1);
         }
-        board.insertPiece(aiMove);
+        board.insertPiece(2, aiMove);
         setEnabled(!board.isColFull(aiMove));
 
         if (board.checkWin() == 1) {
