@@ -117,28 +117,29 @@ public class AIType1Player {
                 // If the child did not result in a failed insert (i.e., insert
                 // into full column), add the child to the tree and create
                 // any children it may have
-                if(!CFBS[currentDepth].getFailedInsert());
+                if(!CFBS[currentDepth].getFailedInsert())
                 {
                     CFBS[currentDepth].setScore(evaluateBoardState(CFBS[currentDepth].getBoard()));
                     stateSpace.add(CFBS[currentDepth - 1], CFBS[currentDepth]);
                     buildStateSpaceRecursive(k, maxDepth - 1, currentDepth + 1);
-                }
                 
-                // If the parent has not had a score set, give it the child's score
-                if(!CFBS[currentDepth - 1].getScoreEvaluated())
-                    CFBS[currentDepth - 1].setScore(CFBS[currentDepth].getScore());
                 
-                // On even depths, give the parent the min score
-                // On odd depths, give the parent the max score
-                if(currentDepth % 2 == 0)
-                {
-                    if(CFBS[currentDepth].getScore() < CFBS[currentDepth - 1].getScore())
+                    // If the parent has not had a score set, give it the child's score
+                    if(!CFBS[currentDepth - 1].getScoreEvaluated())
                         CFBS[currentDepth - 1].setScore(CFBS[currentDepth].getScore());
-                }
-                else
-                {
-                    if(CFBS[currentDepth].getScore() > CFBS[currentDepth - 1].getScore())
-                        CFBS[currentDepth - 1].setScore(CFBS[currentDepth].getScore());
+
+                    // On even depths, give the parent the min score
+                    // On odd depths, give the parent the max score
+                    if(currentDepth % 2 == 0)
+                    {
+                        if(CFBS[currentDepth].getScore() < CFBS[currentDepth - 1].getScore())
+                            CFBS[currentDepth - 1].setScore(CFBS[currentDepth].getScore());
+                    }
+                    else
+                    {
+                        if(CFBS[currentDepth].getScore() > CFBS[currentDepth - 1].getScore())
+                            CFBS[currentDepth - 1].setScore(CFBS[currentDepth].getScore());
+                    }
                 }
             }
         }
