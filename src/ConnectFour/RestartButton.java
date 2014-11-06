@@ -1,3 +1,4 @@
+
 package ConnectFour;
 
 import java.awt.event.ActionEvent;
@@ -6,21 +7,22 @@ import javax.swing.JButton;
 
 /**
  *
- * @author Beaker
+ * @author bcrawford
  */
-public class StartButton extends JButton implements ActionListener {
+public class RestartButton extends JButton implements ActionListener {
 
-    public StartButton() {
+    public RestartButton() {
         
         this.addActionListener(this);
-        this.setText("Start");
+        this.setText("Restart");
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         
         // Use synchronization to release blocked main thread
-        ConnectFour.userOptionsInputSem.release();
+        ConnectFour.restart = true;
+        ConnectFour.userRestartInputSem.release();
     }
 
 }

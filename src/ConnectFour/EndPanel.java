@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ConnectFour;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.GridLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -17,19 +14,21 @@ import javax.swing.JPanel;
  * @author Beaker
  */
 public class EndPanel extends JPanel {
-    ConnectFourBoard board;
-    StartButton restart;
     
-    public EndPanel(ConnectFourBoard board, BoardPanel bP, boolean winner){
-        this.board = board;
+    public EndPanel(ConnectFourBoard board, BoardPanel bP, int winner){
+        
         setLayout(new BorderLayout());
         add(bP, BorderLayout.CENTER);
-        if(winner)
+        
+        if(winner == 1)
             add(new JLabel(new ImageIcon("Red.png")), BorderLayout.NORTH);
         else
             add(new JLabel(new ImageIcon("Black.png")), BorderLayout.NORTH);
-        restart = new StartButton("Restart?");
-        add(restart, BorderLayout.SOUTH);
+        
+        JPanel buttons = new JPanel(new GridLayout(1, 2));
+        buttons.add(new ExitButton());
+        buttons.add(new RestartButton());
+        add(buttons, BorderLayout.SOUTH);
     }
     
     @Override
