@@ -10,10 +10,14 @@ import java.util.Scanner;
 public class AITester {
     
     public static void main(String args[]) {
+        playGame();
+    }
+    
+    public static void playGame() {
         int i = 1;
         Scanner input = new Scanner(System.in);
         ConnectFourBoard CFB = new ConnectFourBoard(8, 8);
-        AIType1Player AT1 = new AIType1Player(2, CFB);
+        AIType1Player AT1 = new AIType1Player(2, 4, CFB);
         int win = CFB.checkWin();
         
         while(win == 0)
@@ -53,9 +57,9 @@ public class AITester {
         
     }
     
-    public void test() {
+    public static void test() {
         ConnectFourBoard CFB = new ConnectFourBoard(8, 8);
-        AIType1Player AT1 = new AIType1Player(1, CFB);
+        AIType1Player AT1 = new AIType1Player(1, 4, CFB);
         
         CFB.insertPiece(1, 0);
         CFB.insertPiece(2, 0);
