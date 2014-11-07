@@ -38,7 +38,7 @@ public class AIType1Player extends AbstractPlayer {
         int result;
         int cols = cfb.getBoard().length;
         int pc = ((pieceColor + 2) % 2) + 1; // Opponents piece color
-        CFBS = new ConnectFourBoardState[6];
+        CFBS = new ConnectFourBoardState[lookAhead+ 1];
         stateSpace = new KAryTree<>(cols);
         
         // Create and insert the root
