@@ -62,11 +62,11 @@ public class AIType1Player extends AbstractPlayer {
         
         ConnectFourBoardState c = lotLI.next();
         int d = 1;
-        
-        System.out.println("Possible Moves:\n");
+        System.out.println("AI Type 1 Move Info:");
+        System.out.println("\n  Possible Moves:\n");
         while(lotLI.hasNext() && (c = lotLI.next()).getDepth() < 2)
         {
-            System.out.println("Col: " + c.getColInserted() + 
+            System.out.println("    Col: " + c.getColInserted() + 
                                " Path: " + c.getPath() + 
                                " Score: " + c.getScore());
             
@@ -84,20 +84,20 @@ public class AIType1Player extends AbstractPlayer {
             
         }
         
-        System.out.println("\nConsidered Moves:\n");
+        System.out.println("\n  Considered Moves:\n");
         for(ConnectFourBoardState cfbs : list)
         {
             //System.out.println(cfbs);
-            System.out.println("Column: " + cfbs.getColInserted() + 
+            System.out.println("    Column: " + cfbs.getColInserted() + 
                                " Path: " + cfbs.getPath() + 
                                " Score: " + cfbs.getScore());
         }
+        System.out.println("");
         
         int numMoves = list.size();
         Random rand = new Random();
         int choice = rand.nextInt(numMoves);
         int col = list.get(choice).getColInserted();
-        System.out.println("\nInserting into column " + col + "\n");
         result = list.get(choice).getColInserted();
         
         /*
