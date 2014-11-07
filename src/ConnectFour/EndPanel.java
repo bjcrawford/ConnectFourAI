@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridLayout;
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -15,20 +16,45 @@ import javax.swing.JPanel;
  */
 public class EndPanel extends JPanel {
     
-    public EndPanel(ConnectFourBoard board, BoardPanel bP, int winner){
+    ConnectFourBoard board;
+    JPanel buttonPanel;
+    DropButton buttons[]; 
+    JPanel topPanel;
+    JPanel leftPanel;
+    JPanel rightPanel;
+    
+    public EndPanel(ConnectFourBoard board, BoardPanel boardPanel, int winner){
         
         setLayout(new BorderLayout());
-        add(bP, BorderLayout.CENTER);
+        
+        
+        topPanel = new JPanel();
         
         if(winner == 1)
-            add(new JLabel(new ImageIcon("Red.png")), BorderLayout.NORTH);
+            topPanel.add(new JLabel(new ImageIcon("Red.png")));
         else
-            add(new JLabel(new ImageIcon("Black.png")), BorderLayout.NORTH);
+            topPanel.add(new JLabel(new ImageIcon("Black.png")));
         
-        JPanel buttons = new JPanel(new GridLayout(1, 2));
-        buttons.add(new ExitButton());
-        buttons.add(new RestartButton());
-        add(buttons, BorderLayout.SOUTH);
+        leftPanel = new JPanel();
+        leftPanel.setPreferredSize(new Dimension(200, 400));
+        leftPanel.setMaximumSize(new Dimension(200, 400));
+        
+        rightPanel = new JPanel();
+        rightPanel.setPreferredSize(new Dimension(200, 400));
+        rightPanel.setMaximumSize(new Dimension(200, 400));
+        
+        buttonPanel = new JPanel(new GridLayout(1, 2));
+        buttonPanel.setPreferredSize(new Dimension(800, 30));
+        buttonPanel.setMaximumSize(new Dimension(800, 30));
+        buttonPanel.add(new ExitButton());
+        buttonPanel.add(new RestartButton());
+        
+        
+        add(topPanel, BorderLayout.NORTH);
+        add(leftPanel, BorderLayout.WEST);
+        add(boardPanel, BorderLayout.CENTER);
+        add(rightPanel, BorderLayout.EAST);
+        add(buttonPanel, BorderLayout.SOUTH);
     }
     
     @Override

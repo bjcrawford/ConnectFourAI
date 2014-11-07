@@ -28,6 +28,6 @@ public class BoardPanel extends JPanel{
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        board.drawBoard(g, 200, 30);
+        board.drawBoard(g, 0, 0);
     }
 }
