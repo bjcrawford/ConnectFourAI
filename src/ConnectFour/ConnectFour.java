@@ -51,7 +51,7 @@ public class ConnectFour {
 
             // Synchronization here to wait for user options input
             userOptionsInputSem.acquire();
-            System.out.println("User input, start, released main thread");
+            System.out.println("User input, start, released main thread\n");
 
             // These can be set at runtime when the welcome screen 
             // is built to take user options
@@ -80,12 +80,14 @@ public class ConnectFour {
                 if(playerTurn == 1)
                 {
                     col = playerOne.getNextMove();
+                    System.out.println("Player one inserts into column " + col + "\n");
                     board.insertPiece(playerOne.getPieceColor(), col);
                     playerTurn = 2;
                 }
                 else
                 {
                     col = playerTwo.getNextMove();
+                    System.out.println("Player two inserts into column " + col + "\n");
                     board.insertPiece(playerTwo.getPieceColor(), col);
                     playerTurn = 1;
                 }
@@ -106,7 +108,7 @@ public class ConnectFour {
             userRestartInputSem.acquire();
             System.out.println("User input, " + 
                                (restart ? "restart" : "exit") + 
-                               ", released main thread");
+                               ", released main thread\n");
             
             // use invoke later to make call to destroy end panel
             SwingUtilities.invokeLater(new Runnable() {
@@ -123,7 +125,7 @@ public class ConnectFour {
     
     private static void initWelcomePanel() {
         
-        System.out.println("initWelcomePanel");
+        System.out.println("initWelcomePanel\n");
         wp = new WelcomePanel();
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gui.add(wp);
@@ -133,7 +135,7 @@ public class ConnectFour {
     
     private static void initGamePanel() {
         
-        System.out.println("initGamePanel");
+        System.out.println("initGamePanel\n");
         gp = new GamePanel(board);
         gui.remove(wp);
         gp.buttonPanel.setVisible(true);
@@ -146,13 +148,13 @@ public class ConnectFour {
     
     private static void updateGamePanel() {
         
-        System.out.println("updateGamePanel");
+        System.out.println("updateGamePanel\n");
         gui.repaint();
     }
     
     private static void initEndPanel(int win) {
         
-        System.out.println("initEndPanel");
+        System.out.println("initEndPanel\n");
         ep = new EndPanel(board, gp.boardPanel, win);
         gui.remove(gp);
         gui.add(ep);
@@ -161,6 +163,7 @@ public class ConnectFour {
     
     private static void destroyEndPanel() {
         
+        System.out.println("destroyEndPanel\n");
         gui.remove(ep);
     }
 }
