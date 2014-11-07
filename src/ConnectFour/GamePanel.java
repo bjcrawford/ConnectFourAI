@@ -15,6 +15,8 @@ public class GamePanel extends JPanel {
     
     ConnectFourBoard board;
     BoardPanel boardPanel;
+    JPanel topSpacer;
+    JPanel buttonRowPanel;
     JPanel buttonPanel;
     JPanel leftSpacer;
     JPanel rightSpacer;
@@ -31,15 +33,25 @@ public class GamePanel extends JPanel {
         boardPanel = new BoardPanel(board);
         
         topPanel = new JPanel();
-        topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.X_AXIS));
-        topPanel.setPreferredSize(new Dimension(800, 30));
-        topPanel.setMaximumSize(new Dimension(800, 30));
+        topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
+        topPanel.setPreferredSize(new Dimension(800, 70));
+        topPanel.setMaximumSize(new Dimension(800, 70));
+        
+        topSpacer = new JPanel();
+        topSpacer.setPreferredSize(new Dimension(800, 40));
+        topSpacer.setMaximumSize(new Dimension(800, 40));
+        
+        buttonRowPanel = new JPanel();
+        buttonRowPanel.setLayout(new BoxLayout(buttonRowPanel, BoxLayout.X_AXIS));
+        buttonRowPanel.setPreferredSize(new Dimension(800, 30));
+        buttonRowPanel.setMaximumSize(new Dimension(800, 30));
         
         leftSpacer = new JPanel();
         leftSpacer.setPreferredSize(new Dimension(207, 30));
         leftSpacer.setMaximumSize(new Dimension(207, 30));
         
-        buttonPanel = new JPanel(new GridLayout(1, board.getWidth()));
+        buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(1, board.getWidth()));
         buttonPanel.setPreferredSize(new Dimension(380, 30));
         buttonPanel.setMaximumSize(new Dimension(380, 30));
         
@@ -53,9 +65,12 @@ public class GamePanel extends JPanel {
         rightSpacer.setPreferredSize(new Dimension(210, 30));
         rightSpacer.setMaximumSize(new Dimension(210, 30));
         
-        topPanel.add(leftSpacer);
-        topPanel.add(buttonPanel);
-        topPanel.add(rightSpacer);
+        buttonRowPanel.add(leftSpacer);
+        buttonRowPanel.add(buttonPanel);
+        buttonRowPanel.add(rightSpacer);
+        
+        topPanel.add(topSpacer);
+        topPanel.add(buttonRowPanel);
         
         leftPanel = new JPanel();
         leftPanel.setPreferredSize(new Dimension(200, 400));
