@@ -58,13 +58,13 @@ public class ConnectFourBoardState {
         
         ConnectFourBoardState child = new ConnectFourBoardState(this);
         child.score = 0;
-        int newPieceColor = ((this.getPieceColor() + 2) % 2) + 1;
+        child.pieceColor = ((this.getPieceColor() + 2) % 2) + 1;
         boolean inserted = false; 
         for(int row = child.getBoard().length - 1; row >= 0; row--)
         {
             if(child.getBoard()[row][col] == 0)
             {
-                child.getBoard()[row][col] = newPieceColor;
+                child.getBoard()[row][col] = child.pieceColor;
                 inserted = true;
                 break;
             }
