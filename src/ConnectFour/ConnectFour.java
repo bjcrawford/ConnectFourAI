@@ -15,6 +15,9 @@ public class ConnectFour {
     static int win;
     static int playerTurn;
     
+    static int playerOneSelection;
+    static int playerTwoSelection;
+    
     static ConnectFourBoard board;
     static AbstractPlayer playerOne;
     static AbstractPlayer playerTwo;
@@ -39,6 +42,8 @@ public class ConnectFour {
             restart = false;
             win = 0;
             playerTurn = 1;
+            playerOneSelection = 0;
+            playerTwoSelection = 0;
             
             // Updates to the UI should be be called on the event
             // dispatch thread using invoke later
@@ -56,8 +61,30 @@ public class ConnectFour {
             // These can be set at runtime when the welcome screen 
             // is built to take user options
             board = new ConnectFourBoard(8, 8);
-            playerOne = new HumanPlayer(1, board);
-            playerTwo = new AIType1Player(2, 4, board);
+            
+            switch(playerOneSelection) {
+                case 0:
+                    System.out.println("p1 human");
+                    playerOne = new HumanPlayer(1, board);
+                    break;
+                case 1:
+                    System.out.println("p1 ai");
+                    playerOne = new AIType1Player(1, 4, board);
+                    break;
+                default:
+                    playerOne = new HumanPlayer(1, board);
+                    break;
+            }
+            
+            switch(playerTwoSelection) {
+                case 0:
+                    System.out.println("p2 ai");
+                    playerTwo = new AIType1Player(2, 4, board);
+                    break;
+                default:
+                    playerTwo = new AIType1Player(2, 4, board);
+                    break;
+            }
 
             // use invoke later to make call to init gamepanel
             SwingUtilities.invokeLater(new Runnable() {
@@ -92,7 +119,8 @@ public class ConnectFour {
                     playerTurn = 1;
                 }
                 win = board.checkWin();
-                gp.updateButtons();
+                if(playerOne.isHuman() || playerTwo.isHuman())
+                    gp.updateButtons();
                 System.out.println(board);
             }
 

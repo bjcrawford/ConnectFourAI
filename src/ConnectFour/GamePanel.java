@@ -56,9 +56,13 @@ public class GamePanel extends JPanel {
         buttonPanel.setMaximumSize(new Dimension(380, 30));
         
         buttons = new DropButton[board.getWidth()];
-        for(int i = 0; i < board.getWidth(); i++) {
-            buttons[i] = new DropButton(i + 1, (HumanPlayer) ConnectFour.playerOne, board);
-            buttonPanel.add(buttons[i]);
+        
+        if(ConnectFour.playerOne.isHuman())
+        {
+            for(int i = 0; i < board.getWidth(); i++) {
+                buttons[i] = new DropButton(i + 1, (HumanPlayer) ConnectFour.playerOne, board);
+                buttonPanel.add(buttons[i]);
+            }
         }
         
         rightSpacer = new JPanel();
@@ -79,7 +83,6 @@ public class GamePanel extends JPanel {
         rightPanel = new JPanel();
         rightPanel.setPreferredSize(new Dimension(200, 400));
         rightPanel.setMaximumSize(new Dimension(200, 400));
-        
         
         add(topPanel, BorderLayout.NORTH);
         add(leftPanel, BorderLayout.WEST);
