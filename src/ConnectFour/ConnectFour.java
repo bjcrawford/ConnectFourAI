@@ -80,14 +80,14 @@ public class ConnectFour {
                 if(playerTurn == 1)
                 {
                     col = playerOne.getNextMove();
-                    System.out.println("Player one inserts into column " + col + "\n");
+                    System.out.println("Player 1 inserts into column " + col + "\n");
                     board.insertPiece(playerOne.getPieceColor(), col);
                     playerTurn = 2;
                 }
                 else
                 {
                     col = playerTwo.getNextMove();
-                    System.out.println("Player two inserts into column " + col + "\n");
+                    System.out.println("Player 2 inserts into column " + col + "\n");
                     board.insertPiece(playerTwo.getPieceColor(), col);
                     playerTurn = 1;
                 }

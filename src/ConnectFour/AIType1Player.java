@@ -38,7 +38,7 @@ public class AIType1Player extends AbstractPlayer {
         int result;
         int cols = cfb.getBoard().length;
         int pc = ((pieceColor + 2) % 2) + 1; // Opponents piece color
-        CFBS = new ConnectFourBoardState[lookAhead+ 1];
+        CFBS = new ConnectFourBoardState[lookAhead + 1];
         stateSpace = new KAryTree<>(cols);
         
         // Create and insert the root
@@ -62,7 +62,8 @@ public class AIType1Player extends AbstractPlayer {
         
         ConnectFourBoardState c = lotLI.next();
         int d = 1;
-        System.out.println("AI Type 1 Move Info:");
+        System.out.println("Player " + pieceColor + " Move Info:");
+        System.out.println("\n  AI Type 1");
         System.out.println("\n  Possible Moves:\n");
         while(lotLI.hasNext() && (c = lotLI.next()).getDepth() < 2)
         {
