@@ -10,6 +10,9 @@ public abstract class AbstractPlayer {
     /* The player's piece color */
     protected int pieceColor;
     
+    /* Indicates a human player */
+    protected boolean human;
+    
     /* The connect four board */
     protected ConnectFourBoard cfb;
     
@@ -19,9 +22,10 @@ public abstract class AbstractPlayer {
      * @param pieceColor The player's piece color (1: red, 2: black)
      * @param cfb The connect four board
      */
-    public AbstractPlayer(int pieceColor, ConnectFourBoard cfb) {
+    public AbstractPlayer(int pieceColor, boolean human, ConnectFourBoard cfb) {
         
         this.pieceColor = pieceColor;
+        this.human = human;
         this.cfb = cfb;
     }
     
@@ -40,6 +44,16 @@ public abstract class AbstractPlayer {
     public int getPieceColor() {
         
         return pieceColor;
+    }
+    
+    /**
+     * Gets the players type
+     * 
+     * @return True if human, otherwise false
+     */
+    public boolean isHuman() {
+        
+        return human;
     }
     
 }

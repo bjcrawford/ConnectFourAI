@@ -29,7 +29,7 @@ public class HumanPlayer extends AbstractPlayer {
      */
     public HumanPlayer(int pieceColor, ConnectFourBoard cfb) {
         
-        super(pieceColor, cfb);
+        super(pieceColor, true, cfb);
         nextMove = -1; // -1 means we are waiting on user input
         mutexLock = new Semaphore(1);
         userDropInputSem = new Semaphore(0); // Start with no available input

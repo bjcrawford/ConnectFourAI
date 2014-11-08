@@ -23,7 +23,7 @@ public class AIType1Player extends AbstractPlayer {
     
     public AIType1Player(int pieceColor, int lookAhead, ConnectFourBoard cfb) {
         
-        super(pieceColor, cfb);
+        super(pieceColor, false, cfb);
         this.lookAhead = lookAhead;
     }
     
