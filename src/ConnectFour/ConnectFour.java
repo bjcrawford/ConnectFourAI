@@ -125,45 +125,36 @@ public class ConnectFour {
     
     private static void initWelcomePanel() {
         
-        System.out.println("initWelcomePanel\n");
         wp = new WelcomePanel();
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gui.add(wp);
+        gui.getContentPane().add(wp);
         gui.pack();
         gui.setVisible(true);
     }
     
     private static void initGamePanel() {
         
-        System.out.println("initGamePanel\n");
         gp = new GamePanel(board);
-        gui.remove(wp);
-        gp.buttonPanel.setVisible(true);
-        gp.boardPanel.setVisible(true);
-        gp.repaint();
-        gui.add(gp);
+        gui.getContentPane().remove(wp);
+        gui.getContentPane().add(gp);
         gui.pack();
-        gui.setVisible(true);
     }
     
     private static void updateGamePanel() {
         
-        System.out.println("updateGamePanel\n");
         gui.repaint();
     }
     
     private static void initEndPanel(int win) {
         
-        System.out.println("initEndPanel\n");
         ep = new EndPanel(board, gp.boardPanel, win);
-        gui.remove(gp);
-        gui.add(ep);
+        gui.getContentPane().remove(gp);
+        gui.getContentPane().add(ep);
         gui.pack();
     }
     
     private static void destroyEndPanel() {
         
-        System.out.println("destroyEndPanel\n");
-        gui.remove(ep);
+        gui.getContentPane().remove(ep);
     }
 }
