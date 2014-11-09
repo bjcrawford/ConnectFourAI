@@ -11,18 +11,28 @@ import javax.swing.JButton;
  */
 public class ExitButton extends JButton implements ActionListener {
     
-    public ExitButton() {
+    int id; // Use 1 for welcome screen button, 2 for end screen button
+    
+    public ExitButton(int id) {
         
         this.addActionListener(this);
+        this.id = id;
         this.setText("Exit");
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        // Use synchronization to release blocked main thread
-        ConnectFour.restart = false;
-        ConnectFour.userRestartInputSem.release();
+        if(id == 1) {
+            // Use synchronization to release blocked main thread
+            ConnectFour.exit = true;
+            ConnectFour.userOptionsInputSem.release();
+        }
+        else {
+            // Use synchronization to release blocked main thread
+            ConnectFour.restart = false;
+            ConnectFour.userRestartInputSem.release();
+        }
     }
     
 }

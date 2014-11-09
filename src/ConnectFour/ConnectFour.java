@@ -11,6 +11,7 @@ import javax.swing.SwingUtilities;
  */
 public class ConnectFour {
     
+    static boolean exit;
     static boolean restart;
     static int win;
     static int playerTurn;
@@ -33,6 +34,7 @@ public class ConnectFour {
     public static void main(String args[]) throws InterruptedException {
         
         gui = new JFrame("Connect Four AI");
+        exit = false;
         restart = true;
         userOptionsInputSem = new Semaphore(0); // Start with no user input available
         userRestartInputSem = new Semaphore(0); // Start with no user input available
@@ -56,7 +58,9 @@ public class ConnectFour {
 
             // Synchronization here to wait for user options input
             userOptionsInputSem.acquire();
-            System.out.println("User input, start, released main thread\n");
+            
+            if(exit)
+                System.exit(0);
 
             // These can be set at runtime when the welcome screen 
             // is built to take user options

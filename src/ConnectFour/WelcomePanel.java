@@ -111,8 +111,8 @@ public class WelcomePanel extends JPanel {
         buttonPanel.setLayout(new GridLayout(1, 3));
         buttonPanel.setPreferredSize(new Dimension(720, 50));
         buttonPanel.setMaximumSize(new Dimension(720, 50));
-        buttonPanel.add(new StartButton());
-        buttonPanel.add(new StartButton());
+        buttonPanel.add(new ExitButton(1));
+        buttonPanel.add(new InfoButton());
         buttonPanel.add(new StartButton());
         
         bottomRightSpacer = new JPanel();

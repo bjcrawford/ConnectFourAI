@@ -45,7 +45,7 @@ public class EndPanel extends JPanel {
         buttonPanel = new JPanel(new GridLayout(1, 2));
         buttonPanel.setPreferredSize(new Dimension(800, 30));
         buttonPanel.setMaximumSize(new Dimension(800, 30));
-        buttonPanel.add(new ExitButton());
+        buttonPanel.add(new ExitButton(2));
         buttonPanel.add(new RestartButton());
         
         
