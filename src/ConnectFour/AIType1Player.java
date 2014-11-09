@@ -58,7 +58,7 @@ public class AIType1Player extends AbstractPlayer {
         ListIterator<ConnectFourBoardState> lotLI = lotL.listIterator();
         
         List<ConnectFourBoardState> list = new ArrayList<>();
-        int highest = -101;
+        int highest = -100 * lookAhead + 1;
         
         ConnectFourBoardState c = lotLI.next();
         int d = 1;
@@ -135,15 +135,22 @@ public class AIType1Player extends AbstractPlayer {
                 // any children it may have
                 if(!CFBS[currentDepth].getFailedInsert())
                 {
-                    CFBS[currentDepth].setScore(evaluateBoardState(CFBS[currentDepth].getBoard()));
                     stateSpace.add(CFBS[currentDepth - 1], CFBS[currentDepth]);
                     buildStateSpaceRecursive(k, maxDepth - 1, currentDepth + 1);
                 
-                
+                    // Evaluate scores at the leaves of the tree
+                    if(maxDepth == 0)
+                        CFBS[currentDepth].setScore(evaluateBoardState(CFBS[currentDepth].getBoard()));
+                    
+                    // At any node, if the state results in a win, update the node score
+                    // and ignore the childrens values
+                    if(evaluateBoardState(CFBS[currentDepth].getBoard()) != 0)
+                        CFBS[currentDepth].setScore((maxDepth + 1) * evaluateBoardState(CFBS[currentDepth].getBoard()));
+                    
                     // If the parent has not had a score set, give it the child's score
                     if(!CFBS[currentDepth - 1].getScoreEvaluated())
                         CFBS[currentDepth - 1].setScore(CFBS[currentDepth].getScore());
-
+                    
                     // On even depths, give the parent the min score
                     // On odd depths, give the parent the max score
                     if(currentDepth % 2 == 0)
