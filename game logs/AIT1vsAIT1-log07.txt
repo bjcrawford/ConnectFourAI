@@ -1,0 +1,2055 @@
+run:
+Player 1: AIType1
+Player 2: AIType1
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 6
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 1 0 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 2 inserts into column 3
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 2 0 0 1 0 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 3
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 1 0 0 0 0 
+0 0 0 2 0 0 1 0 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 2 inserts into column 3
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 2 0 0 0 0 
+0 0 0 1 0 0 0 0 
+0 0 0 2 0 0 1 0 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 4
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 2 0 0 0 0 
+0 0 0 1 0 0 0 0 
+0 0 0 2 1 0 1 0 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 2 inserts into column 4
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 2 0 0 0 0 
+0 0 0 1 2 0 0 0 
+0 0 0 2 1 0 1 0 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 1
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 2 0 0 0 0 
+0 0 0 1 2 0 0 0 
+0 1 0 2 1 0 1 0 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 2 inserts into column 2
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 2 0 0 0 0 
+0 0 0 1 2 0 0 0 
+0 1 2 2 1 0 1 0 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 4
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 2 1 0 0 0 
+0 0 0 1 2 0 0 0 
+0 1 2 2 1 0 1 0 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 2 inserts into column 1
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 2 1 0 0 0 
+0 2 0 1 2 0 0 0 
+0 1 2 2 1 0 1 0 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 7
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 2 1 0 0 0 
+0 2 0 1 2 0 0 0 
+0 1 2 2 1 0 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -300
+    Col: 1 Path: 0,1 Score: -300
+    Col: 2 Path: 0,2 Score: -300
+    Col: 3 Path: 0,3 Score: -300
+    Col: 4 Path: 0,4 Score: -300
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: -300
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 5 Path: 0,5 Score: 0
+
+Player 2 inserts into column 5
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 2 1 0 0 0 
+0 2 0 1 2 0 0 0 
+0 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 4
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 1 0 0 0 
+0 0 0 2 1 0 0 0 
+0 2 0 1 2 0 0 0 
+0 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 2 inserts into column 2
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 1 0 0 0 
+0 0 0 2 1 0 0 0 
+0 2 2 1 2 0 0 0 
+0 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: -300
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 7
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 1 0 0 0 
+0 0 0 2 1 0 0 0 
+0 2 2 1 2 0 0 1 
+0 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 2 inserts into column 6
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 1 0 0 0 
+0 0 0 2 1 0 0 0 
+0 2 2 1 2 0 2 1 
+0 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: -300
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 3
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 1 1 0 0 0 
+0 0 0 2 1 0 0 0 
+0 2 2 1 2 0 2 1 
+0 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -300
+    Col: 1 Path: 0,1 Score: -300
+    Col: 2 Path: 0,2 Score: -300
+    Col: 3 Path: 0,3 Score: -300
+    Col: 4 Path: 0,4 Score: -300
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: -300
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 5 Path: 0,5 Score: 0
+
+Player 2 inserts into column 5
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 1 1 0 0 0 
+0 0 0 2 1 0 0 0 
+0 2 2 1 2 2 2 1 
+0 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: -300
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: -100
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 4
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 1 0 0 0 
+0 0 0 1 1 0 0 0 
+0 0 0 2 1 0 0 0 
+0 2 2 1 2 2 2 1 
+0 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -300
+    Col: 1 Path: 0,1 Score: -300
+    Col: 2 Path: 0,2 Score: -300
+    Col: 3 Path: 0,3 Score: -300
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: -300
+    Col: 6 Path: 0,6 Score: -300
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 4 Path: 0,4 Score: 0
+
+Player 2 inserts into column 4
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 0 
+0 0 0 0 1 0 0 0 
+0 0 0 1 1 0 0 0 
+0 0 0 2 1 0 0 0 
+0 2 2 1 2 2 2 1 
+0 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: -300
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 6
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 0 
+0 0 0 0 1 0 0 0 
+0 0 0 1 1 0 0 0 
+0 0 0 2 1 0 1 0 
+0 2 2 1 2 2 2 1 
+0 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -100
+    Col: 1 Path: 0,1 Score: -100
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: -100
+    Col: 4 Path: 0,4 Score: -100
+    Col: 5 Path: 0,5 Score: -300
+    Col: 6 Path: 0,6 Score: -100
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 2 Path: 0,2 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 2 inserts into column 7
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 0 
+0 0 0 0 1 0 0 0 
+0 0 0 1 1 0 0 0 
+0 0 0 2 1 0 1 2 
+0 2 2 1 2 2 2 1 
+0 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: -300
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 0
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 0 
+0 0 0 0 1 0 0 0 
+0 0 0 1 1 0 0 0 
+0 0 0 2 1 0 1 2 
+0 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: -100
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: -300
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 2 inserts into column 3
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 0 
+0 0 0 2 1 0 0 0 
+0 0 0 1 1 0 0 0 
+0 0 0 2 1 0 1 2 
+0 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: -300
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 1
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 0 
+0 0 0 2 1 0 0 0 
+0 0 0 1 1 0 0 0 
+0 1 0 2 1 0 1 2 
+0 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -100
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: -100
+    Col: 4 Path: 0,4 Score: -100
+    Col: 5 Path: 0,5 Score: -300
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: -100
+
+  Considered Moves:
+
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+
+Player 2 inserts into column 6
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 0 
+0 0 0 2 1 0 0 0 
+0 0 0 1 1 0 2 0 
+0 1 0 2 1 0 1 2 
+0 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -300
+    Col: 1 Path: 0,1 Score: -300
+    Col: 2 Path: 0,2 Score: -300
+    Col: 3 Path: 0,3 Score: -300
+    Col: 4 Path: 0,4 Score: -300
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: -300
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 5 Path: 0,5 Score: 0
+
+Player 1 inserts into column 5
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 0 
+0 0 0 2 1 0 0 0 
+0 0 0 1 1 0 2 0 
+0 1 0 2 1 1 1 2 
+0 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -300
+    Col: 1 Path: 0,1 Score: -300
+    Col: 2 Path: 0,2 Score: -300
+    Col: 3 Path: 0,3 Score: -300
+    Col: 4 Path: 0,4 Score: -300
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: -300
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 5 Path: 0,5 Score: 0
+
+Player 2 inserts into column 5
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 0 
+0 0 0 2 1 0 0 0 
+0 0 0 1 1 2 2 0 
+0 1 0 2 1 1 1 2 
+0 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -300
+    Col: 1 Path: 0,1 Score: -300
+    Col: 2 Path: 0,2 Score: -300
+    Col: 3 Path: 0,3 Score: -300
+    Col: 4 Path: 0,4 Score: -300
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: -300
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 5 Path: 0,5 Score: 0
+
+Player 1 inserts into column 5
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 0 
+0 0 0 2 1 1 0 0 
+0 0 0 1 1 2 2 0 
+0 1 0 2 1 1 1 2 
+0 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -100
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: -100
+    Col: 4 Path: 0,4 Score: -100
+    Col: 5 Path: 0,5 Score: -100
+    Col: 6 Path: 0,6 Score: -100
+    Col: 7 Path: 0,7 Score: -100
+
+  Considered Moves:
+
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+
+Player 2 inserts into column 1
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 0 
+0 0 0 2 1 1 0 0 
+0 2 0 1 1 2 2 0 
+0 1 0 2 1 1 1 2 
+0 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: -300
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 1
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 0 2 0 0 0 
+0 1 0 2 1 1 0 0 
+0 2 0 1 1 2 2 0 
+0 1 0 2 1 1 1 2 
+0 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 2 inserts into column 3
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 2 2 0 0 0 
+0 1 0 2 1 1 0 0 
+0 2 0 1 1 2 2 0 
+0 1 0 2 1 1 1 2 
+0 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: -300
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 5
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 2 2 1 0 0 
+0 1 0 2 1 1 0 0 
+0 2 0 1 1 2 2 0 
+0 1 0 2 1 1 1 2 
+0 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -300
+    Col: 1 Path: 0,1 Score: -300
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: -300
+    Col: 4 Path: 0,4 Score: -300
+    Col: 5 Path: 0,5 Score: -300
+    Col: 6 Path: 0,6 Score: -300
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 2 Path: 0,2 Score: 0
+
+Player 2 inserts into column 2
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 2 2 1 0 0 
+0 1 0 2 1 1 0 0 
+0 2 0 1 1 2 2 0 
+0 1 2 2 1 1 1 2 
+0 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -300
+    Col: 1 Path: 0,1 Score: -300
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: -300
+    Col: 4 Path: 0,4 Score: -300
+    Col: 5 Path: 0,5 Score: -300
+    Col: 6 Path: 0,6 Score: -300
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 2 Path: 0,2 Score: 0
+
+Player 1 inserts into column 2
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 2 2 1 0 0 
+0 1 0 2 1 1 0 0 
+0 2 1 1 1 2 2 0 
+0 1 2 2 1 1 1 2 
+0 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 2 inserts into column 0
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+0 0 0 2 2 1 0 0 
+0 1 0 2 1 1 0 0 
+0 2 1 1 1 2 2 0 
+0 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: -100
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: -100
+    Col: 4 Path: 0,4 Score: 0
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: -100
+    Col: 7 Path: 0,7 Score: -100
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 5 Path: 0,5 Score: 0
+
+Player 1 inserts into column 5
+
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 1 0 0 
+0 0 0 2 2 1 0 0 
+0 1 0 2 1 1 0 0 
+0 2 1 1 1 2 2 0 
+0 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -300
+    Col: 1 Path: 0,1 Score: -300
+    Col: 2 Path: 0,2 Score: -300
+    Col: 3 Path: 0,3 Score: -300
+    Col: 4 Path: 0,4 Score: -300
+    Col: 5 Path: 0,5 Score: 0
+    Col: 6 Path: 0,6 Score: -300
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 5 Path: 0,5 Score: 0
+
+Player 2 inserts into column 5
+
+0 0 0 0 0 2 0 0 
+0 0 0 0 0 1 0 0 
+0 0 0 2 2 1 0 0 
+0 1 0 2 1 1 0 0 
+0 2 1 1 1 2 2 0 
+0 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: -100
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: -100
+    Col: 4 Path: 0,4 Score: 0
+    Col: 6 Path: 0,6 Score: -100
+    Col: 7 Path: 0,7 Score: -100
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+
+Player 1 inserts into column 0
+
+0 0 0 0 0 2 0 0 
+0 0 0 0 0 1 0 0 
+0 0 0 2 2 1 0 0 
+0 1 0 2 1 1 0 0 
+0 2 1 1 1 2 2 0 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 3 Path: 0,3 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 2 inserts into column 3
+
+0 0 0 0 0 2 0 0 
+0 0 0 2 0 1 0 0 
+0 0 0 2 2 1 0 0 
+0 1 0 2 1 1 0 0 
+0 2 1 1 1 2 2 0 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -300
+    Col: 1 Path: 0,1 Score: -300
+    Col: 2 Path: 0,2 Score: -300
+    Col: 3 Path: 0,3 Score: 0
+    Col: 4 Path: 0,4 Score: -300
+    Col: 6 Path: 0,6 Score: -300
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 3 Path: 0,3 Score: 0
+
+Player 1 inserts into column 3
+
+0 0 0 1 0 2 0 0 
+0 0 0 2 0 1 0 0 
+0 0 0 2 2 1 0 0 
+0 1 0 2 1 1 0 0 
+0 2 1 1 1 2 2 0 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: -100
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+
+Player 2 inserts into column 0
+
+0 0 0 1 0 2 0 0 
+0 0 0 2 0 1 0 0 
+0 0 0 2 2 1 0 0 
+0 1 0 2 1 1 0 0 
+2 2 1 1 1 2 2 0 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 7
+
+0 0 0 1 0 2 0 0 
+0 0 0 2 0 1 0 0 
+0 0 0 2 2 1 0 0 
+0 1 0 2 1 1 0 0 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -100
+    Col: 1 Path: 0,1 Score: -100
+    Col: 2 Path: 0,2 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 2 Path: 0,2 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 2 inserts into column 6
+
+0 0 0 1 0 2 0 0 
+0 0 0 2 0 1 0 0 
+0 0 0 2 2 1 0 0 
+0 1 0 2 1 1 2 0 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 6
+
+0 0 0 1 0 2 0 0 
+0 0 0 2 0 1 0 0 
+0 0 0 2 2 1 1 0 
+0 1 0 2 1 1 2 0 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -300
+    Col: 1 Path: 0,1 Score: -300
+    Col: 2 Path: 0,2 Score: -300
+    Col: 4 Path: 0,4 Score: -300
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 6 Path: 0,6 Score: 0
+
+Player 2 inserts into column 6
+
+0 0 0 1 0 2 0 0 
+0 0 0 2 0 1 2 0 
+0 0 0 2 2 1 1 0 
+0 1 0 2 1 1 2 0 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 0
+
+0 0 0 1 0 2 0 0 
+0 0 0 2 0 1 2 0 
+0 0 0 2 2 1 1 0 
+1 1 0 2 1 1 2 0 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 2 inserts into column 2
+
+0 0 0 1 0 2 0 0 
+0 0 0 2 0 1 2 0 
+0 0 0 2 2 1 1 0 
+1 1 2 2 1 1 2 0 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -300
+    Col: 1 Path: 0,1 Score: -300
+    Col: 2 Path: 0,2 Score: -300
+    Col: 4 Path: 0,4 Score: 0
+    Col: 6 Path: 0,6 Score: -300
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 4 Path: 0,4 Score: 0
+
+Player 1 inserts into column 4
+
+0 0 0 1 0 2 0 0 
+0 0 0 2 1 1 2 0 
+0 0 0 2 2 1 1 0 
+1 1 2 2 1 1 2 0 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 4 Path: 0,4 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 4 Path: 0,4 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 2 inserts into column 4
+
+0 0 0 1 2 2 0 0 
+0 0 0 2 1 1 2 0 
+0 0 0 2 2 1 1 0 
+1 1 2 2 1 1 2 0 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 7
+
+0 0 0 1 2 2 0 0 
+0 0 0 2 1 1 2 0 
+0 0 0 2 2 1 1 0 
+1 1 2 2 1 1 2 1 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+
+Player 2 inserts into column 1
+
+0 0 0 1 2 2 0 0 
+0 0 0 2 1 1 2 0 
+0 2 0 2 2 1 1 0 
+1 1 2 2 1 1 2 1 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -300
+    Col: 1 Path: 0,1 Score: -300
+    Col: 2 Path: 0,2 Score: 0
+    Col: 6 Path: 0,6 Score: -300
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 2 Path: 0,2 Score: 0
+
+Player 1 inserts into column 2
+
+0 0 0 1 2 2 0 0 
+0 0 0 2 1 1 2 0 
+0 2 1 2 2 1 1 0 
+1 1 2 2 1 1 2 1 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+
+Player 2 inserts into column 2
+
+0 0 0 1 2 2 0 0 
+0 0 2 2 1 1 2 0 
+0 2 1 2 2 1 1 0 
+1 1 2 2 1 1 2 1 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 0
+
+0 0 0 1 2 2 0 0 
+0 0 2 2 1 1 2 0 
+1 2 1 2 2 1 1 0 
+1 1 2 2 1 1 2 1 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+
+Player 2 inserts into column 0
+
+0 0 0 1 2 2 0 0 
+2 0 2 2 1 1 2 0 
+1 2 1 2 2 1 1 0 
+1 1 2 2 1 1 2 1 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: -300
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: -300
+    Col: 6 Path: 0,6 Score: -300
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 1 Path: 0,1 Score: 0
+
+Player 1 inserts into column 1
+
+0 0 0 1 2 2 0 0 
+2 1 2 2 1 1 2 0 
+1 2 1 2 2 1 1 0 
+1 1 2 2 1 1 2 1 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 2 Path: 0,2 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 2 Path: 0,2 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+
+Player 2 inserts into column 2
+
+0 0 2 1 2 2 0 0 
+2 1 2 2 1 1 2 0 
+1 2 1 2 2 1 1 0 
+1 1 2 2 1 1 2 1 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 0 Path: 0,0 Score: 0
+    Col: 1 Path: 0,1 Score: 0
+    Col: 6 Path: 0,6 Score: 0
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 0 Path: 0,0 Score: 0
+    Column: 1 Path: 0,1 Score: 0
+    Column: 6 Path: 0,6 Score: 0
+    Column: 7 Path: 0,7 Score: 0
+
+Player 1 inserts into column 0
+
+1 0 2 1 2 2 0 0 
+2 1 2 2 1 1 2 0 
+1 2 1 2 2 1 1 0 
+1 1 2 2 1 1 2 1 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 1 Path: 0,1 Score: -100
+    Col: 6 Path: 0,6 Score: -100
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 1 Path: 0,1 Score: -100
+    Column: 6 Path: 0,6 Score: -100
+
+Player 2 inserts into column 6
+
+1 0 2 1 2 2 2 0 
+2 1 2 2 1 1 2 0 
+1 2 1 2 2 1 1 0 
+1 1 2 2 1 1 2 1 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 1 Path: 0,1 Score: 200
+    Col: 7 Path: 0,7 Score: 0
+
+  Considered Moves:
+
+    Column: 1 Path: 0,1 Score: 200
+
+Player 1 inserts into column 1
+
+1 1 2 1 2 2 2 0 
+2 1 2 2 1 1 2 0 
+1 2 1 2 2 1 1 0 
+1 1 2 2 1 1 2 1 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 2 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 7 Path: 0,7 Score: -300
+
+  Considered Moves:
+
+    Column: 7 Path: 0,7 Score: -300
+
+Player 2 inserts into column 7
+
+1 1 2 1 2 2 2 0 
+2 1 2 2 1 1 2 0 
+1 2 1 2 2 1 1 2 
+1 1 2 2 1 1 2 1 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
+Player 1 Move Info:
+
+  AI Type 1
+
+  Possible Moves:
+
+    Col: 7 Path: 0,7 Score: 400
+
+  Considered Moves:
+
+    Column: 7 Path: 0,7 Score: 400
+
+Player 1 inserts into column 7
+
+1 1 2 1 2 2 2 0 
+2 1 2 2 1 1 2 1 
+1 2 1 2 2 1 1 2 
+1 1 2 2 1 1 2 1 
+2 2 1 1 1 2 2 1 
+1 1 2 2 1 1 1 2 
+2 2 2 1 2 2 2 1 
+1 1 2 2 1 2 1 1 
+
