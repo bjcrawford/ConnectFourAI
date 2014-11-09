@@ -58,7 +58,7 @@ public class AIType1Player extends AbstractPlayer {
         ListIterator<ConnectFourBoardState> lotLI = lotL.listIterator();
         
         List<ConnectFourBoardState> list = new ArrayList<>();
-        int highest = -100 * lookAhead + 1;
+        int highest = (-100 * lookAhead) - 1;
         
         ConnectFourBoardState c = lotLI.next();
         int d = 1;
@@ -103,11 +103,9 @@ public class AIType1Player extends AbstractPlayer {
         
         /*
         lotLI = lotL.listIterator();
-        System.out.println("\nState Space:");
-        while(lotLI.hasNext() && (c = lotLI.next()).getDepth() < 3) {
-            System.out.println("Score: " + c.getScore() + 
-                               " Path: " + c.getPath() + 
-                               " Col: " + c.getColInserted());
+        System.out.println("\n  State Space:");
+        while(lotLI.hasNext() && (c = lotLI.next()).getDepth() < 4) {
+            System.out.println("    Path: " + c.getPath() + " Score: " + c.getScore());
         }
         */
         
