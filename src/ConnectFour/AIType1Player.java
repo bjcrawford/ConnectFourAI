@@ -93,7 +93,6 @@ public class AIType1Player extends AbstractPlayer {
                                " Path: " + cfbs.getPath() + 
                                " Score: " + cfbs.getScore());
         }
-        System.out.println("");
         
         int numMoves = list.size();
         Random rand = new Random();
@@ -108,6 +107,8 @@ public class AIType1Player extends AbstractPlayer {
             System.out.println("    Path: " + c.getPath() + " Score: " + c.getScore());
         }
         */
+        System.out.println("");
+        
         
         return result;
     }

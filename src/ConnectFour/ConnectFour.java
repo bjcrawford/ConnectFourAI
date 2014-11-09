@@ -68,27 +68,30 @@ public class ConnectFour {
             
             switch(playerOneSelection) {
                 case 0:
-                    System.out.println("p1 human");
+                    System.out.println("Player 1: Human");
                     playerOne = new HumanPlayer(1, board);
                     break;
                 case 1:
-                    System.out.println("p1 ai");
+                    System.out.println("Player 1: AIType1");
                     playerOne = new AIType1Player(1, 4, board);
                     break;
                 default:
-                    playerOne = new HumanPlayer(1, board);
+                    System.err.println("Invalid playerOneSelection value.");
+                    System.exit(1);
                     break;
             }
             
             switch(playerTwoSelection) {
                 case 0:
-                    System.out.println("p2 ai");
+                    System.out.println("Player 2: AIType1");
                     playerTwo = new AIType1Player(2, 4, board);
                     break;
                 default:
-                    playerTwo = new AIType1Player(2, 4, board);
+                    System.err.println("Invalid playerTwoSelection value.");
+                    System.exit(1);
                     break;
             }
+            System.out.println("");
 
             // use invoke later to make call to init gamepanel
             SwingUtilities.invokeLater(new Runnable() {
@@ -138,9 +141,6 @@ public class ConnectFour {
 
             // synchronization here to wait for user restart input
             userRestartInputSem.acquire();
-            System.out.println("User input, " + 
-                               (restart ? "restart" : "exit") + 
-                               ", released main thread\n");
             
             // use invoke later to make call to destroy end panel
             SwingUtilities.invokeLater(new Runnable() {

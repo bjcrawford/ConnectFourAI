@@ -98,16 +98,11 @@ public class OptionsPanel extends JPanel  implements ActionListener {
         JComboBox cb = (JComboBox) e.getSource();
         int selection = cb.getSelectedIndex();
         
-        if(cb == playerOneComboBox) {
-            System.out.println("Player One Combo Box");
-            System.out.println("Selected: " + selection);
+        if(cb == playerOneComboBox) 
             ConnectFour.playerOneSelection = selection;
-        }
-        else {
-            System.out.println("Player Two Combo Box");
-            System.out.println("Selected: " + selection);
+        
+        else 
             ConnectFour.playerTwoSelection = selection;
-        }
     }
     
 }
