@@ -81,7 +81,6 @@ public class WelcomePanel extends JPanel {
         centerPanel.setMaximumSize(new Dimension(720, 310));
         
         introTextArea = new JTextArea();
-        introTextArea.setEditable(false);
         introTextArea.setEnabled(false);
         introTextArea.setBackground(new Color(0, 0, 0, 0));
         introTextArea.setText("This can hold the intro text");

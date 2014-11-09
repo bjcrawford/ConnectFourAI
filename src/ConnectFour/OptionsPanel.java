@@ -8,6 +8,7 @@ package ConnectFour;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
@@ -42,20 +43,19 @@ public class OptionsPanel extends JPanel  implements ActionListener {
         playerOnePanel.setMaximumSize(new Dimension(360, 140));
         
         playerOneTextArea = new JTextArea();
-        playerOneTextArea.setEditable(false);
         playerOneTextArea.setEnabled(false);
         playerOneTextArea.setBackground(new Color(0, 0, 0, 0));
         playerOneTextArea.setText("Player One");
         playerOneTextArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 20));
-        playerOneTextArea.setPreferredSize(new Dimension(360, 80));
-        playerOneTextArea.setMaximumSize(new Dimension(360, 80));
-        playerOneTextArea.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        playerOneTextArea.setPreferredSize(new Dimension(360, 50));
+        playerOneTextArea.setMaximumSize(new Dimension(360, 50));
+        playerOneTextArea.setMargin(new Insets(10, 30, 10, 30));
         
         playerOneComboBox = new JComboBox(playerOneOptions);
         playerOneComboBox.addActionListener(this);
-        playerOneComboBox.setPreferredSize(new Dimension(360, 60));
-        playerOneComboBox.setMaximumSize(new Dimension(360, 60));
-        playerOneComboBox.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        playerOneComboBox.setPreferredSize(new Dimension(360, 50));
+        playerOneComboBox.setMaximumSize(new Dimension(360, 50));
+        playerOneComboBox.setBorder(BorderFactory.createEmptyBorder(15, 25, 15, 25));
         
         playerOnePanel.add(playerOneTextArea);
         playerOnePanel.add(playerOneComboBox);
@@ -66,20 +66,19 @@ public class OptionsPanel extends JPanel  implements ActionListener {
         playerTwoPanel.setMaximumSize(new Dimension(360, 140));
         
         playerTwoTextArea = new JTextArea();
-        playerTwoTextArea.setEditable(false);
         playerTwoTextArea.setEnabled(false);
         playerTwoTextArea.setBackground(new Color(0, 0, 0, 0));
         playerTwoTextArea.setText("Player Two");
         playerTwoTextArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 20));
-        playerTwoTextArea.setPreferredSize(new Dimension(360, 80));
-        playerTwoTextArea.setMaximumSize(new Dimension(360, 80));
-        playerTwoTextArea.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        playerTwoTextArea.setPreferredSize(new Dimension(360, 50));
+        playerTwoTextArea.setMaximumSize(new Dimension(360, 50));
+        playerTwoTextArea.setMargin(new Insets(10, 30, 10, 30));
         
         playerTwoComboBox = new JComboBox(playerTwoOptions);
         playerTwoComboBox.addActionListener(this);
-        playerTwoComboBox.setPreferredSize(new Dimension(360, 60));
-        playerTwoComboBox.setMaximumSize(new Dimension(360, 60));
-        playerTwoComboBox.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        playerTwoComboBox.setPreferredSize(new Dimension(360, 50));
+        playerTwoComboBox.setMaximumSize(new Dimension(360, 50));
+        playerTwoComboBox.setBorder(BorderFactory.createEmptyBorder(15, 25, 15, 25));
         
         playerTwoPanel.add(playerTwoTextArea);
         playerTwoPanel.add(playerTwoComboBox);
