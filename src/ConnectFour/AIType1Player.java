@@ -135,14 +135,20 @@ public class AIType1Player extends AbstractPlayer {
                 if(!CFBS[currentDepth].getFailedInsert())
                 {
                     stateSpace.add(CFBS[currentDepth - 1], CFBS[currentDepth]);
-                    buildStateSpaceRecursive(k, maxDepth - 1, currentDepth + 1);
+                    
+                    // If this state doesn't result in a win, continue building
+                    // the state space.
+                    if(evaluateBoardState(CFBS[currentDepth].getBoard()) == 0)
+                        buildStateSpaceRecursive(k, maxDepth - 1, currentDepth + 1);
                 
                     // Evaluate scores at the leaves of the tree
                     if(maxDepth == 0)
                         CFBS[currentDepth].setScore(evaluateBoardState(CFBS[currentDepth].getBoard()));
                     
                     // At any node, if the state results in a win, update the node score
-                    // and ignore the childrens values
+                    // and ignore the value given by the children. The node score is
+                    // multiplied by (maxDepth + 1) to give the score a weight. This
+                    // gives priority to the moves nearest the root in the state space.
                     if(evaluateBoardState(CFBS[currentDepth].getBoard()) != 0)
                         CFBS[currentDepth].setScore((maxDepth + 1) * evaluateBoardState(CFBS[currentDepth].getBoard()));
                     
