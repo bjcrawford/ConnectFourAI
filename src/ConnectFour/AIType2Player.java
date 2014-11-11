@@ -10,18 +10,21 @@ import java.util.Random;
 
 
 /**
- * This is the Type 1 for our Connect Four implementation. This
- * AI uses a basic minimax algorithm. It is capable of looking n 
- * moves ahead. No other factors besides win or lose have been 
- * considered.
+ * This is the Type 2 for our Connect Four implementation. This
+ * AI uses a slightly improved minimax algorithm. It is capable 
+ * of looking n moves ahead. When evaluating the score at a given
+ * node, those nodes closer to the root are given a larger weight
+ * than nodes that are further from the root. This allows the AI
+ * to differentiate between a win in two moves versus a win in 
+ * four moves.
  */
-public class AIType1Player extends AbstractPlayer {
+public class AIType2Player extends AbstractPlayer {
     
     private int lookAhead;
     private ConnectFourBoardState CFBS[];
     private KAryTree<ConnectFourBoardState> stateSpace;
     
-    public AIType1Player(int pieceColor, int lookAhead, ConnectFourBoard cfb) {
+    public AIType2Player(int pieceColor, int lookAhead, ConnectFourBoard cfb) {
         
         super(pieceColor, false, cfb);
         this.lookAhead = lookAhead;
@@ -146,9 +149,11 @@ public class AIType1Player extends AbstractPlayer {
                         CFBS[currentDepth].setScore(evaluateBoardState(CFBS[currentDepth]));
                     
                     // At any node, if the state results in a win, update the node score
-                    // and ignore the value given by the children. 
+                    // and ignore the value given by the children. The node score is
+                    // multiplied by (maxDepth + 1) to give the score a weight. This
+                    // gives priority to the moves nearest the root in the state space.
                     if(evaluateBoardState(CFBS[currentDepth]) != 0)
-                        CFBS[currentDepth].setScore(evaluateBoardState(CFBS[currentDepth]));
+                        CFBS[currentDepth].setScore((maxDepth + 1) * evaluateBoardState(CFBS[currentDepth]));
                     
                     // If the parent has not had a score set, give it the child's score
                     if(!CFBS[currentDepth - 1].getScoreEvaluated())

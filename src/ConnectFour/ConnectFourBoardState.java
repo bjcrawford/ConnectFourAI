@@ -14,7 +14,6 @@ public class ConnectFourBoardState {
     private boolean win;
     private int depth;
     private String path;
-    private boolean child;
     private int pieceColor;
     private int colInserted;
     private boolean failedInsert;
@@ -29,7 +28,6 @@ public class ConnectFourBoardState {
         this.win = false;
         this.depth = 0;
         this.path = "0";
-        this.child = false;
         this.pieceColor = pieceColor;
         this.colInserted = -1;
         this.failedInsert = false;
@@ -48,7 +46,6 @@ public class ConnectFourBoardState {
         this.win = toCopy.getWin();
         this.depth = toCopy.getDepth();
         this.path = toCopy.getPath();
-        this.child = false;
         this.colInserted = -1;
         this.failedInsert = false;
         this.scoreEvaluated = false;
@@ -57,8 +54,10 @@ public class ConnectFourBoardState {
     public ConnectFourBoardState createChildState(int col) {
         
         ConnectFourBoardState child = new ConnectFourBoardState(this);
+        
         child.score = 0;
         child.pieceColor = ((this.getPieceColor() + 2) % 2) + 1;
+        
         boolean inserted = false; 
         for(int row = child.getBoard().length - 1; row >= 0; row--)
         {
@@ -69,11 +68,11 @@ public class ConnectFourBoardState {
                 break;
             }
         }
+        
         if(inserted)
-            child.win = checkWin(child.getBoard()) != 0;
+            child.win = child.checkWin() != 0;
         child.depth++;
         child.path = this.path + "," + col;
-        child.child = true;
         child.colInserted = col;
         child.failedInsert = !inserted;
         child.scoreEvaluated = false;
@@ -146,7 +145,7 @@ public class ConnectFourBoardState {
      * 
      * @return 0 if no win, 1 if red win, 2 if black win
      */
-    public static int checkWin(int[][] board) {
+    public int checkWin() {
         
         int result = 0;
         
