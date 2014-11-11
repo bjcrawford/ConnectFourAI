@@ -26,13 +26,23 @@ public class EndPanel extends JPanel {
         
         setLayout(new BorderLayout());
         
-        
         topPanel = new JPanel();
         
-        if(winner == 1)
-            topPanel.add(new JLabel(new ImageIcon("Red.png")));
-        else
-            topPanel.add(new JLabel(new ImageIcon("Black.png")));
+        switch(winner) {
+            case -1:
+                topPanel.add(new JLabel(new ImageIcon("draw.png")));
+                break;
+            case 1:
+                topPanel.add(new JLabel(new ImageIcon("redwin.png")));
+                break;
+            case 2:
+                topPanel.add(new JLabel(new ImageIcon("blackwin.png")));
+                break;
+            default:
+                System.exit(1);
+        }
+            
+        System.out.println("topPanel size: " + topPanel.getPreferredSize());
         
         leftPanel = new JPanel();
         leftPanel.setPreferredSize(new Dimension(200, 400));

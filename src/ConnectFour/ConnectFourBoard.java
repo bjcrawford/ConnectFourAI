@@ -37,6 +37,11 @@ public class ConnectFourBoard {
      * A two-dimensional array to hold the contents of the board
      */
     private final int board[][];
+    
+    /**
+     * The total number of pieces currently in the board
+     */
+    private int totalPieces;
 
     /**
      * Creates a Connect Four board representation with a given width and height
@@ -50,6 +55,7 @@ public class ConnectFourBoard {
         this.height = height;
         this.width = width;
         this.board = new int[height][width];
+        this.totalPieces = 0;
     }
 
     /**
@@ -111,6 +117,7 @@ public class ConnectFourBoard {
                 board[i][j] = 0;
             }
         }
+        totalPieces = 0;
     }
 
     /**
@@ -128,6 +135,7 @@ public class ConnectFourBoard {
                 if (board[row][col] == 0) {
                     board[row][col] = pieceColor;
                     result = true;
+                    totalPieces++;
                     break;
                 }
             }
@@ -139,7 +147,7 @@ public class ConnectFourBoard {
     /**
      * Checks the game board for a win.
      *
-     * @return 0 if no win, 1 if red win, 2 if black win
+     * @return -1 if draw, 0 if no win, 1 if red win, 2 if black win
      */
     public int checkWin() {
 
@@ -224,6 +232,9 @@ public class ConnectFourBoard {
                 }
             }
         }
+        
+        if(totalPieces == width * height)
+            result = -1;
 
         return result;
     }

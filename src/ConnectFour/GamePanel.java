@@ -34,12 +34,12 @@ public class GamePanel extends JPanel {
         
         topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
-        topPanel.setPreferredSize(new Dimension(800, 70));
-        topPanel.setMaximumSize(new Dimension(800, 70));
+        topPanel.setPreferredSize(new Dimension(800, 80));
+        topPanel.setMaximumSize(new Dimension(800, 80));
         
         topSpacer = new JPanel();
-        topSpacer.setPreferredSize(new Dimension(800, 40));
-        topSpacer.setMaximumSize(new Dimension(800, 40));
+        topSpacer.setPreferredSize(new Dimension(800, 50));
+        topSpacer.setMaximumSize(new Dimension(800, 50));
         
         buttonRowPanel = new JPanel();
         buttonRowPanel.setLayout(new BoxLayout(buttonRowPanel, BoxLayout.X_AXIS));
