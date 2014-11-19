@@ -41,8 +41,6 @@ public class EndPanel extends JPanel {
             default:
                 System.exit(1);
         }
-            
-        System.out.println("topPanel size: " + topPanel.getPreferredSize());
         
         leftPanel = new JPanel();
         leftPanel.setPreferredSize(new Dimension(200, 400));
