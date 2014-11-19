@@ -66,7 +66,7 @@ public class AIType2Player extends AbstractPlayer {
         ConnectFourBoardState c = lotLI.next();
         int d = 1;
         System.out.println("Player " + pieceColor + " Move Info:");
-        System.out.println("\n  AI Type 1");
+        System.out.println("\n  AI Type 2");
         System.out.println("\n  Possible Moves:\n");
         while(lotLI.hasNext() && (c = lotLI.next()).getDepth() < 2)
         {
