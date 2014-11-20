@@ -79,6 +79,10 @@ public class ConnectFour {
                     System.out.println("Player 1: AIType2");
                     playerOne = new AIType2Player(1, 4, board);
                     break;
+                case 3:
+                    System.out.println("Player 1: AIType3");
+                    playerOne = new AIType3Player(1, 5, board);
+                    break;
                 default:
                     System.err.println("Invalid playerOneSelection value.");
                     System.exit(1);
@@ -93,6 +97,10 @@ public class ConnectFour {
                 case 1:
                     System.out.println("Player 2: AIType2");
                     playerTwo = new AIType2Player(2, 4, board);
+                    break;
+                case 2:
+                    System.out.println("Player 2: AIType3");
+                    playerTwo = new AIType3Player(2, 5, board);
                     break;
                 default:
                     System.err.println("Invalid playerTwoSelection value.");
