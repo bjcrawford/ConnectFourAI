@@ -10,7 +10,8 @@ import java.util.Scanner;
 public class AITester {
     
     public static void main(String args[]) {
-        playGame();
+        //playGame();
+        test();
     }
     
     public static void playGame() {
@@ -59,7 +60,7 @@ public class AITester {
     
     public static void test() {
         ConnectFourBoard CFB = new ConnectFourBoard(8, 8);
-        AIType1Player AT1 = new AIType1Player(1, 4, CFB);
+        AIType4Player AI = new AIType4Player(1, 4, CFB);
         
         CFB.insertPiece(1, 0);
         CFB.insertPiece(2, 0);
@@ -74,11 +75,25 @@ public class AITester {
         CFB.insertPiece(1, 3);
         CFB.insertPiece(2, 5);
         CFB.insertPiece(1, 7);
+        CFB.insertPiece(2, 4);
+        
+//        Intial Board State
+//
+//        0 0 0 0 0 0 0 0 
+//        0 0 0 0 0 0 0 0 
+//        0 0 0 0 0 0 0 0 
+//        0 0 0 0 0 0 0 0 
+//        0 0 0 1 0 0 0 0 
+//        0 0 1 1 0 0 0 0 
+//        2 0 2 2 0 0 0 0 
+//        1 0 1 2 2 2 1 1
         
         System.out.println("Intial Board State\n");
         System.out.println(CFB);
         
-        AT1.getNextMove();
+        ConnectFourBoardState cfbs = new ConnectFourBoardState(CFB.getBoard(), AI.getPieceColor());
+        System.out.println("Triples: " + AI.checkOpenTriples(cfbs));
+        //AI.getNextMove();
     }
 
     
