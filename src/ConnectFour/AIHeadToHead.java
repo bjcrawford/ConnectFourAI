@@ -4,7 +4,7 @@ package ConnectFour;
 public class AIHeadToHead {
     
     public static void main(String args[]) {
-        playGames(1000);
+        playGames(1);
     }
     
     public static void playGames(int numOfGames) {
@@ -24,8 +24,8 @@ public class AIHeadToHead {
             i = 1;
             win = 0;
             CFB.resetBoard();
-            AI1 = new AIMinimax1Player(1, 4, CFB);
-            AI2 = new AIHeuristicPlayer(2, 4, CFB);
+            AI1 = new AIMonteCarloPlayer(1, 20000, CFB);
+            AI2 = new AIMonteCarlo2Player(2, 20000, CFB);
 
             while(win == 0)
             {
@@ -35,20 +35,22 @@ public class AIHeadToHead {
                 if(i % 2 == 1)
                 {
                     System.out.println("Red Turn\n");
-
+                    long start = System.currentTimeMillis();
                     col = AI1.getNextMove();
-
+                    long end = System.currentTimeMillis();
+                    System.out.println("Move took " + (end-start) + " ms to compute");
                     CFB.insertPiece(1, col);
-                    System.out.println("\nRed inserts in col " + col);
+                    System.out.println("\nRed inserts in column " + (col+1));
                 }
                 else
                 {
                     System.out.println("Black Turn\n");
-
+                    long start = System.currentTimeMillis();
                     col = AI2.getNextMove();
-
+                    long end = System.currentTimeMillis();
+                    System.out.println("Move took " + (end-start) + " ms to compute");
                     CFB.insertPiece(2, col);
-                    System.out.println("\nBlack inserts in col " + col);
+                    System.out.println("\nBlack inserts in column " + (col+1));
                 }
                 i++;
                 win = CFB.checkWin();
