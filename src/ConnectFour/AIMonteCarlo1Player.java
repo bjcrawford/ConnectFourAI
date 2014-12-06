@@ -37,7 +37,7 @@ public class AIMonteCarlo1Player extends AbstractPlayer {
         ArrayList<Integer> moves = cfb.getPossibleMoves();
         
         System.out.println("Player " + pieceColor + " Move Info:");
-        System.out.println("\n  AI MonteCarlo");
+        System.out.println("\n  AI MonteCarlo 1");
         System.out.println("\n  Possible Moves:\n");
         for(int move : moves) {
             

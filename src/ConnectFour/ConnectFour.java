@@ -169,14 +169,20 @@ public class ConnectFour {
                 int col;
                 if(playerTurn == 1)
                 {
+                    long start = System.currentTimeMillis();
                     col = playerOne.getNextMove();
+                    long end = System.currentTimeMillis();
+                    System.out.println("  Time to compute move: " + (end-start) + " ms\n");
                     System.out.println("Player 1 inserts into column " + col + "\n");
                     board.insertPiece(playerOne.getPieceColor(), col);
                     playerTurn = 2;
                 }
                 else
                 {
+                    long start = System.currentTimeMillis();
                     col = playerTwo.getNextMove();
+                    long end = System.currentTimeMillis();
+                    System.out.println("  Time to compute move: " + (end-start) + " ms\n");
                     System.out.println("Player 2 inserts into column " + col + "\n");
                     board.insertPiece(playerTwo.getPieceColor(), col);
                     playerTurn = 1;

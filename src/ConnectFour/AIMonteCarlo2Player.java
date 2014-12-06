@@ -41,7 +41,7 @@ public class AIMonteCarlo2Player extends AbstractPlayer {
         Thread[] evalThreads = new Thread[cfb.getWidth()]; 
         
         System.out.println("Player " + pieceColor + " Move Info:");
-        System.out.println("\n  AI MonteCarlo");
+        System.out.println("\n  AI MonteCarlo 2");
         System.out.println("\n  Possible Moves:\n");
         for(int move : moves) {
             
