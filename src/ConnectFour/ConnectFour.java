@@ -96,8 +96,12 @@ public class ConnectFour {
                     playerOne = new AIHeuristicPlayer(1, 4, board);
                     break;
                 case 7:
-                    System.out.println("Player 1: AI MonteCarlo");
-                    playerOne = new AIMonteCarloPlayer(1, 20000, board);
+                    System.out.println("Player 1: AI MonteCarlo 1");
+                    playerOne = new AIMonteCarlo1Player(1, 20000, board);
+                    break;
+                case 8:
+                    System.out.println("Player 1: AI MonteCarlo 2");
+                    playerOne = new AIMonteCarlo2Player(1, 20000, board);
                     break;
                 default:
                     System.err.println("Invalid playerOneSelection value.");
@@ -131,8 +135,12 @@ public class ConnectFour {
                     playerTwo = new AIHeuristicPlayer(2, 4, board);
                     break;
                 case 6:
-                    System.out.println("Player 2: AI MonteCarlo");
-                    playerTwo = new AIMonteCarloPlayer(2, 20000, board);
+                    System.out.println("Player 2: AI MonteCarlo 1");
+                    playerTwo = new AIMonteCarlo1Player(2, 20000, board);
+                    break;
+                case 7:
+                    System.out.println("Player 2: AI MonteCarlo 2");
+                    playerTwo = new AIMonteCarlo2Player(2, 20000, board);
                     break;
                 default:
                     System.err.println("Invalid playerTwoSelection value.");

@@ -33,7 +33,8 @@ public class OptionsPanel extends JPanel  implements ActionListener {
                                   "AI Minimax 2 Player", 
                                   "AI AlphaBeta Player", 
                                   "AI Heuristic Player", 
-                                  "AI MonteCarlo Player" };
+                                  "AI MonteCarlo 1 Player",
+                                  "AI MonteCarlo 2 Player" };
     
     JPanel playerTwoPanel;
     JTextArea playerTwoTextArea;
@@ -44,7 +45,8 @@ public class OptionsPanel extends JPanel  implements ActionListener {
                                   "AI Minimax 2 Player", 
                                   "AI AlphaBeta Player", 
                                   "AI Heuristic Player",
-                                  "AI MonteCarlo Player" };
+                                  "AI MonteCarlo 1 Player",
+                                  "AI MonteCarlo 2 Player" };
     
     public OptionsPanel() {
         

@@ -24,7 +24,7 @@ public class AIHeadToHead {
             i = 1;
             win = 0;
             CFB.resetBoard();
-            AI1 = new AIMonteCarloPlayer(1, 20000, CFB);
+            AI1 = new AIMonteCarlo1Player(1, 20000, CFB);
             AI2 = new AIMonteCarlo2Player(2, 20000, CFB);
 
             while(win == 0)

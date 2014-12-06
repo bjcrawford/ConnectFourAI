@@ -5,12 +5,13 @@ import java.util.Random;
 
 /**
  * This player is an AI that makes use of a probabilistic technique. 
- * This AI makes use of a simplified Monte Carlo Tree Search to 
- * determine the best next move to make. When a move is requested 
- * from the AI, it considers the possible moves that can be made, 
- * and from each of those possible moves a given number of randomly 
- * played games are simulated to determine the probability of a win 
- * or loss for the considered possible move.
+ * This AI uses a Monte Carlo method to determine the best next move 
+ * to make. When a move is requested from the AI, it considers the 
+ * possible moves that can be made,and from each of those possible 
+ * moves a given number of randomly played games are simulated to 
+ * determine the probability of a win or loss for the considered 
+ * possible move. This AI improves upon AIMonteCarlo1Player by 
+ * using concurrency to reduce the computation time.
  */
 public class AIMonteCarlo2Player extends AbstractPlayer {
 
