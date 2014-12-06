@@ -97,7 +97,7 @@ public class ConnectFour {
                     break;
                 case 7:
                     System.out.println("Player 1: AI MonteCarlo");
-                    playerOne = new AIType5Player(1, 20000, board);
+                    playerOne = new AIMonteCarloPlayer(1, 20000, board);
                     break;
                 default:
                     System.err.println("Invalid playerOneSelection value.");
@@ -132,7 +132,7 @@ public class ConnectFour {
                     break;
                 case 6:
                     System.out.println("Player 2: AI MonteCarlo");
-                    playerTwo = new AIType5Player(2, 20000, board);
+                    playerTwo = new AIMonteCarloPlayer(2, 20000, board);
                     break;
                 default:
                     System.err.println("Invalid playerTwoSelection value.");

@@ -12,11 +12,11 @@ import java.util.Random;
  * played games are simulated to determine the probability of a win 
  * or loss for the considered possible move.
  */
-public class AIType5Player extends AbstractPlayer {
+public class AIMonteCarloPlayer extends AbstractPlayer {
 
     private int numOfSimGames;
 
-    public AIType5Player(int pieceColor, int numOfSimGames, ConnectFourBoard cfb) {
+    public AIMonteCarloPlayer(int pieceColor, int numOfSimGames, ConnectFourBoard cfb) {
 
         super(pieceColor, false, cfb);
         this.numOfSimGames = numOfSimGames;
