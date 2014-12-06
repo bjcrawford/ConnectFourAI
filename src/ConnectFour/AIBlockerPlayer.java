@@ -5,10 +5,9 @@ import java.util.Random;
 
 /**
  * This player is a very simple AI that takes a defensive approach.
- * This AI will attempt to block any sequences of opponents piece
- * that are three pieces in length. If no blocking moves are found,
- * the AI will insert pieces at random.
- * 
+ * This AI will attempt to block any sequences of opponents pieces
+ * that will result in an opponent win on the very next move. If no 
+ * blocking moves are found, the AI will insert pieces at random.
  */
 public class AIBlockerPlayer extends AbstractPlayer {
 
@@ -58,10 +57,9 @@ public class AIBlockerPlayer extends AbstractPlayer {
     }
     
     /**
-     * Checks for open spots on the board with adjacent three-in-a-row
-     * sequences of the opponents pieces. Returns the column of the first 
-     * such spot found when searching from the left side of the board to 
-     * the right.
+     * Checks for open spots on the board where the opponent can win
+     * in the following move. Returns the column of the first such spot 
+     * found when searching from the left side of the board to the right.
      * 
      * @return The column of the block move, -1 if no move is found
      */
