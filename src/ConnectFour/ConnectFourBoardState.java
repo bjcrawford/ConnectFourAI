@@ -1,25 +1,86 @@
 package ConnectFour;
 
 /**
- *
- * @author bcrawford
+ * A class representing a Connect Four board state. This class is
+ * used for representing states within the state space searches 
+ * of the AIs which make use of a state space search.
  */
 public class ConnectFourBoardState {
 
+    /**
+     * The score associated with the board state
+     */
     private int score;
+    
+    /**
+     * The height of the board
+     */
     private int height;
+    
+    /**
+     * The width of the board
+     */
     private int width;
+    
+    /**
+     * A two-dimensional array to hold the contents of the board
+     */
     private int board[][];
+    
+    /**
+     * A boolean to represented the win state of the board
+     */
     private boolean win;
+    
+    /**
+     * The depth of the state within a state space tree
+     */
     private int depth;
+    
+    /**
+     * The path from the root of the state space tree to this state
+     */
     private String path;
+    
+    /**
+     * The piece color of the last player to insert
+     */
     private int pieceColor;
+    
+    /**
+     * The column of the last insert
+     */
     private int colInserted;
-    private boolean failedInsert;
+    
+    /**
+     * A boolean to represent the success of the last insert
+     */
+    private boolean insertSuccess;
+    
+    /**
+     * A boolean to represent if the state's score has been evaluated
+     */
     private boolean scoreEvaluated;
+    
+    /**
+     * The alpha value of the state
+     */
     private int alpha = -100;
+    
+    /**
+     * The beta value of the state
+     */
     private int beta = 100;
 
+    /**
+     * Creates a Connect Four board state using the given board and
+     * piece color. This should only be used to create the root
+     * of a state space. To create children of the root, use the
+     * createChildState method.
+     * 
+     * @param board The board to create the state from
+     * @param pieceColor The piece color of the last player to insert
+     */
     public ConnectFourBoardState(int board[][], int pieceColor) {
 
         this.score = 0;
@@ -31,10 +92,17 @@ public class ConnectFourBoardState {
         this.path = "0";
         this.pieceColor = pieceColor;
         this.colInserted = -1;
-        this.failedInsert = false;
+        this.insertSuccess = true;
         this.scoreEvaluated = false;
     }
 
+    /**
+     * Creates a copy of a Connect Four board state. This method
+     * is for internal use only and should only be called from 
+     * the createChildState method
+     * 
+     * @param toCopy The Connect Four board state to copy
+     */
     public ConnectFourBoardState(ConnectFourBoardState toCopy) {
 
         this.score = 0;
@@ -50,16 +118,25 @@ public class ConnectFourBoardState {
         this.depth = toCopy.getDepth();
         this.path = toCopy.getPath();
         this.colInserted = -1;
-        this.failedInsert = false;
+        this.insertSuccess = true;
         this.scoreEvaluated = false;
     }
 
+    /**
+     * Creates a child Connect Four board state from a parent
+     * and inserts the appropriate piece color into the given
+     * column.
+     * 
+     * @param col The column to insert into during the creation
+     *            of the child state
+     * @return The child Connect Four board state
+     */
     public ConnectFourBoardState createChildState(int col) {
 
         ConnectFourBoardState child = new ConnectFourBoardState(this);
 
         child.score = 0;
-        child.pieceColor = ((this.getPieceColor() + 2) % 2) + 1;
+        child.pieceColor = (this.getPieceColor() % 2) + 1;
 
         boolean inserted = false;
         for (int row = child.getBoard().length - 1; row >= 0; row--) {
@@ -76,47 +153,85 @@ public class ConnectFourBoardState {
         child.depth++;
         child.path = this.path + "," + col;
         child.colInserted = col;
-        child.failedInsert = !inserted;
+        child.insertSuccess = inserted;
         child.scoreEvaluated = false;
 
         return child;
     }
 
+    /**
+     * Returns the score of the board state.
+     * 
+     * @return The board state's score
+     */
     public int getScore() {
 
         return score;
     }
 
+    /**
+     * Returns the height of the board state's board.
+     * 
+     * @return The board state's board height
+     */
     public int getHeight() {
 
         return height;
     }
 
+    /**
+     * Returns the width of the board state's board.
+     * 
+     * @return The board state's board width
+     */
     public int getWidth() {
 
         return width;
     }
 
+    /**
+     * Returns the two-dimensional array representation of the
+     * board state's board
+     * 
+     * @return The two-dimensional array representing the board
+     */
     public int[][] getBoard() {
 
         return board;
     }
 
+    /**
+     * Returns the win state of the board.
+     * 
+     * @return true if win, false otherwise
+     */
     public boolean getWin() {
 
         return win;
     }
 
+    /**
+     * Returns the depth of the board state with the state space tree.
+     * 
+     * @return The board state's depth 
+     */
     public int getDepth() {
 
         return depth;
     }
 
+    /**
+     * Returns the path from the root of the state space tree to
+     * the board state.
+     * 
+     * @return The path from root to board state
+     */
     public String getPath() {
 
         return path;
     }
 
+    
     public int getPieceColor() {
 
         return pieceColor;
@@ -127,20 +242,14 @@ public class ConnectFourBoardState {
         return colInserted;
     }
 
-    public boolean getFailedInsert() {
+    public boolean getInsertSuccess() {
 
-        return failedInsert;
+        return insertSuccess;
     }
 
     public boolean getScoreEvaluated() {
 
         return scoreEvaluated;
-    }
-
-    public void setScore(int newScore) {
-
-        this.score = newScore;
-        this.scoreEvaluated = true;
     }
 
     public int getAlpha() {
@@ -149,6 +258,12 @@ public class ConnectFourBoardState {
 
     public int getBeta() {
         return beta;
+    }
+    
+    public void setScore(int newScore) {
+
+        this.score = newScore;
+        this.scoreEvaluated = true;
     }
 
     public void setAlpha(int Alpha) {

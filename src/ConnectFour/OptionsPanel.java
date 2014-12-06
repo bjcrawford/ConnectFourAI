@@ -26,12 +26,25 @@ public class OptionsPanel extends JPanel  implements ActionListener {
     JPanel playerOnePanel;
     JTextArea playerOneTextArea;
     JComboBox playerOneComboBox;
-    String[] playerOneOptions = { "Human", "AI Type 1", "AI Type 2", "AI Type 3", "AI Type 4"};
+    String[] playerOneOptions = { "Human", 
+                                  "AI Random Player",
+                                  "AI Blocker Player",
+                                  "AI Minimax 1 Player", 
+                                  "AI Minimax 2 Player", 
+                                  "AI AlphaBeta Player", 
+                                  "AI Heuristic Player", 
+                                  "AI MonteCarlo Player" };
     
     JPanel playerTwoPanel;
     JTextArea playerTwoTextArea;
     JComboBox playerTwoComboBox;
-    String[] playerTwoOptions = { "AI Type 1", "AI Type 2", "AI Type 3", "AI Type 4"};
+    String[] playerTwoOptions = { "AI Random",
+                                  "AI Blocker Player",
+                                  "AI Minimax 1 Player", 
+                                  "AI Minimax 2 Player", 
+                                  "AI AlphaBeta Player", 
+                                  "AI Heuristic Player",
+                                  "AI MonteCarlo Player" };
     
     public OptionsPanel() {
         

@@ -72,20 +72,32 @@ public class ConnectFour {
                     playerOne = new HumanPlayer(1, board);
                     break;
                 case 1:
-                    System.out.println("Player 1: AIType1");
-                    playerOne = new AIType1Player(1, 4, board);
+                    System.out.println("Player 1: AI Random");
+                    playerOne = new AIRandomPlayer(1, board);
                     break;
                 case 2:
-                    System.out.println("Player 1: AIType2");
-                    playerOne = new AIType2Player(1, 4, board);
+                    System.out.println("Player 1: AI Blocker");
+                    playerOne = new AIBlockerPlayer(1, board);
                     break;
                 case 3:
-                    System.out.println("Player 1: AIType3");
-                    playerOne = new AIType3Player(1, 5, board);
+                    System.out.println("Player 1: AI Minimax 1");
+                    playerOne = new AIMinimax1Player(1, 4, board);
                     break;
                 case 4:
-                    System.out.println("Player 1: AIType4");
-                    playerOne = new AIType4Player(1, 4, board);
+                    System.out.println("Player 1: AI Minimax 2");
+                    playerOne = new AIMinimax2Player(1, 4, board);
+                    break;
+                case 5:
+                    System.out.println("Player 1: AI AlphaBeta");
+                    playerOne = new AIAlphaBetaPlayer(1, 5, board);
+                    break;
+                case 6:
+                    System.out.println("Player 1: AI Heuristic");
+                    playerOne = new AIHeuristicPlayer(1, 4, board);
+                    break;
+                case 7:
+                    System.out.println("Player 1: AI MonteCarlo");
+                    playerOne = new AIType5Player(1, 20000, board);
                     break;
                 default:
                     System.err.println("Invalid playerOneSelection value.");
@@ -95,20 +107,32 @@ public class ConnectFour {
             
             switch(playerTwoSelection) {
                 case 0:
-                    System.out.println("Player 2: AIType1");
-                    playerTwo = new AIType1Player(2, 4, board);
+                    System.out.println("Player 2: AI Random");
+                    playerTwo = new AIRandomPlayer(2, board);
                     break;
                 case 1:
-                    System.out.println("Player 2: AIType2");
-                    playerTwo = new AIType2Player(2, 4, board);
+                    System.out.println("Player 2: AI Blocker");
+                    playerTwo = new AIBlockerPlayer(2, board);
                     break;
                 case 2:
-                    System.out.println("Player 2: AIType3");
-                    playerTwo = new AIType3Player(2, 5, board);
+                    System.out.println("Player 2: AI Minimax 1");
+                    playerTwo = new AIMinimax1Player(2, 4, board);
                     break;
                 case 3:
-                    System.out.println("Player 2: AIType4");
-                    playerTwo = new AIType4Player(2, 4, board);
+                    System.out.println("Player 2: AI Minimax 2");
+                    playerTwo = new AIMinimax2Player(2, 4, board);
+                    break;
+                case 4:
+                    System.out.println("Player 2: AI AlphaBeta");
+                    playerTwo = new AIAlphaBetaPlayer(2, 5, board);
+                    break;
+                case 5:
+                    System.out.println("Player 2: AI AlphaBeta");
+                    playerTwo = new AIHeuristicPlayer(2, 4, board);
+                    break;
+                case 6:
+                    System.out.println("Player 2: AI MonteCarlo");
+                    playerTwo = new AIType5Player(2, 20000, board);
                     break;
                 default:
                     System.err.println("Invalid playerTwoSelection value.");

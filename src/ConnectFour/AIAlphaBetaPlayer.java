@@ -12,13 +12,13 @@ import java.util.Random;
  * minimax algorithm. It is capable of looking n moves ahead. No other factors
  * besides win or lose have been considered.
  */
-public class AIType3Player extends AbstractPlayer {
+public class AIAlphaBetaPlayer extends AbstractPlayer {
 
     private int lookAhead;
     private ConnectFourBoardState CFBS[];
     private KAryTree<ConnectFourBoardState> stateSpace;
 
-    public AIType3Player(int pieceColor, int lookAhead, ConnectFourBoard cfb) {
+    public AIAlphaBetaPlayer(int pieceColor, int lookAhead, ConnectFourBoard cfb) {
 
         super(pieceColor, false, cfb);
         this.lookAhead = lookAhead;
@@ -33,11 +33,10 @@ public class AIType3Player extends AbstractPlayer {
     public int getNextMove() {
 
         int x = 123456;
-        int result;
-        int cols = cfb.getBoard().length;
+        int bestMove;
         int pc = ((pieceColor + 2) % 2) + 1; // Opponents piece color
         CFBS = new ConnectFourBoardState[lookAhead + 1];
-        stateSpace = new KAryTree<>(cols);
+        stateSpace = new KAryTree<>(cfb.getWidth());
 
         // Create and insert the root
         CFBS[0] = new ConnectFourBoardState(cfb.getBoard(), pc);
@@ -46,7 +45,7 @@ public class AIType3Player extends AbstractPlayer {
         // Build the state space with a depth of three
         // starting from the first level (the root is zero level)
         try {
-            buildStateSpaceRecursive(cols, lookAhead - 1, 1, false);
+            buildStateSpaceRecursive(lookAhead - 1, 1, false);
         } catch (NodeNotFoundException e) {
             System.err.println(e.getLocalizedMessage());
             return -1;
@@ -59,14 +58,12 @@ public class AIType3Player extends AbstractPlayer {
         int highest = (-100 * lookAhead) - 1;
 
         ConnectFourBoardState c = lotLI.next();
-        int d = 1;
         System.out.println("Player " + pieceColor + " Move Info:");
-        System.out.println("\n  AI Type 3");
+        System.out.println("\n  AI AlphaBeta");
         System.out.println("\n  Possible Moves:\n");
         while (lotLI.hasNext() && (c = lotLI.next()).getDepth() < 2) {
-            System.out.println("    Col: " + c.getColInserted()
-                    + " Path: " + c.getPath()
-                    + " Score: " + c.getScore());
+            System.out.println("    Column: " + (c.getColInserted()+1) +
+                               " Score: " + c.getScore());
 
             if (c.getScore() > highest) {
                 highest = c.getScore();
@@ -81,17 +78,14 @@ public class AIType3Player extends AbstractPlayer {
 
         System.out.println("\n  Considered Moves:\n");
         for (ConnectFourBoardState cfbs : list) {
-            //System.out.println(cfbs);
-            System.out.println("    Column: " + cfbs.getColInserted()
-                    + " Path: " + cfbs.getPath()
-                    + " Score: " + cfbs.getScore());
+            System.out.println("    Column: " + (cfbs.getColInserted()+1) +
+                               " Score: " + cfbs.getScore());
         }
 
         int numMoves = list.size();
-        Random rand = new Random();
+        Random rand = new Random(System.currentTimeMillis());
         int choice = rand.nextInt(numMoves);
-        int col = list.get(choice).getColInserted();
-        result = list.get(choice).getColInserted();
+        bestMove = list.get(choice).getColInserted();
 
         /*
          lotLI = lotL.listIterator();
@@ -100,61 +94,56 @@ public class AIType3Player extends AbstractPlayer {
          System.out.println("    Path: " + c.getPath() + " Score: " + c.getScore());
          }
          */
-        System.out.println("");
+        System.out.println();
 
-        return result;
+        return bestMove;
     }
 
     /**
      * Builds the state space for the getNextMove() method.
      *
-     * @param k The max number of children per node
-     * @param maxDepth The max depth to continue building past this call's level
+     * @param remainingDepth The remaining depth to continue building
      * @param currentDepth The current depth within the tree
-     * @param alpha The current best value along path to root for Max Nodes
-     * @param beta The current best value along path to root for Min Nodes
      * @param pruned If this is true then you need not continue with the current
      * child.
      * @throws NodeNotFoundException
      */
-    public void buildStateSpaceRecursive(int k, int maxDepth, int currentDepth, boolean pruned) throws NodeNotFoundException {
+    public void buildStateSpaceRecursive(int remainingDepth, int currentDepth, boolean pruned) throws NodeNotFoundException {
         if (!pruned) {
-            if (maxDepth >= 0) {
+            if (remainingDepth >= 0) {
                 /*if (currentDepth % 2 == 0) {
                  CFBS[currentDepth - 1].setScore(100);
                  } else {
                  CFBS[currentDepth - 1].setScore(-100);
                  }*/
+                int k = cfb.getWidth();
                 for (int i = 0; i < k; i++) {
 
                     // Create and insert i-th child of the parent node
                     CFBS[currentDepth] = CFBS[currentDepth - 1].createChildState(i);
 
-                    // If the child did not result in a failed insert (i.e., insert
-                    // into full column), add the child to the tree and create
-                    // any children it may have
-                    if (!CFBS[currentDepth].getFailedInsert()) {
+                    // If the child resulted in a successful insert (i.e., insert
+                    // into a column with available space), add the child to the 
+                    // tree and create any children it may have.
+                    // If the child resulted in a failed insert, its children
+                    // are effectively pruned from the tree.
+                    if (CFBS[currentDepth].getInsertSuccess()) {
                         stateSpace.add(CFBS[currentDepth - 1], CFBS[currentDepth]);
 
                         // If this state doesn't result in a win, continue building
                         // the state space.
                         if (evaluateBoardState(CFBS[currentDepth]) == 0) {
-                            buildStateSpaceRecursive(k, maxDepth - 1, currentDepth + 1, pruned);
+                            buildStateSpaceRecursive(remainingDepth - 1, currentDepth + 1, pruned);
                         }
-
+                        // If the state results in a win, update the node score
+                        else {
+                            CFBS[currentDepth].setScore((remainingDepth + 1) * evaluateBoardState(CFBS[currentDepth]));
+                        }
+                        
                         // Evaluate scores at the leaves of the tree
-                        if (maxDepth == 0) {
+                        if (remainingDepth == 0) {
                             CFBS[currentDepth].setScore(evaluateBoardState(CFBS[currentDepth]));
                         }
-
-                        // At any node, if the state results in a win, update the node score
-                        // and ignore the value given by the children.
-                        if (evaluateBoardState(CFBS[currentDepth]) != 0) {
-                            CFBS[currentDepth].setScore((maxDepth + 1) * evaluateBoardState(CFBS[currentDepth]));
-                        }
-//                        if (evaluateBoardState(CFBS[currentDepth]) != 0) {
-//                            CFBS[currentDepth].setScore(evaluateBoardState(CFBS[currentDepth]));
-//                        }
 
                         // If the parent has not had a score set, give it the child's score                       
                         if (!CFBS[currentDepth - 1].getScoreEvaluated()) {
@@ -227,14 +216,16 @@ public class AIType3Player extends AbstractPlayer {
          }
          */
         int result;
+        int opc = (pieceColor % 2) + 1; // Opponents piece color
         int win = cfbs.checkWin();
-        if (win == 0) {
-            result = 0;
-        } else if (win == pieceColor) {
+        if (win == pieceColor) {
             result = 100;
-        } else {
+        } else if (win == opc) {
             result = -100;
+        } else {
+            result = 0;
         }
+        
         return result;
     }
 }

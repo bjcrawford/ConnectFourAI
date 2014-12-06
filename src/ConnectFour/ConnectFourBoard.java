@@ -2,6 +2,7 @@ package ConnectFour;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
 
 /**
  * A class representing the Connect Four game board
@@ -44,8 +45,8 @@ public class ConnectFourBoard {
     private int totalPieces;
 
     /**
-     * Creates a Connect Four board representation with a given width and height
-     * for the board.
+     * Creates a Connect Four board representation with a given 
+     * width and height for the board.
      *
      * @param height The height of the board
      * @param width The width of the board
@@ -56,6 +57,24 @@ public class ConnectFourBoard {
         this.width = width;
         this.board = new int[height][width];
         this.totalPieces = 0;
+    }
+    
+    /**
+     * Creates a copy of a Connect Four Board representation.
+     * 
+     * @param CFB The Connect Four Board to copy
+     */
+    public ConnectFourBoard(ConnectFourBoard CFB) {
+        
+        this.height = CFB.getHeight();
+        this.width = CFB.getWidth();
+        this.board = new int[this.height][this.width];
+        for(int row = 0; row < this.height; row++) {
+            for(int col = 0; col < this.width; col++) {
+                this.board[row][col] = CFB.getBoard()[row][col];
+            }
+        }
+        this.totalPieces = CFB.getTotalPieces();
     }
 
     /**
@@ -89,6 +108,15 @@ public class ConnectFourBoard {
             }
         }
         return copy;
+    }
+    
+    /**
+     * Returns the total number of pieces in the board.
+     * 
+     * @return The total number of pieces on the board
+     */
+    public int getTotalPieces() {
+        return totalPieces;
     }
     
     /**
@@ -143,6 +171,25 @@ public class ConnectFourBoard {
 
         return result;
     }
+    
+    /**
+     * Returns the board states possible moves.
+     * 
+     * @return An ArrayList containing the columns of possible moves
+     */
+    public ArrayList<Integer> getPossibleMoves() {
+        ArrayList<Integer> moves = new ArrayList<>();
+        for(int col = 0; col < width; col++) {
+            for (int row = height - 1; row >= 0; row--) {
+                if (board[row][col] == 0) {
+                    moves.add(col);
+                    break;
+                }
+            }
+        }
+        
+        return moves;
+    }
 
     /**
      * Checks the game board for a win.
@@ -153,88 +200,90 @@ public class ConnectFourBoard {
 
         int result = 0;
 
-        // Check horizontals
-        for (int row = 0; row < height && result == 0; row++) {
-            for (int col = 3; col < width && result == 0; col++) {
-                // Red team win
-                if (board[row][col - 3] == 1
-                        && board[row][col - 2] == 1
-                        && board[row][col - 1] == 1
-                        && board[row][col] == 1) {
-                    result = 1;
-                }
-                // Black team win
-                if (board[row][col - 3] == 2
-                        && board[row][col - 2] == 2
-                        && board[row][col - 1] == 2
-                        && board[row][col] == 2) {
-                    result = 2;
-                }
-            }
-        }
-
-        // Check verticals
-        for (int row = 3; row < height && result == 0; row++) {
-            for (int col = 0; col < width && result == 0; col++) {
-                // Red team win
-                if (board[row - 3][col] == 1
-                        && board[row - 2][col] == 1
-                        && board[row - 1][col] == 1
-                        && board[row][col] == 1) {
-                    result = 1;
-                }
-                // Black team win
-                if (board[row - 3][col] == 2
-                        && board[row - 2][col] == 2
-                        && board[row - 1][col] == 2
-                        && board[row][col] == 2) {
-                    result = 2;
-                }
-            }
-        }
-
-        // Check positive slope diagonals
-        for (int row = 3; row < height && result == 0; row++) {
-            for (int col = 3; col < width && result == 0; col++) {
-                // Red team win
-                if (board[row][col - 3] == 1
-                        && board[row - 1][col - 2] == 1
-                        && board[row - 2][col - 1] == 1
-                        && board[row - 3][col] == 1) {
-                    result = 1;
-                }
-                // Black team win
-                if (board[row][col - 3] == 2
-                        && board[row - 1][col - 2] == 2
-                        && board[row - 2][col - 1] == 2
-                        && board[row - 3][col] == 2) {
-                    result = 2;
-                }
-            }
-        }
-
-        // Check negative slope diagonals
-        for (int row = 3; row < height && result == 0; row++) {
-            for (int col = 3; col < width && result == 0; col++) {
-                // Red team win
-                if (board[row - 3][col - 3] == 1
-                        && board[row - 2][col - 2] == 1
-                        && board[row - 1][col - 1] == 1
-                        && board[row][col] == 1) {
-                    result = 1;
-                }
-                // Black team win
-                if (board[row - 3][col - 3] == 2
-                        && board[row - 2][col - 2] == 2
-                        && board[row - 1][col - 1] == 2
-                        && board[row][col] == 2) {
-                    result = 2;
-                }
-            }
-        }
-        
         if(totalPieces == width * height)
             result = -1;
+        else {
+            
+            // Check horizontals
+            for (int row = 0; row < height && result == 0; row++) {
+                for (int col = 3; col < width && result == 0; col++) {
+                    // Red team win
+                    if (board[row][col - 3] == 1
+                            && board[row][col - 2] == 1
+                            && board[row][col - 1] == 1
+                            && board[row][col] == 1) {
+                        result = 1;
+                    }
+                    // Black team win
+                    if (board[row][col - 3] == 2
+                            && board[row][col - 2] == 2
+                            && board[row][col - 1] == 2
+                            && board[row][col] == 2) {
+                        result = 2;
+                    }
+                }
+            }
+
+            // Check verticals
+            for (int row = 3; row < height && result == 0; row++) {
+                for (int col = 0; col < width && result == 0; col++) {
+                    // Red team win
+                    if (board[row - 3][col] == 1
+                            && board[row - 2][col] == 1
+                            && board[row - 1][col] == 1
+                            && board[row][col] == 1) {
+                        result = 1;
+                    }
+                    // Black team win
+                    if (board[row - 3][col] == 2
+                            && board[row - 2][col] == 2
+                            && board[row - 1][col] == 2
+                            && board[row][col] == 2) {
+                        result = 2;
+                    }
+                }
+            }
+
+            // Check positive slope diagonals
+            for (int row = 3; row < height && result == 0; row++) {
+                for (int col = 3; col < width && result == 0; col++) {
+                    // Red team win
+                    if (board[row][col - 3] == 1
+                            && board[row - 1][col - 2] == 1
+                            && board[row - 2][col - 1] == 1
+                            && board[row - 3][col] == 1) {
+                        result = 1;
+                    }
+                    // Black team win
+                    if (board[row][col - 3] == 2
+                            && board[row - 1][col - 2] == 2
+                            && board[row - 2][col - 1] == 2
+                            && board[row - 3][col] == 2) {
+                        result = 2;
+                    }
+                }
+            }
+
+            // Check negative slope diagonals
+            for (int row = 3; row < height && result == 0; row++) {
+                for (int col = 3; col < width && result == 0; col++) {
+                    // Red team win
+                    if (board[row - 3][col - 3] == 1
+                            && board[row - 2][col - 2] == 1
+                            && board[row - 1][col - 1] == 1
+                            && board[row][col] == 1) {
+                        result = 1;
+                    }
+                    // Black team win
+                    if (board[row - 3][col - 3] == 2
+                            && board[row - 2][col - 2] == 2
+                            && board[row - 1][col - 1] == 2
+                            && board[row][col] == 2) {
+                        result = 2;
+                    }
+                }
+            }
+        }
 
         return result;
     }
