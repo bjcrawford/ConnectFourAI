@@ -34,8 +34,16 @@ public class AIBlockerPlayer extends AbstractPlayer {
             bestMove = moves.get(rand.nextInt(moves.size()));
             randomMove = true;
         }
+        
+        // Pause for a moment
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            System.err.println(e.getLocalizedMessage());
+        }
+        
         System.out.println("Player " + pieceColor + " Move Info:");
-        System.out.println("\n  AI Type: Random");
+        System.out.println("\n  AI Type: Blocker");
         System.out.println("\n  Possible Moves:\n");
         for(int move : moves) 
             System.out.println("    Column: " + (move+1));
@@ -77,9 +85,10 @@ public class AIBlockerPlayer extends AbstractPlayer {
                     found = true;
                     
                     // Check north
-                    // North is not possible in connect four
+                    // North is not possible
 
                     // Check north east
+                    // 0xxx
                     if(col < (width - 3) && row >= 3) {
                         if(board[row - 1][col + 1] == pc &&
                            board[row - 2][col + 2] == pc &&
@@ -87,7 +96,17 @@ public class AIBlockerPlayer extends AbstractPlayer {
                             move = col;
                         }
                     }
+                    // x0xx
+                    if(col >= 1 && col < (width - 2) &&
+                       row >= 2 && row < (width - 1)) {
+                        if(board[row + 1][col - 1] == pc &&
+                           board[row - 1][col + 1] == pc &&
+                           board[row - 2][col + 2] == pc) {
+                            move = col;
+                        }
+                    }
                     // Check east
+                    // 0xxx
                     if(col < (width - 3)) {
                         if(board[row][col + 1] == pc &&
                            board[row][col + 2] == pc &&
@@ -95,7 +114,16 @@ public class AIBlockerPlayer extends AbstractPlayer {
                             move = col;
                         }
                     }
+                    // x0xx
+                    if(col >= 1 && col < (width - 2)) {
+                        if(board[row][col - 1] == pc &&
+                           board[row][col + 1] == pc &&
+                           board[row][col + 2] == pc) {
+                            move = col;
+                        }
+                    }
                     // Check south east
+                    // 0xxx
                     if(col < (width - 3) && row < (height - 3)) {
                         if(board[row + 1][col + 1] == pc &&
                            board[row + 2][col + 2] == pc &&
@@ -103,7 +131,17 @@ public class AIBlockerPlayer extends AbstractPlayer {
                             move = col;
                         }
                     }
+                    // x0xx
+                    if(col >= 1 && col < (width - 2) && 
+                       row >= 1 && row < (height - 2)) {
+                        if(board[row - 1][col - 1] == pc &&
+                           board[row + 1][col + 1] == pc &&
+                           board[row + 2][col + 2] == pc) {
+                            move = col;
+                        }
+                    }
                     // Check south
+                    // 0xxx
                     if(row < (height - 3)) {
                         if(board[row + 1][col] == pc &&
                            board[row + 2][col] == pc &&
@@ -111,7 +149,9 @@ public class AIBlockerPlayer extends AbstractPlayer {
                             move = col;
                         }
                     }
+                    // x0xx - not possible
                     // Check south west
+                    // xxx0
                     if(col >= 3 && row < (height - 3)) {
                         if(board[row + 1][col - 1] == pc &&
                            board[row + 2][col - 2] == pc &&
@@ -119,7 +159,17 @@ public class AIBlockerPlayer extends AbstractPlayer {
                             move = col;
                         }
                     }
+                    // xx0x
+                    if(col >= 2 && col < (width - 1) &&
+                       row >= 1 && row < (height - 2)) {
+                        if(board[row - 1][col + 1] == pc &&
+                           board[row + 1][col - 1] == pc &&
+                           board[row + 2][col - 2] == pc) {
+                            move = col;
+                        }
+                    }
                     // Check west
+                    // xxx0
                     if(col >= 3) {
                         if(board[row][col - 1] == pc &&
                            board[row][col - 2] == pc &&
@@ -127,11 +177,29 @@ public class AIBlockerPlayer extends AbstractPlayer {
                             move = col;
                         }
                     }
+                    // xx0x
+                    if(col >= 2 && col < (width - 1)) {
+                        if(board[row][col + 1] == pc &&
+                           board[row][col - 1] == pc &&
+                           board[row][col - 2] == pc) {
+                            move = col;
+                        }
+                    }
                     // Check north west
+                    // xxx0
                     if(col >= 3 && row >= 3) {
                         if(board[row - 1][col - 1] == pc &&
                            board[row - 2][col - 2] == pc &&
                            board[row - 3][col - 3] == pc) {
+                            move = col;
+                        }
+                    }
+                    // xx0x
+                    if(col >= 2 && col < (width - 1) &&
+                       row >= 2 && row < (width - 1)) {
+                        if(board[row + 1][col + 1] == pc &&
+                           board[row - 1][col - 1] == pc &&
+                           board[row - 2][col - 2] == pc) {
                             move = col;
                         }
                     }
