@@ -34,7 +34,12 @@ public class WelcomePanel extends JPanel {
     
     /* Center panel components */
     JPanel centerPanel;
-    JTextArea introTextArea;
+    JLabel introLabel;
+    JPanel introLabelPanel;
+    JPanel optionsLabelsPanel;
+    JLabel playerOneLabel;
+    JLabel boardSizeLabel;
+    JLabel playerTwoLabel;
     OptionsPanel optionsPanel;
     
     /* Spacer component */
@@ -72,52 +77,84 @@ public class WelcomePanel extends JPanel {
         topPanel.add(titleLabel);
         
         leftPanel = new JPanel();
-        leftPanel.setPreferredSize(new Dimension(40, 310));
-        leftPanel.setMaximumSize(new Dimension(40, 310));
+        leftPanel.setPreferredSize(new Dimension(40, 300));
+        leftPanel.setMaximumSize(new Dimension(40, 300));
         
         centerPanel = new JPanel();
         centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
-        centerPanel.setPreferredSize(new Dimension(720, 310));
-        centerPanel.setMaximumSize(new Dimension(720, 310));
+        centerPanel.setPreferredSize(new Dimension(720, 300));
+        centerPanel.setMaximumSize(new Dimension(720, 300));
         
-        introTextArea = new JTextArea();
-        introTextArea.setEnabled(false);
-        introTextArea.setBackground(new Color(0, 0, 0, 0));
-        introTextArea.setText("This can hold the intro text");
-        introTextArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 25));
-        introTextArea.setPreferredSize(new Dimension(720, 170));
-        introTextArea.setMaximumSize(new Dimension(720, 170));
-        introTextArea.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        introLabelPanel = new JPanel();
+        introLabelPanel.setLayout(new BoxLayout(introLabelPanel, BoxLayout.X_AXIS));
+        introLabelPanel.setPreferredSize(new Dimension(720, 170));
+        introLabelPanel.setMaximumSize(new Dimension(720, 170));
+        
+        introLabel = new JLabel();
+        introLabel.setPreferredSize(new Dimension(720, 170));
+        introLabel.setMaximumSize(new Dimension(720, 170));
+        introLabel.setIcon(new ImageIcon("intro.png"));
+        introLabel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        
+        introLabelPanel.add(introLabel);
+        
+        optionsLabelsPanel = new JPanel();
+        optionsLabelsPanel.setLayout(new BoxLayout(optionsLabelsPanel, BoxLayout.X_AXIS));
+        optionsLabelsPanel.setPreferredSize(new Dimension(720, 80));
+        optionsLabelsPanel.setMaximumSize(new Dimension(720, 80));
+        
+        playerOneLabel = new JLabel();
+        playerOneLabel.setPreferredSize(new Dimension(260, 80));
+        playerOneLabel.setMaximumSize(new Dimension(260, 80));
+        playerOneLabel.setIcon(new ImageIcon("playerone.png"));
+        playerOneLabel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        
+        boardSizeLabel = new JLabel();
+        boardSizeLabel.setPreferredSize(new Dimension(200, 80));
+        boardSizeLabel.setMaximumSize(new Dimension(200, 80));
+        boardSizeLabel.setIcon(new ImageIcon("boardsize.png"));
+        boardSizeLabel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        
+        playerTwoLabel = new JLabel();
+        playerTwoLabel.setPreferredSize(new Dimension(260, 80));
+        playerTwoLabel.setMaximumSize(new Dimension(260, 80));
+        playerTwoLabel.setIcon(new ImageIcon("playertwo.png"));
+        playerTwoLabel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        
+        optionsLabelsPanel.add(playerOneLabel);
+        optionsLabelsPanel.add(boardSizeLabel);
+        optionsLabelsPanel.add(playerTwoLabel);
         
         optionsPanel = new OptionsPanel();
         
-        centerPanel.add(introTextArea);
+        centerPanel.add(introLabelPanel);
+        centerPanel.add(optionsLabelsPanel);
         centerPanel.add(optionsPanel);
         
         rightPanel = new JPanel();
-        rightPanel.setPreferredSize(new Dimension(40, 310));
-        rightPanel.setMaximumSize(new Dimension(40, 310));
+        rightPanel.setPreferredSize(new Dimension(40, 300));
+        rightPanel.setMaximumSize(new Dimension(40, 300));
         
         bottomPanel = new JPanel();
         bottomPanel.setLayout(new BoxLayout(bottomPanel, BoxLayout.X_AXIS));
-        bottomPanel.setPreferredSize(new Dimension(800, 50));
-        bottomPanel.setMaximumSize(new Dimension(800, 50));
+        bottomPanel.setPreferredSize(new Dimension(800, 60));
+        bottomPanel.setMaximumSize(new Dimension(800, 60));
         
         bottomLeftSpacer = new JPanel();
-        bottomLeftSpacer.setPreferredSize(new Dimension(40, 50));
-        bottomLeftSpacer.setMaximumSize(new Dimension(40, 50));
+        bottomLeftSpacer.setPreferredSize(new Dimension(40, 60));
+        bottomLeftSpacer.setMaximumSize(new Dimension(40, 60));
         
         buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridLayout(1, 3));
-        buttonPanel.setPreferredSize(new Dimension(720, 50));
-        buttonPanel.setMaximumSize(new Dimension(720, 50));
+        buttonPanel.setPreferredSize(new Dimension(720, 40));
+        buttonPanel.setMaximumSize(new Dimension(720, 40));
         buttonPanel.add(new ExitButton(1));
         buttonPanel.add(new InfoButton());
         buttonPanel.add(new StartButton());
         
         bottomRightSpacer = new JPanel();
-        bottomRightSpacer.setPreferredSize(new Dimension(40, 50));
-        bottomRightSpacer.setMaximumSize(new Dimension(40, 50));
+        bottomRightSpacer.setPreferredSize(new Dimension(40, 60));
+        bottomRightSpacer.setMaximumSize(new Dimension(40, 60));
         
         bottomPanel.add(bottomLeftSpacer);
         bottomPanel.add(buttonPanel);

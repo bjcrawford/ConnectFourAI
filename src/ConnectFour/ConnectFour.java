@@ -18,6 +18,7 @@ public class ConnectFour {
     
     static int playerOneSelection;
     static int playerTwoSelection;
+    static int boardSizeSelection;
     
     static ConnectFourBoard board;
     static AbstractPlayer playerOne;
@@ -64,7 +65,36 @@ public class ConnectFour {
 
             // These can be set at runtime when the welcome screen 
             // is built to take user options
-            board = new ConnectFourBoard(8, 8);
+            switch(boardSizeSelection) {
+                case 0:
+                    board = new ConnectFourBoard(6, 7);
+                    break;
+                case 1:
+                    board = new ConnectFourBoard(7, 7);
+                    break;
+                case 2:
+                    board = new ConnectFourBoard(7, 8);
+                    break;
+                case 3:
+                    board = new ConnectFourBoard(8, 8);
+                    break;
+                case 4:
+                    board = new ConnectFourBoard(8, 9);
+                    break;
+                case 5:
+                    board = new ConnectFourBoard(9, 9);
+                    break;
+                case 6:
+                    board = new ConnectFourBoard(9, 10);
+                    break;
+                case 7:
+                    board = new ConnectFourBoard(10, 10);
+                    break;
+                default:
+                    System.err.println("Invalid boardSizeSelection value.");
+                    System.exit(1);
+                    break;
+            }
             
             switch(playerOneSelection) {
                 case 0:
@@ -148,6 +178,8 @@ public class ConnectFour {
                     break;
             }
             System.out.println("");
+            playerOne.toggleVerbose();
+            playerTwo.toggleVerbose();
 
             // use invoke later to make call to init gamepanel
             SwingUtilities.invokeLater(new Runnable() {
