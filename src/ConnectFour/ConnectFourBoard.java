@@ -298,12 +298,12 @@ public class ConnectFourBoard {
      */
     public void drawBoard(Graphics g, int x, int y) {
 
-        int bgHeight = 400;
         int bgWidth = 400;
         int borderSize = 10;
-        int boardHeight = bgHeight - (2 * borderSize);
         int boardWidth = bgWidth - (2 * borderSize);
-        int squareSize = boardWidth / ((width > height) ? width : height);
+        int squareSize = boardWidth / width;
+        int boardHeight = squareSize * height;
+        int bgHeight = boardHeight + (2 * borderSize);
         int rowSep = squareSize;
         int colSep = squareSize;
         int pieceWidth = (rowSep * 3) / 4;
@@ -327,13 +327,6 @@ public class ConnectFourBoard {
         // Draw background border
         g.setColor(Color.BLACK);
         g.drawRect(x, y, bgWidth, bgHeight);
-
-        // Draw board
-//        g.setColor(Color.YELLOW);
-//        g.fillRect(x + borderSize,
-//                   y + borderSize,
-//                   boardWidth, 
-//                   boardHeight);
         
         
         for(int i = y + borderSize; row < height; i += rowSep, row++)
