@@ -64,13 +64,13 @@ public class WelcomePanel extends JPanel {
         imageLabel = new JLabel();
         imageLabel.setPreferredSize(new Dimension(240, 240));
         imageLabel.setMaximumSize(new Dimension(240, 240));
-        imageLabel.setIcon(new ImageIcon("cfb.png"));
+        imageLabel.setIcon(new ImageIcon("res/cfb.png"));
         imageLabel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         
         titleLabel = new JLabel();
         titleLabel.setPreferredSize(new Dimension(560, 240));
         titleLabel.setMaximumSize(new Dimension(560, 240));
-        titleLabel.setIcon(new ImageIcon("title.png"));
+        titleLabel.setIcon(new ImageIcon("res/title.png"));
         titleLabel.setBorder(BorderFactory.createEmptyBorder(20, 0, 20, 0));
         
         topPanel.add(imageLabel);
@@ -93,7 +93,7 @@ public class WelcomePanel extends JPanel {
         introLabel = new JLabel();
         introLabel.setPreferredSize(new Dimension(720, 170));
         introLabel.setMaximumSize(new Dimension(720, 170));
-        introLabel.setIcon(new ImageIcon("intro.png"));
+        introLabel.setIcon(new ImageIcon("res/intro.png"));
         introLabel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         
         introLabelPanel.add(introLabel);
@@ -106,19 +106,19 @@ public class WelcomePanel extends JPanel {
         playerOneLabel = new JLabel();
         playerOneLabel.setPreferredSize(new Dimension(260, 80));
         playerOneLabel.setMaximumSize(new Dimension(260, 80));
-        playerOneLabel.setIcon(new ImageIcon("playerone.png"));
+        playerOneLabel.setIcon(new ImageIcon("res/playerone.png"));
         playerOneLabel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         
         boardSizeLabel = new JLabel();
         boardSizeLabel.setPreferredSize(new Dimension(200, 80));
         boardSizeLabel.setMaximumSize(new Dimension(200, 80));
-        boardSizeLabel.setIcon(new ImageIcon("boardsize.png"));
+        boardSizeLabel.setIcon(new ImageIcon("res/boardsize.png"));
         boardSizeLabel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         
         playerTwoLabel = new JLabel();
         playerTwoLabel.setPreferredSize(new Dimension(260, 80));
         playerTwoLabel.setMaximumSize(new Dimension(260, 80));
-        playerTwoLabel.setIcon(new ImageIcon("playertwo.png"));
+        playerTwoLabel.setIcon(new ImageIcon("res/playertwo.png"));
         playerTwoLabel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         
         optionsLabelsPanel.add(playerOneLabel);

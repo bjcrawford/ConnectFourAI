@@ -30,13 +30,13 @@ public class EndPanel extends JPanel {
         
         switch(winner) {
             case -1:
-                topPanel.add(new JLabel(new ImageIcon("draw.png")));
+                topPanel.add(new JLabel(new ImageIcon("res/draw.png")));
                 break;
             case 1:
-                topPanel.add(new JLabel(new ImageIcon("redwin.png")));
+                topPanel.add(new JLabel(new ImageIcon("res/redwin.png")));
                 break;
             case 2:
-                topPanel.add(new JLabel(new ImageIcon("blackwin.png")));
+                topPanel.add(new JLabel(new ImageIcon("res/blackwin.png")));
                 break;
             default:
                 System.exit(1);

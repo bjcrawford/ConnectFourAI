@@ -8,9 +8,7 @@ import java.util.ListIterator;
 import java.util.Random;
 
 /**
- * This is the Type 1 for our Connect Four implementation. This AI uses a basic
- * minimax algorithm. It is capable of looking n moves ahead. No other factors
- * besides win or lose have been considered.
+ * 
  */
 public class AIAlphaBetaPlayer extends AbstractPlayer {
 
