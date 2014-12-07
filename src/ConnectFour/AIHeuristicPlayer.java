@@ -67,13 +67,18 @@ public class AIHeuristicPlayer extends AbstractPlayer {
         int highest = (-1000 * lookAhead) - 1;
         
         ConnectFourBoardState c = lotLI.next();
-        System.out.println("Player " + pieceColor + " Move Info:");
-        System.out.println("\n  AI Minimax 3");
-        System.out.println("\n  Possible Moves:\n");
-        while(lotLI.hasNext() && (c = lotLI.next()).getDepth() < 2)
-        {
-            System.out.println("    Column: " + (c.getColInserted()+1) + 
-                               " Score: " + c.getScore());
+        
+        if(verbose) {
+            System.out.println("Player " + pieceColor + " Move Info:");
+            System.out.println("\n  AI Minimax 3");
+            System.out.println("\n  Possible Moves:\n");
+        }
+        while(lotLI.hasNext() && (c = lotLI.next()).getDepth() < 2) {
+            
+            if(verbose) {
+                System.out.println("    Column: " + (c.getColInserted()+1) + 
+                                   " Score: " + c.getScore());
+            }
             
             
             if(c.getScore() > highest)
@@ -89,10 +94,14 @@ public class AIHeuristicPlayer extends AbstractPlayer {
             
         }
         
-        System.out.println("\n  Considered Moves:\n");
+        if(verbose) {
+            System.out.println("\n  Considered Moves:\n");
+        }
         for(ConnectFourBoardState cfbs : list) {
-            System.out.println("    Column: " + (cfbs.getColInserted()+1) +
-                               " Score: " + cfbs.getScore());
+            if(verbose) {
+                System.out.println("    Column: " + (cfbs.getColInserted()+1) +
+                                   " Score: " + cfbs.getScore());
+            }
         }
         
         int numMoves = list.size();

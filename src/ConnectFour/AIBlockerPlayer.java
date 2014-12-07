@@ -41,18 +41,19 @@ public class AIBlockerPlayer extends AbstractPlayer {
             System.err.println(e.getLocalizedMessage());
         }
         
-        System.out.println("Player " + pieceColor + " Move Info:");
-        System.out.println("\n  AI Type: Blocker");
-        System.out.println("\n  Possible Moves:\n");
-        for(int move : moves) 
-            System.out.println("    Column: " + (move+1));
-        System.out.println("\n  Considered Moves:\n");
-        if(randomMove)
-            System.out.println("    Column: " + (bestMove+1) + " (random)");
-        else
-            System.out.println("    Column: " + (bestMove+1) + " (block)");
-        System.out.println();
-
+        if(verbose) {
+            System.out.println("Player " + pieceColor + " Move Info:");
+            System.out.println("\n  AI Type: Blocker");
+            System.out.println("\n  Possible Moves:\n");
+            for(int move : moves) 
+                System.out.println("    Column: " + (move+1));
+            System.out.println("\n  Considered Moves:\n");
+            if(randomMove)
+                System.out.println("    Column: " + (bestMove+1) + " (random)");
+            else
+                System.out.println("    Column: " + (bestMove+1) + " (block)");
+            System.out.println();
+        }
         return bestMove;
     }
     

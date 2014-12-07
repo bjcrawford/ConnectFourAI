@@ -36,14 +36,17 @@ public class AIMonteCarlo1Player extends AbstractPlayer {
         ConnectFourBoard newCFB = new ConnectFourBoard(cfb);
         ArrayList<Integer> moves = cfb.getPossibleMoves();
         
-        System.out.println("Player " + pieceColor + " Move Info:");
-        System.out.println("\n  AI MonteCarlo 1");
-        System.out.println("\n  Possible Moves:\n");
-        for(int move : moves) {
-            
-            System.out.println("    Column: " + (move+1));
+        if(verbose) {
+            System.out.println("Player " + pieceColor + " Move Info:");
+            System.out.println("\n  AI MonteCarlo 1");
+            System.out.println("\n  Possible Moves:\n");
+        
+            for(int move : moves) {
+
+                System.out.println("    Column: " + (move+1));
+            }
+            System.out.println("\n  Considered Moves:\n");
         }
-        System.out.println("\n  Considered Moves:\n");
         for(int move : moves) {
             
             currentScore = evaluateMove(newCFB, move);
@@ -52,10 +55,11 @@ public class AIMonteCarlo1Player extends AbstractPlayer {
                 bestScore = currentScore;
                 bestMove = move;
             }
-            System.out.println("    Column: " + (move+1) + 
-                               " Score: " + currentScore);
+            if(verbose) {
+                System.out.println("    Column: " + (move+1) + 
+                                   " Score: " + currentScore + "\n");
+            }
         }
-        System.out.println();
 
         return bestMove;
     }

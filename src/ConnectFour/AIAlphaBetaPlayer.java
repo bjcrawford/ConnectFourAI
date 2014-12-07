@@ -58,12 +58,16 @@ public class AIAlphaBetaPlayer extends AbstractPlayer {
         int highest = (-100 * lookAhead) - 1;
 
         ConnectFourBoardState c = lotLI.next();
-        System.out.println("Player " + pieceColor + " Move Info:");
-        System.out.println("\n  AI AlphaBeta");
-        System.out.println("\n  Possible Moves:\n");
+        if(verbose) {
+            System.out.println("Player " + pieceColor + " Move Info:");
+            System.out.println("\n  AI AlphaBeta");
+            System.out.println("\n  Possible Moves:\n");
+        }
         while (lotLI.hasNext() && (c = lotLI.next()).getDepth() < 2) {
-            System.out.println("    Column: " + (c.getColInserted()+1) +
-                               " Score: " + c.getScore());
+            if(verbose) {
+                System.out.println("    Column: " + (c.getColInserted()+1) +
+                                   " Score: " + c.getScore());
+            }
 
             if (c.getScore() > highest) {
                 highest = c.getScore();
@@ -76,10 +80,14 @@ public class AIAlphaBetaPlayer extends AbstractPlayer {
             }
         }
 
-        System.out.println("\n  Considered Moves:\n");
+        if(verbose) {
+            System.out.println("\n  Considered Moves:\n");
+        }
         for (ConnectFourBoardState cfbs : list) {
-            System.out.println("    Column: " + (cfbs.getColInserted()+1) +
-                               " Score: " + cfbs.getScore());
+            if(verbose) {
+                System.out.println("    Column: " + (cfbs.getColInserted()+1) +
+                                   " Score: " + cfbs.getScore() + "\n");
+            }
         }
 
         int numMoves = list.size();
@@ -94,7 +102,6 @@ public class AIAlphaBetaPlayer extends AbstractPlayer {
          System.out.println("    Path: " + c.getPath() + " Score: " + c.getScore());
          }
          */
-        System.out.println();
 
         return bestMove;
     }

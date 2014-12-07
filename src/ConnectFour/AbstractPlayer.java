@@ -7,13 +7,16 @@ package ConnectFour;
  */
 public abstract class AbstractPlayer {
     
-    /* The player's piece color */
+    /** The player's piece color */
     protected int pieceColor;
     
-    /* Indicates a human player */
+    /** Indicates a human player */
     protected boolean human;
     
-    /* The connect four board */
+    /** A toggle for printing getNextMove() info */
+    boolean verbose;
+    
+    /** The connect four board */
     protected ConnectFourBoard cfb;
     
     /**
@@ -27,6 +30,17 @@ public abstract class AbstractPlayer {
         this.pieceColor = pieceColor;
         this.human = human;
         this.cfb = cfb;
+        this.verbose = false;
+    }
+    
+    /**
+     * Toggles the verbose flag
+     * 
+     * @return The new state of the flag
+     */
+    public boolean toggleVerbose() {
+        
+        return (verbose = !verbose);
     }
     
     /**
@@ -47,7 +61,7 @@ public abstract class AbstractPlayer {
     }
     
     /**
-     * Gets the players type
+     * Gets the player's type
      * 
      * @return True if human, otherwise false
      */

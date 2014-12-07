@@ -38,16 +38,18 @@ public class AIRandomPlayer extends AbstractPlayer {
             System.err.println(e.getLocalizedMessage());
         }
         
-        System.out.println("Player " + pieceColor + " Move Info:");
-        System.out.println("\n  AI Type: Random");
-        System.out.println("\n  Possible Moves:\n");
-        for(int move : moves) {
-            
-            System.out.println("    Column: " + (move+1));
+        if(verbose) {
+            System.out.println("Player " + pieceColor + " Move Info:");
+            System.out.println("\n  AI Type: Random");
+            System.out.println("\n  Possible Moves:\n");
+            for(int move : moves) {
+
+                System.out.println("    Column: " + (move+1));
+            }
+            System.out.println("\n  Considered Moves:\n");
+            System.out.println("    Column: " + (bestMove+1));
+            System.out.println();
         }
-        System.out.println("\n  Considered Moves:\n");
-        System.out.println("    Column: " + (bestMove+1));
-        System.out.println();
 
         return bestMove;
     }

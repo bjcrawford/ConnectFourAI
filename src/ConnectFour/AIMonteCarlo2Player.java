@@ -40,15 +40,19 @@ public class AIMonteCarlo2Player extends AbstractPlayer {
         ThreadEvalMove[] evalRunnables = new ThreadEvalMove[cfb.getWidth()];
         Thread[] evalThreads = new Thread[cfb.getWidth()]; 
         
-        System.out.println("Player " + pieceColor + " Move Info:");
-        System.out.println("\n  AI MonteCarlo 2");
-        System.out.println("\n  Possible Moves:\n");
+        if(verbose) {
+            System.out.println("Player " + pieceColor + " Move Info:");
+            System.out.println("\n  AI MonteCarlo 2");
+            System.out.println("\n  Possible Moves:\n");
+        }
         for(int move : moves) {
             
             evalRunnables[move] = new ThreadEvalMove(new ConnectFourBoard(cfb), move);
             evalThreads[move] = new Thread(evalRunnables[move]);
             evalThreads[move].start();
-            System.out.println("    Column: " + (move+1));
+            if(verbose) {
+                System.out.println("    Column: " + (move+1));
+            }
         }
         for(int move : moves) {
             try {
@@ -58,7 +62,9 @@ public class AIMonteCarlo2Player extends AbstractPlayer {
                 System.err.println(e.getLocalizedMessage());
             }
         }
-        System.out.println("\n  Considered Moves:\n");
+        if(verbose) {
+            System.out.println("\n  Considered Moves:\n");
+        }
         for(int move : moves) {
             
             currentScore = moveScores[move];
@@ -67,10 +73,11 @@ public class AIMonteCarlo2Player extends AbstractPlayer {
                 bestScore = currentScore;
                 bestMove = move;
             }
-            System.out.println("    Column: " + (move+1) + 
-                               " Score: " + currentScore);
+            if(verbose) {
+                System.out.println("    Column: " + (move+1) + 
+                                   " Score: " + currentScore + "\n");
+            }
         }
-        System.out.println();
 
         return bestMove;
     }
