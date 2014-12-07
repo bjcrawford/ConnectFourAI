@@ -2,8 +2,6 @@ package ConnectFour;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * This player is a very simple AI which makes all of its
@@ -31,14 +29,14 @@ public class AIRandomPlayer extends AbstractPlayer {
         ArrayList<Integer> moves = cfb.getPossibleMoves();
         int bestMove = moves.get(rand.nextInt(moves.size()));
         
-        // Pause for a moment
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            System.err.println(e.getLocalizedMessage());
-        }
-        
         if(verbose) {
+            // Pause for a moment
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                System.err.println(e.getLocalizedMessage());
+            }
+        
             System.out.println("Player " + pieceColor + " Move Info:");
             System.out.println("\n  AI Type: Random");
             System.out.println("\n  Possible Moves:\n");

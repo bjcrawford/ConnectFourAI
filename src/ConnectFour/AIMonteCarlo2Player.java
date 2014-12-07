@@ -75,8 +75,11 @@ public class AIMonteCarlo2Player extends AbstractPlayer {
             }
             if(verbose) {
                 System.out.println("    Column: " + (move+1) + 
-                                   " Score: " + currentScore + "\n");
+                                   " Score: " + currentScore);
             }
+        }
+        if(verbose) {
+            System.out.println();
         }
 
         return bestMove;

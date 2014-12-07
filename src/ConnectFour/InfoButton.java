@@ -31,13 +31,21 @@ public class InfoButton extends JButton implements ActionListener {
         JOptionPane.showMessageDialog(info, 
                 "Here is a little more info about the AIs:\n\n" +
                 "  AI Random:\n" +
+                "    Makes random insertions into the board\n" +
                 "  AI Blocker:\n" +
+                "    Blocks opponents wins\n" +
                 "  AI Minimax 1:\n" +
+                "    Uses Minimax with four move look ahead\n" +
                 "  AI Minimax 2:\n" +
+                "    Optimized Minimax 1, uses weighted scores\n" +
                 "  AI AlphaBeta:\n" +
+                "    Optimized Minimax 2, reduces state space\n" +
                 "  AI Heuristic:\n" +
+                "    Optmized Minimax 2, scores non-terminal states\n" +
                 "  AI MonteCarlo 1:\n" +
-                "  AI MonteCarlo 2:\n" );
+                "    Uses Monte Carlo method to evaluate moves\n" +
+                "  AI MonteCarlo 2:\n" +
+                "    Optimized MonteCarlo 1, uses concurrency\n" );
         
         info.pack();
         info.setVisible(true);

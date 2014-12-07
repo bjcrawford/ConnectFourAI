@@ -34,14 +34,14 @@ public class AIBlockerPlayer extends AbstractPlayer {
             randomMove = true;
         }
         
-        // Pause for a moment
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            System.err.println(e.getLocalizedMessage());
-        }
-        
         if(verbose) {
+            // Pause for a moment
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                System.err.println(e.getLocalizedMessage());
+            }
+        
             System.out.println("Player " + pieceColor + " Move Info:");
             System.out.println("\n  AI Type: Blocker");
             System.out.println("\n  Possible Moves:\n");

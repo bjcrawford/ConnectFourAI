@@ -103,6 +103,9 @@ public class AIHeuristicPlayer extends AbstractPlayer {
                                    " Score: " + cfbs.getScore());
             }
         }
+        if(verbose) {
+            System.out.println();
+        }
         
         int numMoves = list.size();
         Random rand = new Random(System.currentTimeMillis());
@@ -116,9 +119,6 @@ public class AIHeuristicPlayer extends AbstractPlayer {
             System.out.println("    Path: " + c.getPath() + " Score: " + c.getScore());
         }
         */
-        
-        System.out.println();
-        
         
         return result;
     }

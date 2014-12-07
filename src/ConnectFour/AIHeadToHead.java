@@ -4,7 +4,7 @@ package ConnectFour;
 public class AIHeadToHead {
     
     public static void main(String args[]) {
-        playGames(3000);
+        playGames(1000);
     }
     
     public static void playGames(int numOfGames) {
@@ -19,12 +19,14 @@ public class AIHeadToHead {
         AbstractPlayer AI1;
         AbstractPlayer AI2;
         
+        long start = System.currentTimeMillis();
+        long end;
         while(games < numOfGames)
         {
             i = 1;
             win = 0;
             CFB.resetBoard();
-            AI1 = new AIMinimax1Player(1, 4, CFB);
+            AI1 = new AIHeuristicPlayer(1, 4, CFB);
             AI2 = new AIMinimax1Player(2, 4, CFB);
 
             while(win == 0)
@@ -35,10 +37,7 @@ public class AIHeadToHead {
                 if(i % 2 == 1)
                 {
                     //System.out.println("Red Turn\n");
-                    //long start = System.currentTimeMillis();
                     col = AI1.getNextMove();
-                    //long end = System.currentTimeMillis();
-                    //System.out.println("Move took " + (end-start) + " ms to compute");
                     CFB.insertPiece(1, col);
                     //System.out.println("\nRed inserts in column " + (col+1));
                 }
@@ -74,11 +73,26 @@ public class AIHeadToHead {
                 draws++;
             }
             games++;
+            end = System.currentTimeMillis();
+            long esec = ((end - start) / 1000) % 60;
+            long emin = (end - start) / 60000;
+            long remaining = ((end - start) / games) * (numOfGames - games);
+            long rsec = (remaining / 1000) % 60;
+            long rmin = remaining / 60000;
+            
             System.out.println("\n");
-            System.out.println("Out of " + games + " games played: ");
+            System.out.println("" + games + " out of " + numOfGames + " games played");
             System.out.println("  Red wins: " + redWins);
             System.out.println("  Black wins: " + blackWins);
             System.out.println("  Draws: " + draws);
+            System.out.printf("  Time elapsed: %02d:%02d\n", emin, esec);
+            System.out.printf("  Time remaining: %02d:%02d\n", rmin, rsec);
+            
         }
+        
+        end = System.currentTimeMillis();
+        long sec = ((end - start) / 1000) % 60;
+        long min = (end - start) / 60000;
+        System.out.printf("\nTotal time elapsed: %02d:%02d\n", min, sec);
     }
 }

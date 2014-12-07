@@ -88,8 +88,11 @@ public class AIMinimax2Player extends AbstractPlayer {
         for (ConnectFourBoardState cfbs : list) {
             if(verbose) {
                 System.out.println("    Column: " + (cfbs.getColInserted()+1) +
-                                   " Score: " + cfbs.getScore() + "\n");
+                                   " Score: " + cfbs.getScore());
             }
+        }
+        if(verbose) {
+            System.out.println();
         }
 
         int numMoves = list.size();
